@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- tipografía Inconsolata Condensed-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@75,200..900&display=swap" rel="stylesheet">
+
+     <link rel="icon" type="image/jpg" href="logo/logo_favicon.ico"/>
+     <link rel="stylesheet" href="css/estilo.css">
+     <script defer src="js/funciones.js"></script>
+</head>
+<body class="index">
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="filters">
+	<defs>
+		<filter id="sketchy-0">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="0" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+		<filter id="sketchy-1">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="1" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+		<filter id="sketchy-2">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="2" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+		<filter id="sketchy-3">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="3" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+		<filter id="sketchy-4">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="4" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+		<filter id="sketchy-5">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="5" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+	</defs>
+    </svg>
+
+    <header>
+    <button class="boton--abrir"><img src="imagenes/menu_abrir.svg" alt="abrir menu icono"></button>
+    <nav class="menu">
+        <button class="menu__boton--cerrar"><img src="imagenes/menu_cerrar.svg" alt="cerrar menu icono"></button>
+        <ul>
+            <li class="menu__logo"><a href="index.html"><img src="logo/logo.svg" alt="logo"></a></li>
+            <li class="menu__descripcion">Ermes Olea - diseñadore, ilustradore y artista multidisciplinar de Madrid, España. <br>@2026</li>
+            <li class="menu__item">
+                <a class="menu__link--archivo" href="archivo.html">
+                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina archivo">
+                    <span>Archivo</span>
+                </a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link--sobremi"href="sobremi.html">
+                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina sobremi">
+                    <span>Sobre mí</span>
+                </a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link--contacto"href="contacto.html">
+                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina contacto">
+                    <span>Contacto</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    </header>
+    <section class="ventana">
+        <img class="ventana__item--drag aguja" src="imagenes/landing/lg_aguja.png" alt="aguja">
+        <img class="ventana__item--drag bolapapel" src="imagenes/landing/lg_bolapapel.png" alt="bola papel">
+        <div class="cinta">
+            <button class="ventana__boton--desordenar"><img src="imagenes/landing/lg_desordenar.svg" alt="desordenar"></button>
+            <button class="ventana__boton--ordenar"><img src="imagenes/landing/lg_ordenar.svg" alt="ordenar"></button>
+        </div>
+        <img class="ventana__item--drag clip" src="imagenes/landing/lg_clip.svg" alt="clip">
+        <a href="comadeja.html" class="ventana__item--drag comadeja"><img src="imagenes/landing/lg_comadeja.png" alt="comadeja"></a>
+        <img class="ventana__item--drag comics" src="imagenes/landing/lg_comics.png" alt="comics">
+        <img class="ventana__item--drag dibujar" src="imagenes/landing/lg_dibujar.png" alt="dibujar">
+        <video class="ventana__item--drag diy" src="imagenes/landing/ar_gato.mp4" alt="diy" muted loop autoplay></video>
+        <img class="ventana__item--drag estrella" src="imagenes/landing/lg_estrella.svg" alt="estrella">
+        <a href="fae.html" class="ventana__item--drag fae"><img src="imagenes/landing/lg_fae.png" alt="fae"></a>
+        <a href="sobremi.html" class="ventana__item--drag foto"><img  src="imagenes/landing/lg_foto.png" alt="foto"></a>
+        <a href="ilustraciones.html" class="ventana__item--drag ilustracion"><img  src="imagenes/landing/lg_ilustracion.jpg" alt="ilustracion"></a>
+        <div class="ventana__item--drag letras"><img class="letras__img"src="imagenes/landing/lg_sandrune_01.svg" alt="sandrune 01"></div>
+        <img class="ventana__item--drag mariposa" src="imagenes/landing/lg_mariposa.png" alt="mariposa">
+        <img class="ventana__item--drag papel1" src="imagenes/landing/lg_papel_01.png" alt="papel 01">
+        <div class="ventana__item--drag papel2">
+            <div class="ventana__item--drag__texto">
+                <h2 class="ventana__item--drag__texto__h2">[INDEX]</h2>
+                <ul>
+                    <li><a href="fae.html" class="ventana__item--drag__texto__enlace">01. Fae 2025</a></li>
+                    <li><a href="comadeja.html" class="ventana__item--drag__texto__enlace">02. Comadeja 2024</a></li>
+                    <li><a href="ilustraciones.html" class="ventana__item--drag__texto__enlace">03. Ilustraciones 2025</a></li>
+                    <li><a href="" class="ventana__item--drag__texto__enlace">04. Por qué dibujo estrellas 2025</a></li>
+                    <li><a href="" class="ventana__item--drag__texto__enlace">05. Fae 2025</a></li>
+                </ul>
+                <p class="ventana__item--drag__texto__footer">SELECTED WORKS // SELECTED WORKS // SELECTED WORKS //</p>
+            </div>
+        </div>
+        <img class="ventana__item--drag punk" src="imagenes/landing/lg_punk.svg" alt="punk">
+        <img class="ventana__item--drag sticker" src="imagenes/landing/lg_sticker.png" alt="sticker">
+        <img class="ventana__item--drag human" src="imagenes/landing/lg_nothuman.png" alt="Texto: not human but thats okay">
+    </section>
+
+    <!--<section class="ventana_02">
+    <img class="marco" src="imagenes/trabajos/ilustracion/ermes_marco_02.jpg" alt="">
+    </section>-->
+</body>
+</html>

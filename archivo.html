@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- tipografía Inconsolata Condensed-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@75,200..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/jpg" href="logo/logo_favicon.ico"/>
+    <link rel="stylesheet" href="css/estilo.css">
+    <script defer src="js/funciones.js"></script>
+</head>
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="filters">
+	<defs>
+		<filter id="sketchy-0">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="0" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+		<filter id="sketchy-1">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="1" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+		<filter id="sketchy-2">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="2" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+		<filter id="sketchy-3">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="3" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+		<filter id="sketchy-4">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="4" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+		<filter id="sketchy-5">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="5" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+	</defs>
+    </svg>
+
+    <header>
+    <button class="boton--abrir"><img src="imagenes/menu_abrir.svg" alt="abrir menu icono"></button>
+    <nav class="menu">
+        <button class="menu__boton--cerrar"><img src="imagenes/menu_cerrar.svg" alt="cerrar menu icono"></button>
+        <ul>
+            <li class="menu__logo"><a href="index.html"><img src="logo/logo.svg" alt="logo"></a></li>
+            <li class="menu__descripcion">Ermes Olea - diseñador, ilustrador y artista multidisciplinar de Madrid, España. <br>@2026</li>
+            <li class="menu__item">
+                <a class="menu__link--archivo" href="archivo.html">
+                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina archivo">
+                    <span>Archivo</span>
+                </a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link--sobremi"href="sobremi.html">
+                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina sobremi">
+                    <span>Sobre mí</span>
+                </a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link--contacto"href="contacto.html">
+                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina contacto">
+                    <span>Contacto</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    </header>
+
+    <div class="contenedor-archivo">
+        <section class="introduccion">
+            <img class="introduccion__titulo" src="imagenes/archivo/ar_titulo.svg" alt="Archivo">
+            <p class="introduccion__descripcion">
+            Aquí comparto una recopilación de mis proyectos pasados y actuales. Este espacio sirve como archivo de los trabajos que he ido realizando a lo largo de los últimos años.
+            </p>
+        </section>
+        <div class="objeto3d">
+            <img src="imagenes/archivo/sm_decoracion.png" alt="decoración">
+            <img src="imagenes/archivo/sm_estrellas.svg" alt="decoración">
+        </div>
+        <section class="archivo">
+            <h2 class="archivo__categoria">EDITORIAL</h2>
+            
+            <div class="archivo__lista">
+            <a href="#" class="archivo__fila">
+                <span class="archivo__celda archivo__celda--nombre">COMADEJA, UNA REVISTA SOBRE GANCHILLO</span>
+                <span class="archivo__celda archivo__celda--proyecto">Ganchillo accesible e inclusivo basado en la ética punk y la cultura DIY</span>
+                <span class="archivo__celda archivo__celda--numero">0.0.1</span>
+
+                <img src="imagenes/trabajos/comadeja/ermes_tfg_01.jpg" alt="Proyecto 1" class="archivo__foto">
+            </a>
+
+            <a href="#" class="archivo__fila">
+                <span class="archivo__celda archivo__celda--nombre">LO QUE APRENDÍ DE LES FAE</span>
+                <span class="archivo__celda archivo__celda--proyecto">libro de artista sobre disidencia, naturaleza y fascinación por fantasía</span>
+                <span class="archivo__celda archivo__celda--numero">0.0.1</span>
+
+                <img src="imagenes/trabajos/fae/ermes_fae_10.png" alt="Proyecto 1" class="archivo__foto">
+            </a>
+
+            <a href="#" class="archivo__fila">
+                <span class="archivo__celda archivo__celda--nombre">GCVHBN FGHYU</span>
+                <span class="archivo__celda archivo__celda--proyecto">THIS IS WHY EVENTS UNNERVE ME, THEM FIND IT ALL.</span>
+                <span class="archivo__celda archivo__celda--numero">0.0.1</span>
+
+                <img src="https://picsum.photos/id/10/300/400" alt="Proyecto 1" class="archivo__foto">
+            </a>
+
+            <a href="#" class="archivo__fila">
+                <span class="archivo__celda archivo__celda--nombre">GCVHBN FGHYU</span>
+                <span class="archivo__celda archivo__celda--proyecto">THIS IS WHY EVENTS UNNERVE ME, THEM FIND IT ALL.</span>
+                <span class="archivo__celda archivo__celda--numero">0.0.1</span>
+
+                <img src="https://picsum.photos/id/10/300/400" alt="Proyecto 1" class="archivo__foto">
+            </a>
+
+            <a href="#" class="archivo__fila">
+                <span class="archivo__celda archivo__celda--nombre">GCVHBN FGHYU</span>
+                <span class="archivo__celda archivo__celda--proyecto">THIS IS WHY EVENTS UNNERVE ME, THEM FIND IT ALL.</span>
+                <span class="archivo__celda archivo__celda--numero">0.0.1</span>
+
+                <img src="https://picsum.photos/id/10/300/400" alt="Proyecto 1" class="archivo__foto">
+            </a>
+            </div>
+
+            <h2 class="archivo__categoria">ILUSTRACIÓN</h2>
+
+            <div class="archivo__lista">
+            <a href="#" class="archivo__fila">
+                <span class="archivo__celda archivo__celda--nombre">GCVHBN FGHYU</span>
+                <span class="archivo__celda archivo__celda--proyecto">THIS IS WHY EVENTS UNNERVE ME, THEM FIND IT ALL.</span>
+                <span class="archivo__celda archivo__celda--numero">0.0.1</span>
+
+                <img src="https://picsum.photos/id/10/300/400" alt="Proyecto 1" class="archivo__foto">
+            </a>
+
+            <a href="#" class="archivo__fila">
+                <span class="archivo__celda archivo__celda--nombre">GCVHBN</span>
+                <span class="archivo__celda archivo__celda--proyecto">A DIFFERENT STORY. NOTICE ARE TURNING...</span>
+                <span class="archivo__celda archivo__celda--numero">0.0.1</span>
+
+                <img src="https://picsum.photos/id/10/300/400" alt="Proyecto 1" class="archivo__foto">
+            </a>
+
+            <a href="#" class="archivo__fila">
+                <span class="archivo__celda archivo__celda--nombre">GCVHBN FGHYU</span>
+                <span class="archivo__celda archivo__celda--proyecto">THIS IS WHY EVENTS UNNERVE ME, THEM FIND IT ALL.</span>
+                <span class="archivo__celda archivo__celda--numero">0.0.1</span>
+
+                <img src="https://picsum.photos/id/10/300/400" alt="Proyecto 1" class="archivo__foto">
+            </a>
+
+            <a href="#" class="archivo__fila">
+                <span class="archivo__celda archivo__celda--nombre">GCVHBN FGHYU</span>
+                <span class="archivo__celda archivo__celda--proyecto">THIS IS WHY EVENTS UNNERVE ME, THEM FIND IT ALL.</span>
+                <span class="archivo__celda archivo__celda--numero">0.0.1</span>
+
+                <img src="https://picsum.photos/id/10/300/400" alt="Proyecto 1" class="archivo__foto">
+            </a>
+
+            <a href="#" class="archivo__fila">
+                <span class="archivo__celda archivo__celda--nombre">GCVHBN FGHYU</span>
+                <span class="archivo__celda archivo__celda--proyecto">THIS IS WHY EVENTS UNNERVE ME, THEM FIND IT ALL.</span>
+                <span class="archivo__celda archivo__celda--numero">0.0.1</span>
+
+                <img src="https://picsum.photos/id/10/300/400" alt="Proyecto 1" class="archivo__foto">
+            </a>
+            </div>
+
+            <h2 class="archivo__categoria">DIY</h2>
+
+            <div class="archivo__lista">
+            <a href="#" class="archivo__fila">
+                <span class="archivo__celda archivo__celda--nombre">GCVHBN FGHYU</span>
+                <span class="archivo__celda archivo__celda--proyecto">THIS IS WHY EVENTS UNNERVE ME, THEM FIND IT ALL.</span>
+                <span class="archivo__celda archivo__celda--numero">0.0.1</span>
+
+                <img src="https://picsum.photos/id/10/300/400" alt="Proyecto 1" class="archivo__foto">
+            </a>
+
+            <a href="#" class="archivo__fila">
+                <span class="archivo__celda archivo__celda--nombre">GCVHBN</span>
+                <span class="archivo__celda archivo__celda--proyecto">A DIFFERENT STORY. NOTICE ARE TURNING...</span>
+                <span class="archivo__celda archivo__celda--numero">0.0.1</span>
+
+                <img src="https://picsum.photos/id/10/300/400" alt="Proyecto 1" class="archivo__foto">
+            </a>
+
+            <a href="#" class="archivo__fila">
+                <span class="archivo__celda archivo__celda--nombre">GCVHBN FGHYU</span>
+                <span class="archivo__celda archivo__celda--proyecto">THIS IS WHY EVENTS UNNERVE ME, THEM FIND IT ALL.</span>
+                <span class="archivo__celda archivo__celda--numero">0.0.1</span>
+
+                <img src="https://picsum.photos/id/10/300/400" alt="Proyecto 1" class="archivo__foto">
+            </a>
+            </div>
+            
+        </section>
+
+</div>
+</body>
+</html>
