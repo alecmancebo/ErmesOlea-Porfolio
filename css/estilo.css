@@ -8,7 +8,7 @@ body{
     font-family: "Inconsolata", monospace;
     font-variation-settings:
     "wdth" 75;
-    background-color: #f8f6f4;
+
 }
 
 img{ display: block;}
@@ -81,7 +81,10 @@ img.menu__img--hover{
 
 /* MARK:landing*/
 
-
+.index{
+    background-image: url("../imagenes/background.png");
+    background-size: cover;
+}
 /*.ventana_02{
     width: 100%;
     position: sticky;
@@ -99,13 +102,12 @@ img.menu__img--hover{
     display: block;
 }*/
 
-/*MARK: POSICION RELATIVA*/
+/*MARK: COMÚN PARA AMBOS*/
 
 .ventana__item--drag__texto ul{
     width: 100%;
     padding:10px 0 20px 0;
     border-bottom: 1px dashed black;
-
 }
 
 .ventana__item--drag__texto__h2{
@@ -180,8 +182,7 @@ img.menu__img--hover{
   grid-template-rows: minmax(0, 0.8fr) minmax(0, 1.5fr) minmax(0, 0.8fr) minmax(0, 1.2fr);
   padding: 100px 20px 20px 20px;
   gap: 5px;
-position: sticky;
-    
+position: sticky; 
 }
 
 .ventana.ordenada .ventana__item--drag {
@@ -567,6 +568,11 @@ img.letras__img {
 
 /*MARK: sobre mí*/
 
+.sobremi{
+    background-image: url("../imagenes/background_02.png");
+    background-size: cover;
+}
+
 /*MARK:experiencia*/
 
 .contenido{
@@ -824,7 +830,6 @@ img.letras__img {
 
 .textosm__texto--h1{
     margin-bottom: 2rem;
-
 }
 
 .textosm__simbolo, .textosm__png{
@@ -841,12 +846,13 @@ img.letras__img {
     width: 16vmin;
 }
 
+/*MARK: CLICK*/
+
+
 .experiencia, .skills, .textosm {
-    transition: transform 0.7s ease-in-out;
+    transition: transform 0.7s ease-in-out, rotate 0.4s ease-in-out;
 }
 
-
-/*MARJ: CLICK*/
 .seccion--apartada {
     transform: translateX(85vw);
     pointer-events: none;
@@ -859,6 +865,11 @@ img.letras__img {
 }
 
 /*MARK: contacto*/
+
+.contacto{
+    background-image: url("../imagenes/background_02.png");
+    background-size: cover;
+}
 
 /*MARK: SOBRE DIBUJO*/
 
@@ -1131,6 +1142,11 @@ img.letras__img {
 
 /*MARK:ARCHIVO*/
 
+.body--archivo{
+    background-image: url("../imagenes/background.png");
+    background-size: cover;
+}
+
 .objeto3d{
     position: absolute;
     right: 10px;
@@ -1260,6 +1276,72 @@ img.letras__img {
   background-color: #333;
 }
 
+
+/*MARK: Trabajos*/
+
+.trabajos{
+    display:flex;
+    justify-content: center;
+    padding: 10% 20px 20px 20px;
+    /*    background-color: #f8f6f4;*/
+
+}
+
+.trabajos__explicacion{
+        max-width:24%;
+}
+
+.trabajos__explicacion__contenido{
+    background-color: #63753b;
+    /*max-height:600px;*/
+    opacity: 0.95;
+    position: relative;
+    /*transform: rotate(-6deg) translateY(2%);*/
+    padding: 40px;
+    align-self: flex-start;
+    margin-top: 80px;
+}
+
+.trabajos__explicacion--volver{
+    border:none;
+    background:transparent;
+}
+
+.trabajos__imagen{
+    width: 100%;
+    background: transparent;
+    margin: 20px 0;
+}
+
+.trabajos__explicacion__clip{
+    width: 50px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+
+.trabajos__explicacion__span{
+    margin: 20px 0;
+    display: block;
+}
+
+.trabajos__explicacion__h2{
+    margin: 20px 0;
+}
+
+.trabajos__explicacion__ficha{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px 10px;
+    padding: 20px 0;
+}
+
+.trabajos__explicacion__ficha__col span{
+    display: block;
+}
 
 /*MARK: media queries*/
 

@@ -4,21 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- tipografía Inconsolata Normal-->
+    <!-- tipografía Inconsolata Condensed-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-    
-    <!-- tipografía Inconsolata Semi Condensed-->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@87.5,200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@75,200..900&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/jpg" href="logo/logo_favicon.ico"/>
     <link rel="stylesheet" href="css/estilo.css">
     <script defer src="js/funciones.js"></script>
 </head>
-<body>
-    
+
+<body class="body--trabajos">
+    <header>
+    <button class="boton--abrir"><img src="imagenes/menu_abrir.svg" alt="abrir menu icono"></button>
+    <nav class="menu">
+        <button class="menu__boton--cerrar"><img src="imagenes/menu_cerrar.svg" alt="cerrar menu icono"></button>
+        <ul>
+            <li class="menu__logo"><a href="index.html"><img src="logo/logo.svg" alt="logo"></a></li>
+            <li class="menu__descripcion">Ermes Olea - diseñadore, ilustradore y artista multidisciplinar de Madrid, España. <br>@2026</li>
+            <li class="menu__item">
+                <a class="menu__link--archivo" href="archivo.html">
+                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina archivo">
+                    <span>Archivo</span>
+                </a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link--sobremi"href="sobremi.html">
+                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina sobremi">
+                    <span>Sobre mí</span>
+                </a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link--contacto"href="contacto.html">
+                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina contacto">
+                    <span>Contacto</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    </header>
+
+    <section class="trabajos">
+    <div class="trabajos__imagenes">
+        <img src="imagenes/trabajos/fae/ermes_fae_01.jpg" alt="" class="trabajos__imagen">
+        <div  class="trabajos__imagen">
+        <img src="imagenes/trabajos/fae/ermes_fae_02.jpg" alt="">
+        <img src="imagenes/trabajos/fae/ermes_fae_03.jpg" alt="">
+        </div>
+        <img src="imagenes/trabajos/fae/ermes_fae_04.jpg" alt="" class="trabajos__imagen">
+        <img src="imagenes/trabajos/fae/ermes_fae_05.jpg" alt="" class="trabajos__imagen">
+        <img src="imagenes/trabajos/fae/ermes_fae_06.jpg" alt="" class="trabajos__imagen">
+        </div  class="trabajos__imagen">
+        <img src="imagenes/trabajos/fae/ermes_fae_07.jpg" alt="">
+        <img src="imagenes/trabajos/fae/ermes_fae_08.jpg" alt="">
+        </div>
+        <img src="imagenes/trabajos/fae/ermes_fae_09.jpg" alt="" class="trabajos__imagen">
+        <img src="imagenes/trabajos/fae/ermes_fae_10.png" alt="" class="trabajos__imagen">
+        <img src="imagenes/trabajos/fae/ermes_fae_11.jpg" alt="" class="trabajos__imagen">
+        <img src="imagenes/trabajos/fae/ermes_fae_12.png" alt="" class="trabajos__imagen">
+        <img src="imagenes/trabajos/fae/ermes_fae_13.jpg" alt="" class="trabajos__imagen">
+        <img src="imagenes/trabajos/fae/ermes_fae_14.jpg" alt="" class="trabajos__imagen">
+        <img src="imagenes/trabajos/fae/ermes_fae_15.jpg" alt="" class="trabajos__imagen">
+        <img src="imagenes/trabajos/fae/ermes_fae_16.png" alt="" class="trabajos__imagen">
+    </div>
+
+    <div class="trabajos__explicacion">
+        <button class="trabajos__explicacion--volver"> VOLVER A ARCHIVO -></button>
+        <div class="trabajos__explicacion__contenido">
+            <img src="imagenes/landing/lg_clip.svg" alt="clip" class="trabajos__explicacion__clip">
+            <span class="trabajos__explicacion__span">EDITORIAL//</span>
+            <h2 class="trabajos__explicacion__h2">FAE</h2>
+            <p class="trabajos__explicacion__parrafo">
+            Este libro de artista trata sobre mi experiencia como persona trans que nunca se ha sentido muy persona y cuyo mayor deseo siempre ha sido escapar al bosque con las hadas donde todo puede ser diferente.</p>
+            
+            <div class="trabajos__explicacion__ficha">
+                    <span>TIPO</span>
+                    <span>LIBRO DE ARTISTA</span>
+                    <span>DESCRIPCIÓN</span>
+                    <span>Instalación compuesta por de 25 estampas (serigrafías y puntasecas sobre acetato, iluminadas con acuarela, dibujadas a mano y mezclando técnicas como el recorte y lo textil), expuesto desplegado a modo de laberinto. </span>
+                    <span>TAMAÑO</span>
+                    <span>20 x 15 cm</span>
+            </div>
+            <div class="trabajos__explicacion__footer">
+                <a href="" class="trabajos__explicacion__enlace">LEE AQUÍ EL ZINE</a>
+                <span>2025</span>
+            </div>
+        </div>
+    </div>
+    </section>
+    <footer class="carrusel"></footer>
 </body>
 </html>
