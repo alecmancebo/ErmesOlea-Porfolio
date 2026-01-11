@@ -8,7 +8,10 @@ body{
     font-family: "Inconsolata", monospace;
     font-variation-settings:
     "wdth" 75;
-
+    cursor: none;
+    background-image: url("../imagenes/background_02.png");
+    background-size: cover;
+    background-repeat: repeat;
 }
 
 img{ display: block;}
@@ -25,7 +28,7 @@ svg#filters {
 header{
     position: fixed;
     width: 100%;
-    z-index: 999;
+    z-index: 998;
 }
 .menu ul{
     display:flex;
@@ -80,27 +83,6 @@ img.menu__img--hover{
 }
 
 /* MARK:landing*/
-
-.index{
-    background-image: url("../imagenes/background.png");
-    background-size: cover;
-}
-/*.ventana_02{
-    width: 100%;
-    position: sticky;
-    overflow: hidden;
-    background-image: url("../imagenes/contacto/sm_hoja.png");
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100dvh;
-
-}
-
-.marco{
-    width: 50dvw;
-    display: block;
-}*/
 
 /*MARK: COMÚN PARA AMBOS*/
 
@@ -568,11 +550,6 @@ img.letras__img {
 
 /*MARK: sobre mí*/
 
-.sobremi{
-    background-image: url("../imagenes/background_02.png");
-    background-size: cover;
-}
-
 /*MARK:experiencia*/
 
 .contenido{
@@ -866,11 +843,6 @@ img.letras__img {
 
 /*MARK: contacto*/
 
-.contacto{
-    background-image: url("../imagenes/background_02.png");
-    background-size: cover;
-}
-
 /*MARK: SOBRE DIBUJO*/
 
 .contenedor-sobre {
@@ -1142,11 +1114,6 @@ img.letras__img {
 
 /*MARK:ARCHIVO*/
 
-.body--archivo{
-    background-image: url("../imagenes/background.png");
-    background-size: cover;
-}
-
 .objeto3d{
     position: absolute;
     right: 10px;
@@ -1279,24 +1246,38 @@ img.letras__img {
 
 /*MARK: Trabajos*/
 
-.trabajos{
-    display:flex;
-    justify-content: center;
-    padding: 10% 20px 20px 20px;
-    /*    background-color: #f8f6f4;*/
+.body--trabajos{
+    background-image: url("../imagenes/background_02.png");
+    background-size:contain;
+    background-repeat: repeat;
 
 }
 
-.trabajos__explicacion{
-        max-width:24%;
+.trabajos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;       
+    padding: 6% 4% 4% 4%;              
+    gap: 40px;                    
+}
+
+.trabajos__imagenes {
+    flex: 1;                      
+    max-width: 65%;                 
+    display: flex;
+    flex-direction: column;  
+}
+
+.trabajos__explicacion {
+    max-width: 30%;          
+    position: sticky;             
+    top: 10%;
+    border-left: 1px solid black;
 }
 
 .trabajos__explicacion__contenido{
-    background-color: #63753b;
-    /*max-height:600px;*/
     opacity: 0.95;
     position: relative;
-    /*transform: rotate(-6deg) translateY(2%);*/
     padding: 40px;
     align-self: flex-start;
     margin-top: 80px;
@@ -1305,19 +1286,32 @@ img.letras__img {
 .trabajos__explicacion--volver{
     border:none;
     background:transparent;
+    margin-left: 40px;
 }
 
-.trabajos__imagen{
+.trabajos__imagen {
     width: 100%;
-    background: transparent;
-    margin: 20px 0;
+    height: auto;
+    margin-bottom: 20px;       
 }
 
-.trabajos__explicacion__clip{
-    width: 50px;
+div.trabajos__imagen {
+    display: flex;
+    gap: 10px;
+}
+
+div.trabajos__imagen img{
+    width: 50%;
+    height: auto;    
+    object-fit: contain;       
+}
+
+.trabajos__explicacion__marco{
+    width: 60%;
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 0px;
+    right: 0px;
+    opacity: 0.8;
 }
 
 
@@ -1336,12 +1330,91 @@ img.letras__img {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
     gap: 20px 10px;
-    padding: 20px 0;
+    padding: 40px 0 20px 0;
 }
 
 .trabajos__explicacion__ficha__col span{
     display: block;
 }
+
+/* Bloque Principal */
+.carousel {
+  --slide-width: 12%;
+  --slide-count: 4; /* Número de fotos originales (sin contar las copias) */
+  --total-slides: calc(var(--slide-count) * 2);
+  --animation-speed: 20s;
+
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+/* Elemento Track (el que se mueve) */
+.carousel__track {
+  display: flex;
+  /* El ancho total es el ancho de una foto por todas las fotos (originales + copias) */
+  width: calc(var(--slide-width) * var(--total-slides));
+  animation: scroll-left var(--animation-speed) linear infinite;
+}
+
+/* Elemento Slide (el contenedor de cada foto) */
+.carousel__slide {
+  width: var(--slide-width);
+  flex-shrink: 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* Elemento Imagen */
+.carousel__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Modificador (opcional: si quieres que el carrusel se detenga al pasar el mouse) */
+.carousel:hover .carousel__track {
+  animation-play-state: paused;
+}
+
+/* Animación */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Se desplaza exactamente la mitad del track (las fotos originales) */
+    transform: translateX(calc(var(--slide-width) * var(--slide-count) * -1));
+  }
+}
+
+
+/*MARK: CURSOR*/
+    
+.cursor {
+    position:fixed;
+    top:-30px;
+    left:-30px;
+    width:18px;
+    height:30px;
+    animation: escala 2s infinite;
+    background-image: url("../imagenes/minibichos/Arrow_texture.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 999;
+
+    }
+    
+@keyframes escala {
+    0%,100%{
+        scale:1;
+    }
+    50%{
+        scale:0.9;
+    }
+
+    }
 
 /*MARK: media queries*/
 

@@ -167,3 +167,13 @@ cinta.addEventListener('click', () => {
             }
         });
     });
+
+
+//imagen que sigue al cursor
+
+const cursor = document.querySelector(".cursor");
+
+window.addEventListener("mousemove", e => {
+    cursor.style.top = e.clientY + "px";
+    cursor.style.left = e.clientX + "px";
+})
