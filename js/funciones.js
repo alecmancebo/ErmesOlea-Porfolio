@@ -1,10 +1,10 @@
 
 //desplegar menú en movil
 const nav = document.querySelector(".menu");
-const botones = document.querySelectorAll(".boton--abrir, .menu__boton--cerrar");
+const botonesSobre = document.querySelectorAll(".boton--abrir, .menu__boton--cerrar");
 
 
-    botones.forEach(boton => {
+    botonesSobre.forEach(boton => {
         boton.addEventListener("click", () => {
             nav.classList.toggle("menu--desplegado");
             })
@@ -167,13 +167,3 @@ cinta.addEventListener('click', () => {
             }
         });
     });
-
-
-//imagen que sigue al cursor
-
-const cursor = document.querySelector(".cursor");
-
-window.addEventListener("mousemove", e => {
-    cursor.style.top = e.clientY + "px";
-    cursor.style.left = e.clientX + "px";
-})
