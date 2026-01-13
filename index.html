@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <!-- Página: LANDING / PORTADA
+         Propósito: Página principal del portfolio - muestra una cuadrícula interactiva 
+         de proyectos destacados con elementos visuales desordenados que se pueden 
+         organizar con los botones de ordenar/desordenar.
+         
+         Secciones principales:
+         - Header con navegación y menú desplegable
+         - Filtros SVG para efectos sketch
+         - Ventana (cuadrícula interactiva) con proyectos y elementos decorativos
+         - Indice (índice de proyectos principales)
+    -->
+
     <!-- tipografía Inconsolata Condensed-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,25 +112,25 @@
         </div>
         <img class="ventana__item mariposa" src="imagenes/landing/lg_mariposa.png" alt="mariposa">
         
-        <a href="cortocircuito.html" class="ventana__item papel1"> 
+        <a href="cortocircuito.html" class="ventana__item cortocircuito"> 
             <picture>
                 <source media="(min-width:481px)" srcset="imagenes/landing/cortocircuito.png">
                 <source media="(max-width:480px)" srcset="imagenes/landing/cortocircuito_02.png">
-                <img src="imagenes/landing/cortocircuito.png" alt="papel 01">
+                <img src="imagenes/landing/cortocircuito.png" alt="cortocircuito">
             </picture>
         </a>
-        <div class="papel2">
-            <img class="papel2__deco" src="imagenes/landing/lg_cinta.png" alt="cinta decorativa">
-            <div class="papel2__texto">
-                <h2 class="papel2__titulo">[INDEX]</h2>
+        <div class="indice">
+            <img class="indice__deco" src="imagenes/landing/lg_cinta.png" alt="cinta decorativa">
+            <div class="indice__texto">
+                <h2 class="indice__titulo">[INDEX]</h2>
                 <ul>
-                    <li><a href="fae.html" class="papel2__enlace">01. Fae 2025</a></li>
-                    <li><a href="comadeja.html" class="papel2__enlace">02. Comadeja 2024</a></li>
-                    <li><a href="vernalizacion.html" class="papel2__enlace">03. Vernalización 2025</a></li>
-                    <li><a href="cortocircuito.html" class="papel2__enlace">04. Cortocircuito 2025</a></li>
-                    <li><a href="the-magnus-archives.html" class="papel2__enlace">05. The Magnus Archives 2025</a></li>
+                    <li><a href="fae.html" class="indice__enlace">01. Fae 2025</a></li>
+                    <li><a href="comadeja.html" class="indice__enlace">02. Comadeja 2024</a></li>
+                    <li><a href="vernalizacion.html" class="indice__enlace">03. Vernalización 2025</a></li>
+                    <li><a href="cortocircuito.html" class="indice__enlace">04. Cortocircuito 2025</a></li>
+                    <li><a href="the-magnus-archives.html" class="indice__enlace">05. The Magnus Archives 2025</a></li>
                 </ul>
-                <div class="papel2__footer"><img src="imagenes/landing/lg_selectedworks.png" alt="Selected works"></div>
+                <div class="indice__footer"><img src="imagenes/landing/lg_selectedworks.png" alt="Selected works"></div>
             </div>
         </div>
         <img class="ventana__item punk" src="imagenes/landing/lg_punk.svg" alt="punk">

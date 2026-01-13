@@ -1,4 +1,18 @@
 
+/*
+  ARCHIVO: funciones.js
+  
+  Propósito: Interactividad y comportamientos dinámicos del portfolio
+  
+  FUNCIONALIDADES PRINCIPALES:
+  1. Menú móvil - toggle (abrir/cerrar) menú en pantallas pequeñas
+  2. Animación de letras punk - cambio de imágenes al hover en menu links
+  3. Rotación aleatoria de letras - efecto en textos del archivo
+  4. Ordenar/desordenar - toggle de clases para grid principal
+  5. Sobre interactivo - click para abrir/cerrar sobre de contacto
+  6. Secciones interactivas - click para expandir/contraer (sobre mi)
+*/
+
 //desplegar menú en movil
 const nav = document.querySelector(".menu");
 const botonesSobre = document.querySelectorAll(".boton--abrir, .menu__boton--cerrar");

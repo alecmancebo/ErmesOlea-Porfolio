@@ -1,41 +1,327 @@
-*{margin:0;padding:0}:root{--font-main:"Inconsolata",monospace;--font-accent:'Rock Salt',cursive;--color-primary:#8ac306;--color-white:#fff;--color-black:#000;--color-bg:#dfddd6;--color-bg-papel:#dfdccf;--color-bg-lineas:#e9e6dc;--color-lineas:#CFC7AB;--transition-standard:all 0.6s ease-in-out;--transition-medium:0.5s ease;--transition-fast:0.3s ease-in-out;--line-dashed:1px dashed #000;--line-white:0.8px solid var(--color-white);--spacing-xs:10px;--spacing-sm:20px;--spacing-md:40px;--spacing-lg:50px}
+/* 
+  ARCHIVO: estilo.css
+  
+  Propósito: Hoja de estilos principal del portfolio
+  
+  SECCIONES PRINCIPALES:
+  1. Variables globales (:root) - colores, tipografías, espaciados, transiciones
+  2. Reset y estilos base - body, reset de márgenes, estilos globales
+  3. Menu - estilos del menú de navegación
+  4. Landing - cuadrícula interactiva de la página principal
+  5. Sobre mí - secciones de experiencia, skills y texto
+  6. Contacto - estilos del sobre interactivo
+  7. Archivo - catálogo de proyectos
+  8. Trabajos - página de detalle de proyecto
+  9. Carousel - galería de imágenes automática
+  10. Animaciones - keyframes para efectos visuales
+  11. Media Queries - estilos responsivos (890px, portrait, 480px)
+  12. Hover Effects - estilos interactivos para escritorio
+*/
 
-body{font-family:var(--font-main);font-variation-settings:"wdth" 75;cursor:url("../imagenes/minibichos/green_cursor.png"),auto;background:url("../imagenes/background_02.png") center/cover repeat}svg#filters{visibility:hidden;position:absolute}img,video,picture{display:block;max-width:100%}ul{list-style:none}a{text-decoration:none;color:inherit;display:block}a,button,.archivo__fila,.sobre{cursor:url("../imagenes/minibichos/green_pointer.png"),pointer}
+/* ========================================
+   VARIABLES GLOBALES Y RESET
+   ======================================== */
+
+
+*{
+    margin:0;
+    padding:0;
+}
+
+:root {
+    /* Tipografías */
+    --font-main: "Inconsolata", monospace;
+    --font-accent: 'Rock Salt', cursive;
+    
+    /* Colores */
+    --color-primary: #8ac306;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-bg: #dfddd6;
+    --color-bg-papel: #dfdccf;
+    --color-bg-lineas: #e9e6dc;
+    --color-lineas: #CFC7AB;
+    
+    /* Transiciones */
+    --transition-standard: all 0.6s ease-in-out;
+    --transition-medium: 0.5s ease;
+    --transition-fast: 0.3s ease-in-out;
+    
+    /* Bordes */
+    --line-dashed: 1px dashed black;
+    --line-white: 0.8px solid var(--color-white);
+    
+    /* Espaciados */
+    --spacing-xs: 10px;
+    --spacing-sm: 20px;
+    --spacing-md: 40px;
+    --spacing-lg: 50px;
+}
+
+body{
+    font-family: var(--font-main);
+    font-variation-settings: "wdth" 75;
+    cursor: url("../imagenes/minibichos/green_cursor.png"), auto;
+    background: url("../imagenes/background_02.png") center / cover repeat;
+}
+
+svg#filters {visibility: hidden; position: absolute;}
+img, video,picture {display: block; max-width: 100%;}
+ul {list-style: none;}
+a {text-decoration: none; color: inherit; display: block;}
+a, button, .archivo__fila, .sobre {cursor: url("../imagenes/minibichos/green_pointer.png"), pointer;}
+
+/* ========================================
+   MENÚ DE NAVEGACIÓN
+   Responsivo: se colapsa en móvil con botón de abrir/cerrar
+   ======================================== */
 
 /* MARK: menu */
 
-header{position:fixed;width:100%;z-index:998}.menu ul{display:flex;justify-content:space-between;align-items:start;padding:1rem 4rem;font-weight:500;font-size:1rem;gap:1rem}.menu a{color:var(--color-black);position:relative}
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 998;
+}
+
+.menu ul{
+    display:flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 1rem 4rem;
+    font-weight: 500;
+    font-size: 1rem;
+    gap: 1rem;
+}
+
+.menu a{
+    color: var(--color-black);
+    position: relative;
+}
 
 
-.menu__descripcion{max-width:350px;text-align:center}.menu__logo{width:3.6rem}.menu__logo a,.menu__logo img{width:100%}.menu__boton--cerrar,.boton--abrir,.menu__img{display:none}
+.menu__descripcion{
+    max-width:350px;
+    text-align: center;
+}
 
+.menu__logo{width: 3.6rem;}
+.menu__logo a, .menu__logo img{width: 100%;}
+.menu__boton--cerrar, .boton--abrir, .menu__img{display: none;}
+
+
+/* ========================================
+   LANDING PAGE - PÁGINA PRINCIPAL
+   Cuadrícula interactiva con elementos posicionados
+   Objetos desordenados vs ordenados con transiciones
+   ======================================== */
 
 /*MARK:LANDING*/
 /*MARK: COMÚN PARA AMBOS*/
 
-.ventana{width:calc(100% - 40px);height:calc(100dvh - 100px);overflow:hidden;display:grid;grid-template-columns:1.8fr 1.5fr 1fr 1fr 1fr 1.5fr 2fr;grid-template-rows:minmax(0,0.8fr) minmax(0,1.5fr) minmax(0,0.8fr) minmax(0,1.2fr);padding:80px 20px 20px 20px;gap:5px}.ventana a{background:transparent;border:none}.ventana__item{display:flex;justify-content:center;align-items:center;width:100%;height:100%;object-fit:contain;transition:var(--transition-standard)}
+.ventana{
+  width: calc(100% - 40px);
+  height: calc(100dvh - 100px);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.8fr 1.5fr 1fr 1fr 1fr 1.5fr 2fr;
+  grid-template-rows: minmax(0, 0.8fr) minmax(0, 1.5fr) minmax(0, 0.8fr) minmax(0, 1.2fr);
+  padding: 80px 20px 20px 20px;
+  gap: 5px;
+}
 
-.ventana__item img{background:transparent;max-width:100%;max-height:100%;width:100%;height:auto;object-fit:contain;object-position:center}
+.ventana a { background: transparent; border: none;}
+
+.ventana__item{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: var(--transition-standard); 
+}
+
+.ventana__item img{
+    background: transparent;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+}
 
 /*MARK: OBJETOS DESORDENADOS*/
 
-.sticker{grid-row:4/5;grid-column:7/8;transform:translateY(-36%) translateX(-16%) rotate(16deg) scale(1.4)}.papel1{grid-row:3/4;grid-column:7/8;transform:translateY(34%) translateX(-62%) rotate(-30deg) scale(1.8)}.papel1 picture{height:100%}.diy{grid-row:2/3;grid-column:7/8;transform:translateX(-40%) translateY(-60%) scale(0.7);z-index:5;mix-blend-mode:multiply}.punk{grid-row:1/2;grid-column:6/7;transform:translateY(5%) translateX(-80%) rotate(20deg);z-index:3}
+.sticker{
+    grid-row: 4/5;
+    grid-column: 7/8;
+    transform: translateY(-36%) translateX(-16%) rotate(16deg) scale(1.4);
+}
 
-.comics{grid-row:2/3;grid-column:5/7;transform:translateY(20%) translateX(-26%) rotate(-20deg) scale(1.7)}.bolapapel{grid-row:1/2;grid-column:5/6;transform:scale(1.4) translateX(-320%) translateY(290%) rotate(15deg);z-index:7}.ilustracion{grid-row:3/5;grid-column:6/7;transform:translateY(-80%) translateX(80%) rotate(-20deg) scale(1.2);z-index:3;height:auto}.mariposa{grid-row:1/2;grid-column:3/5;transform:translateY(20%) translateX(-0%) rotate(15deg) scale(1.6)}
+.cortocircuito{
+    grid-row: 3/4;
+    grid-column: 7/8;   
+    transform: translateY(34%) translateX(-62%) rotate(-30deg) scale(1.8);
+}
 
-.fae{grid-row:2/4;grid-column:3/5;transform:translateY(8%) translateX(-8%) rotate(6deg) scale(1.3)}.comadeja{grid-row:3/5;grid-column:1/2;transform:translateY(-55%) translateX(76%) rotate(24deg) scale(1.6)}.foto{grid-row:4/5;grid-column:2/4;transform:translateY(-40%) translateX(110%) rotate(29deg) scale(1.2)}.cinta{display:flex;justify-content:center;align-items:center;background:url("../imagenes/landing/lg_cinta.png") center/contain no-repeat;grid-row:4/5;grid-column:4/6;transform:translateY(6%) translateX(-47%) rotate(14deg);z-index:7;transition:var(--transition-standard)}
+.cortocircuito picture{
+    height: 100%;
+}
 
-.ventana__boton--ordenar,.ventana__boton--desordenar{width:34%;height:100%;background:transparent;border:none;position:relative;z-index:1}.ventana__boton--ordenar img,.ventana__boton--desordenar img{width:100%}
+.diy{
+    grid-row: 2/3;
+    grid-column: 7/8; 
+    transform: translateX(-40%) translateY(-60%) scale(0.7);
+    z-index: 5;
+    mix-blend-mode: multiply;
+}
 
-.estrella{grid-row:3/4;grid-column:5/6;transform:scale(0.8) translateX(-506%) translateY(60%) rotate(15deg);z-index:7}
+.punk{
+    grid-row: 1/2;
+    grid-column: 6/7; 
+    transform: translateY(5%) translateX(-80%) rotate(20deg) scale(1);
+    z-index: 3;
+}
 
-.letras{grid-row:1/3;grid-column:2/3;transform:scale(1.3) translateX(-6%) translateY(20%) rotate(15deg)}.letras__fondo{position:absolute;z-index:-1;height:100%;top:0}.ventana__item .letras__img{width:50%;align-self:flex-start}
+.comics{
+    grid-row: 2/3;
+    grid-column: 5/7; 
+    transform: translateY(20%) translateX(-26%) rotate(-20deg) scale(1.7);
+}
 
-.aguja{grid-row:3/4;grid-column:2/3;transform:translateY(100%) translateX(300%) rotate(-10deg) scale(1.2);z-index:2}
+.bolapapel{
+    grid-row: 1/2;
+    grid-column: 5/6; 
+    transform: scale(1.4) translateX(-320%) translateY(290%) rotate(15deg);
+    z-index: 7;
+}
 
-.papel2{grid-row:1/3;grid-column:1/2;transform:translateY(-10%) translateX(30%) rotate(30deg);display:flex;flex-direction:column;align-self:stretch;max-height:80%;min-width:130px}.papel2__texto{display:flex;justify-content:space-around;flex-direction:column;padding:1vmax 1.5vmax 3vmax 1.5vmax;width:90%;height:100%;box-sizing:border-box;background-color:var(--color-bg-papel);background:repeating-linear-gradient(transparent 0,transparent calc(1lh - 1px),var(--color-lineas) calc(1lh - 1px),var(--color-lineas) 1lh),var(--color-bg-lineas);mask:radial-gradient(calc(0.5 * var(--f) * 1lh) at calc(0.5 * var(--b)),#0000 calc(100% - 1px),) 0 0/100% 1lh}
+.ilustracion{
+    grid-row: 3/5;
+    grid-column: 6/7; 
+    transform: translateY(-80%) translateX(80%) rotate(-20deg) scale(1.2);
+    z-index: 3;
+    height: auto;
+}
 
-.papel2__texto ul{
+.mariposa{
+    grid-row: 1/2;
+    grid-column: 3/5;
+    transform: rotate(-10deg);
+    transform: translateY(20%) translateX(-0%) rotate(15deg) scale(1.6);
+}
+
+.fae{
+    grid-row: 2/4;
+    grid-column: 3/5;
+    transform: translateY(8%) translateX(-8%) rotate(6deg) scale(1.3);
+}
+
+.comadeja{
+    grid-row: 3/5;
+    grid-column: 1/2 ;
+    transform: translateY(-55%) translateX(76%) rotate(24deg) scale(1.6);
+}
+
+.foto{
+    grid-row: 4/5;
+    grid-column: 2/4 ;
+    transform: translateY(-40%) translateX(110%) rotate(29deg) scale(1.2);
+}
+
+.cinta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../imagenes/landing/lg_cinta.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    grid-row: 4/5;
+    grid-column: 4/6;
+    transform: translateY(6%) translateX(-47%) rotate(14deg) scale(1);
+    z-index: 7;
+    transition: var(--transition-standard);
+}
+
+.ventana__boton--ordenar,
+.ventana__boton--desordenar {
+    width: 34%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    position: relative;
+    z-index: 1;
+}
+
+.ventana__boton--ordenar img,
+.ventana__boton--desordenar img {width: 100%;}
+
+.estrella{
+    grid-row: 3/4;
+    grid-column: 5/6;
+    scale: 0.6;
+    transform: scale(0.8) translateX(-506%) translateY(60%) rotate(15deg);
+    z-index: 7;
+}
+
+.letras{
+    grid-row: 1/3;
+    grid-column: 2/3;
+    transform: scale(1.3) translateX(-6%) translateY(20%) rotate(15deg);
+}
+
+.letras__fondo {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    top: 0;
+}
+
+.ventana__item .letras__img {width: 50%; align-self: flex-start;}
+
+.aguja{
+    grid-row: 3/4;
+    grid-column: 2/3;
+    transform: translateY(100%) translateX(300%) rotate(-10deg) scale(1.2);
+    z-index: 2;
+}
+
+.indice{
+    grid-row: 1/3;
+    grid-column: 1/2;
+    transform: translateY(-10%) translateX(30%) rotate(30deg) scale(1);
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    max-height: 80%;
+    min-width: 130px;
+
+}
+
+.indice__texto{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 1vmax 1.5vmax 3vmax 1.5vmax;
+    width: 90%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: var(--color-bg-papel);
+    background: repeating-linear-gradient(
+                transparent 0,
+                transparent calc(1lh - 1px),
+               var(--color-lineas) calc(1lh - 1px),
+               var(--color-lineas) 1lh), var(--color-bg-lineas);
+
+    mask: radial-gradient(
+          calc(0.5 * var(--f) * 1lh) at calc(0.5 * var(--b)),
+         #0000 calc(100% - 1px),) 0 0/ 100% 1lh;
+}
+
+.indice__texto ul{
     width: 100%;
     margin: 10px 0;
     border-bottom: var(--line-dashed);
@@ -46,14 +332,14 @@ header{position:fixed;width:100%;z-index:998}.menu ul{display:flex;justify-conte
     justify-content: space-evenly;
 }
 
-.papel2__titulo{
+.indice__titulo{
     border-bottom: var(--line-dashed);
     width: 100%;
     text-align: center;
     font-size: 2vmax;
 }
 
-img.papel2__deco{
+img.indice__deco{
     position: relative;
     top:10px;
     left: 10px;
@@ -61,18 +347,18 @@ img.papel2__deco{
     rotate: -17deg;
 }
 
-.papel2__footer{
+.indice__footer{
     display: flex;
     overflow: hidden;
     }
 
-.papel2__footer img{
+.indice__footer img{
     width: 100%;
 }
 
 
 
-.papel2__enlace{
+.indice__enlace{
     text-align-last: justify;
     text-align: justify;
     color: var(--color-black);
@@ -103,7 +389,7 @@ img.papel2__deco{
 .ventana.ordenada .mariposa {transform: scale(1) translateY(0px) translateX(0px) rotate(-10deg); align-self: flex-end;}
 .ventana.ordenada .fae{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
 .ventana.ordenada .comadeja{transform: scale(0.8) translateY(0px) translateX(0px) rotate(-0deg);}
-.ventana.ordenada .papel2{transform: scale(1) translateY(-3%) translateX(0px) rotate(-0deg); align-self: start;}
+.ventana.ordenada .indice{transform: scale(1) translateY(-3%) translateX(0px) rotate(-0deg); align-self: start;}
 .ventana.ordenada .human{display: none;}
 .ventana.ordenada .foto {transform: scale(1) translateY(0px) translateX(0px) rotate(-2deg);}
 .ventana.ordenada .bolapapel{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
@@ -113,10 +399,16 @@ img.papel2__deco{
 .ventana.ordenada .diy{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
 .ventana.ordenada .dibujar{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
 .ventana.ordenada .sticker{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
-.ventana.ordenada .papel1{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
+.ventana.ordenada .cortocircuito{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
 .ventana.ordenada .punk{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
 .ventana.ordenada .estrella{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
 
+
+/* ========================================
+   PÁGINA SOBRE MÍ
+   Tres secciones interactivas: Experiencia, Skills, Textosm
+   Sistema de click: expandir/contraer con translateX
+   ======================================== */
 
 /*MARK: sobre mí*/
 
@@ -378,6 +670,12 @@ img.papel2__deco{
     rotate: none;
 }
 
+/* ========================================
+   PÁGINA CONTACTO - SOBRE INTERACTIVO
+   Sobre que se abre al hacer clic en la cinta
+   Contiene tarjetas con redes, comisiones, etc.
+   ======================================== */
+
 /*MARK: contacto*/
 
 /*MARK: SOBRE DIBUJO*/
@@ -613,6 +911,12 @@ img.papel2__deco{
     transition: 0.5s;
 }
 
+/* ========================================
+   PÁGINA ARCHIVO - CATÁLOGO DE PROYECTOS
+   Lista de proyectos por categoría
+   Hover muestra imagen con rotación aleatoria
+   ======================================== */
+
 /*MARK:ARCHIVO*/
 
 .objeto3d{
@@ -718,6 +1022,12 @@ img.papel2__deco{
   z-index: 10;
 }
 
+/* ========================================
+   PÁGINA DETALLE DE PROYECTO (TRABAJOS)
+   Galería de imágenes en grid + explicación sticky
+   Carousel al pie con otros proyectos
+   ======================================== */
+
 /*MARK: Trabajos*/
 
 .body--trabajos{
@@ -810,6 +1120,12 @@ div.trabajos__imagen img{
     display: block;
 }
 
+/* ========================================
+   CAROUSEL - GALERÍA AUTOMÁTICA
+   Carrusel infinito que se detiene en hover
+   Variables específicas: slide-width, slide-count, animation-speed
+   ======================================== */
+
 /* Bloque Principal */
 .carousel {
   /* Variables específicas del carousel */
@@ -842,6 +1158,14 @@ div.trabajos__imagen img{
   height: auto;
   object-fit: contain;
 }
+
+/* ========================================
+   ANIMACIONES GLOBALES
+   scroll-left: carousel infinito
+   escala: efecto de pulsación
+   sketch: distorsión con ruido SVG
+   loop-horizontal: translación infinita
+   ======================================== */
 
 /* Animaciones */
 
@@ -896,6 +1220,13 @@ div.trabajos__imagen img{
     }
 }
 
+/* ========================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   890px: ajustes para tablets
+   portrait: orientación vertical (teléfonos)
+   480px: móviles pequeños (menú colapsado, grid reordenado)
+   ======================================== */
+
 /*MARK: media queries*/
 
 @media screen and (max-width: 890px){
@@ -916,18 +1247,18 @@ div.trabajos__imagen img{
     transform: translateY(100%) translateX(200%) rotate(-10deg) scale(1.2);
 }
 
-.papel2{
+.indice{
     min-width: none;
     /*position: absolute;*/
 }
 
-.ventana.ordenada .papel2{
+.ventana.ordenada .indice{
     min-width: none;
     position: relative;
 
 }
 
-.papel2__enlace{
+.indice__enlace{
     text-align: left;
     text-align-last: left;
 }
@@ -944,7 +1275,7 @@ div.trabajos__imagen img{
     transform: scale(1.4) translateX(-280%) translateY(290%) rotate(15deg);
 }
 
-.papel2__texto{
+.indice__texto{
     height: auto;
 }
 
@@ -961,12 +1292,12 @@ div.trabajos__imagen img{
   grid-template-rows: minmax(0, 1fr) minmax(0, 0.6fr) minmax(0, 1fr) minmax(0, 0.5fr) minmax(0, 0.7fr) minmax(0, 0.9fr) minmax(0, 0.8fr);
 }
 
-.papel2__titulo{
+.indice__titulo{
     margin-bottom: 5px;
     font-size: 0.9rem;
 }
 
-img.papel2__deco{
+img.indice__deco{
     position: relative;
     top:20%;
     left: 5%;
@@ -975,7 +1306,7 @@ img.papel2__deco{
 }
 
 
-.papel2__texto{
+.indice__texto{
     align-self: center; 
     margin-top:10px; 
     padding: 10px 10px 10% 10px;
@@ -984,7 +1315,7 @@ img.papel2__deco{
 
 }
 
-.papel2__texto ul{
+.indice__texto ul{
     font-size: clamp(0.6rem, 1vmax, 1.1rem);
 }
 
@@ -995,7 +1326,7 @@ img.papel2__deco{
     grid-column: 4/5; 
     transform: translateY(80%) translateX(-0%) rotate(20deg) scale(1.1);}
 
-.papel1{
+.cortocircuito{
     grid-row: 4/6;
     grid-column: 2/4;
     transform: translateY(90%) translateX(70%) rotate(-10deg) scale(1);}
@@ -1066,7 +1397,7 @@ img.papel2__deco{
     grid-column: 4/5;
     transform: translateY(0%) translateX(0%) rotate(25deg) scale(1);}
 
-.papel2{
+.indice{
     grid-row: 1/2;
     grid-column: 3/5;
     transform: translateY(20%) translateX(-160%) rotate(15deg) scale(1);
@@ -1088,7 +1419,7 @@ img.papel2__deco{
 /*MARK: OBJETOS ORDENADOS*/
 
 .ventana.ordenada .sticker{transform: translateY(-0%) translateX(-0%) rotate(0deg) scale(1);}
-.ventana.ordenada .papel1{transform: translateY(0%) translateX(0%) rotate(0deg) scale(1);}
+.ventana.ordenada .cortocircuito{transform: translateY(0%) translateX(0%) rotate(0deg) scale(1);}
 .ventana.ordenada .diy{transform: translateX(-0%) translateY(-0%) scale(1);}
 .ventana.ordenada .punk{transform: translateY(0%) translateX(-0%) rotate(0deg) scale(1);}
 .ventana.ordenada .comics{transform: translateY(0%) translateX(-0%) rotate(-0deg) scale(1);}
@@ -1098,16 +1429,17 @@ img.papel2__deco{
 .ventana.ordenada .fae{transform: translateY(0%) translateX(-0%) rotate(0deg) scale(1);}
 .ventana.ordenada .comadeja{transform: translateY(-0%) translateX(0%) rotate(0deg) scale(1);}
 .ventana.ordenada .foto{transform: translateY(-0%) translateX(0%) rotate(0deg) scale(1);}
+.ventana.ordenada .cortocircuito{transform: translateY(0%) translateX(0%) rotate(0deg) scale(1);}
 .ventana.ordenada .cinta{ transform: translateY(0%) translateX(-0%) rotate(0deg) scale(1);}
 .ventana.ordenada .estrella{transform: translateY(0%) translateX(-0%) rotate(0deg) scale(1);}
 .ventana.ordenada .letras{transform: scale(1) translateX(0%) translateY(0%) rotate(0deg);}
 .ventana.ordenada .aguja{ transform: translateY(0%) translateX(0%) rotate(25deg) scale(1);}
-.ventana.ordenada .papel2{transform: translateY(0%) translateX(0%) rotate(0deg) scale(1); max-width: 100%;}
+.ventana.ordenada .indice{transform: translateY(0%) translateX(0%) rotate(0deg) scale(1); max-width: 100%;}
 .ventana.ordenada .dibujar{transform: translateY(0%) translateX(-0%) rotate(0deg) scale(1);}
 .ventana.ordenada .human{transform: translateY(-0%) translateX(0%) rotate(-0deg) scale(1); display: block;}
 
-.ventana.ordenada .papel2__footer{
-    display: none;
+.ventana.ordenada .indice__footer{
+display: none;
 }
 
 }
@@ -1147,8 +1479,8 @@ header{
         list-style: none;
         width: 100%;
         padding: 0;
-        margin-top: 150px;
-        gap: 2rem;
+        margin-top: 60px;
+        gap: 1rem;
         text-transform: uppercase;
     }
 
@@ -1156,11 +1488,11 @@ header{
 
 .menu--desplegado{
         position: fixed;
-        top:0;
-        left:0;
+        top: 0;
+        left: 0;
         padding: var(--spacing-xs);
         width: calc(100% - var(--spacing-sm));
-        height:calc(100dvh - var(--spacing-sm));
+        height: 100dvh;
         display: flex;
         flex-direction: column;
         align-items: end;
@@ -1169,8 +1501,13 @@ header{
 
 .menu__descripcion{
     text-align: start;
-    order:5;
+    order: 5;
     font-weight: 400;
+    display: none;
+}
+
+.menu--desplegado .menu__descripcion {
+    display: block;
 }
 
 .menu__logo{
@@ -1331,7 +1668,7 @@ header{
     transform: translateY(-0%) translateX(0%) rotate(10deg) scale(1.5);
 }
 
-.papel1{
+.cortocircuito{
     grid-row: 1/3;
     grid-column: 2/3;  
     transform: translateY(-10%) translateX(0%) rotate(20deg) scale(1.2);
@@ -1348,7 +1685,7 @@ header{
     bottom:30px;
 }
 
-.papel2{
+.indice{
     transform: none;
     display: flex;
     flex-direction: column;
@@ -1363,11 +1700,11 @@ header{
 
 }
 
-.papel2__texto{
+.indice__texto{
     padding: 1vmax 1.5vmax 3vmax 1.5vmax;
 }
 
-.papel2__texto ul{
+.indice__texto ul{
     margin: 10px 0;
     font-size: 0.8rem;
     display: flex;
@@ -1375,21 +1712,21 @@ header{
     justify-content: space-evenly;
 }
 
-.papel2__titulo{
+.indice__titulo{
     font-size: 2rem;
 }
 
-img.papel2__deco{
+img.indice__deco{
     top:20px;
     width:30%;
 }
 
-.papel2__footer{
+.indice__footer{
     display:block;
     margin-top: 20px;
 }
 
-.papel2__enlace{
+.indice__enlace{
     text-align-last: justify;
     text-align: justify;
     margin: 5px 0;
@@ -1401,7 +1738,7 @@ img.papel2__deco{
   top: 0;
   width: calc(100% - 40px);
   height: auto;
-  overflow: hidden;
+  overflow-y: auto;
   display: grid;
   grid-template-columns: 1fr 1fr ;
   grid-template-rows: repeat(8, auto);
@@ -1483,7 +1820,7 @@ display: none;
     transform: translateY(0%) translateX(0%) rotate(0deg) scale(1);
 }
 
-.ventana.ordenada .papel1{
+.ventana.ordenada .cortocircuito{
     grid-row: 6/7;
     grid-column: 2/3;  
     transform: translateY(0%) translateX(0%) rotate(0deg) scale(1);
@@ -1500,7 +1837,7 @@ display: none;
     top: 0;
 }
 
-.ventana.ordenada .papel2{
+.ventana.ordenada .indice{
     grid-row: 1/3;
     grid-column: 1/3;
     transform: none;
@@ -1515,11 +1852,11 @@ display: none;
     width: 100%;
 }
 
-.ventana.ordenada .papel2__texto{
+.ventana.ordenada .indice__texto{
     padding: 1vmax 1.5vmax 3vmax 1.5vmax;
 }
 
-.ventana.ordenada .papel2__texto ul{
+.ventana.ordenada .indice__texto ul{
     margin: 10px 0;
     font-size: 1.3rem;
     display: flex;
@@ -1527,21 +1864,21 @@ display: none;
     justify-content: space-evenly;
 }
 
-.ventana.ordenada .papel2__titulo{
+.ventana.ordenada .indice__titulo{
     font-size: 2rem;
 }
 
-.ventana.ordenada img.papel2__deco{
+.ventana.ordenada img.indice__deco{
     top:20px;
     width:30%;
 }
 
-.ventana.ordenada .papel2__footer{
+.ventana.ordenada .indice__footer{
     display:block;
     margin-top: 20px;
 }
 
-.ventana.ordenada .papel2__enlace{
+.ventana.ordenada .indice__enlace{
     text-align-last: justify;
     text-align: justify;
     margin: 5px 0;
@@ -1549,6 +1886,15 @@ display: none;
 
 
 }
+
+/* ========================================
+   EFECTOS HOVER - ESCRITORIO ÚNICAMENTE
+   Se aplica solo si el dispositivo soporta hover
+   Menu: animación de letras punk
+   Landing: desvanecimiento de items no relacionados
+   Contacto: subrayado en enlaces
+   Archivo: fondo negro + mostrar foto
+   ======================================== */
 
 @media (hover: hover) and (pointer: fine) {
 
@@ -1568,26 +1914,26 @@ img.menu__img--hover{
 
 /*EFECTO HOVER EN EL INDEX*/
 
-.ventana:has(.papel2__enlace:hover) .ventana__item {
+.ventana:has(.indice__enlace:hover) .ventana__item {
     opacity: 0;
     filter: grayscale(1);
     transition: var(--transition-standard);
 }
 
-.ventana:has(.papel2__enlace:hover) .papel2 {
+.ventana:has(.indice__enlace:hover) .indice {
     opacity: 1;
     filter: none;
 }
 .ventana:has(a[href="fae.html"]:hover) .fae,
 .ventana:has(a[href="comadeja.html"]:hover) .comadeja,
 .ventana:has(a[href="vernalizacion.html"]:hover) .ilustracion,
-.ventana:has(a[href="cortocircuito.html"]:hover) .papel1, 
+.ventana:has(a[href="cortocircuito.html"]:hover) .cortocircuito, 
 .ventana:has(a[href="the-magnus-archives.html"]:hover) .comics {
     opacity: 1;
     filter: none;
 }
 
-.papel2__enlace:hover{
+.indice__enlace:hover{
     color: var(--color-white); 
     background-color: var(--color-primary);}
 
@@ -1626,8 +1972,6 @@ img.menu__img--hover{
 .archivo__fila:hover .archivo__foto {opacity: 1;}
 
 /*TRABAJOS*/
-
-/* el carrusel se detiene al pasar el mouse */
 
 .carousel:hover .carousel__track {
   animation-play-state: paused;
