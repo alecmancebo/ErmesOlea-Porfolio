@@ -109,18 +109,10 @@ if (botonOrdenar && botonDesordenar) {
     
     botonOrdenar.addEventListener("click", () => {
         ventanaContenedor.classList.add("ordenada"); 
-        
-        itemsVentana.forEach(item => {
-            item.style.transform = "none";
-        });
     });
 
     botonDesordenar.addEventListener("click", () => {
         ventanaContenedor.classList.remove("ordenada");
-        
-        itemsVentana.forEach(item => {
-            item.style.transform = "";
-        });
     });
 }
 

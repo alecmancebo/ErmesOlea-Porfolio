@@ -17,13 +17,13 @@ body{
     font-family: var(--font-main);
     font-variation-settings: "wdth" 75;
     cursor: url("../imagenes/minibichos/green_cursor.png"), auto;
-    background: url("../imagenes/background_02.png") center / cover repeat;;
+    background: url("../imagenes/background_02.png") center / cover repeat;
 }
 
 svg#filters {visibility: hidden; position: absolute;}
-img, video {display: block; max-width: 100%;}
+img, video,picture {display: block; max-width: 100%;}
 ul {list-style: none;}
-a {text-decoration: none; color: inherit;}
+a {text-decoration: none; color: inherit; display: block;}
 a, button, .archivo__fila, .sobre {cursor: url("../imagenes/minibichos/green_pointer.png"), pointer;}
 
 /* MARK: menu */
@@ -40,7 +40,7 @@ header{
     align-items: start;
     padding: 1rem 4rem;
     font-weight: 500;
-    font-size: 1.3rem;
+    font-size: 1rem;
     gap: 1rem;
 }
 
@@ -49,14 +49,6 @@ header{
     position: relative;
 }
 
-.menu__span--hover{opacity:0;}
-
-img.menu__img--hover{
-    display: inline-block;
-    width:100%;
-    vertical-align: middle;
-    position: absolute;
-}
 
 .menu__descripcion{
     max-width:350px;
@@ -72,21 +64,17 @@ img.menu__img--hover{
 /*MARK: COMÚN PARA AMBOS*/
 
 .ventana{
-  position: sticky;
-  top: 0;
   width: calc(100% - 40px);
-  height: calc(100dvh - 120px);
+  height: calc(100dvh - 100px);
   overflow: hidden;
   display: grid;
-  grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr 1.5fr 2fr;
+  grid-template-columns: 1.8fr 1.5fr 1fr 1fr 1fr 1.5fr 2fr;
   grid-template-rows: minmax(0, 0.8fr) minmax(0, 1.5fr) minmax(0, 0.8fr) minmax(0, 1.2fr);
-  padding: 100px 20px 20px 20px;
+  padding: 80px 20px 20px 20px;
   gap: 5px;
 }
 
 .ventana a { background: transparent; border: none;}
-.ventana a:hover{scale: 1.1;}
-.ventana button:hover{animation: sketch 0.4s linear infinite;}
 
 .ventana__item--drag{
     display: flex; 
@@ -98,34 +86,8 @@ img.menu__img--hover{
     transition: var(--transition-standard); 
 }
 
-.ventana__item--drag__texto ul{
-    width: 100%;
-    padding:10px 0 20px 0;
-    border-bottom: var(--line-dashed);
-}
-
-.ventana__item--drag__texto__h2{
-    padding-bottom: 4%;
-    border-bottom: var(--line-dashed);
-    width: 100%;
-    text-align: center;
-    font-size: 140%;
-}
-
-.ventana__item--drag__texto li{padding:3px 0;}
-.ventana__item--drag__texto__enlace:hover{color: #ffffff; background-color: #8ac306;}
-.ventana__item--drag__texto__footer{font-size: 0.5rem; padding: 10px;}
-
-.ventana__item--drag__texto__enlace{
-    text-align: justify;
-    color: #000;
-    width: 100%;
-}
-
 .ventana__item--drag img{
     background: transparent;
-    border: none;
-    padding: 0;
     max-width: 100%;
     max-height: 100%;
     width: 100%;
@@ -145,15 +107,17 @@ img.menu__img--hover{
 .papel1{
     grid-row: 3/4;
     grid-column: 7/8;   
-    scale: 1.2; 
-    transform: translateY(34%) translateX(-60%) rotate(-30deg) scale(1.8);
+    transform: translateY(34%) translateX(-62%) rotate(-30deg) scale(1.8);
+}
+
+.papel1 picture{
+    height: 100%;
 }
 
 .diy{
     grid-row: 2/3;
     grid-column: 7/8; 
-    scale: 0.7;
-    transform: translateX(-50%) translateY(-79%) scale(1.1);
+    transform: translateX(-40%) translateY(-60%) scale(0.7);
     z-index: 5;
     mix-blend-mode: multiply;
 }
@@ -161,7 +125,7 @@ img.menu__img--hover{
 .punk{
     grid-row: 1/2;
     grid-column: 6/7; 
-    transform: translateY(0%) translateX(-38%) rotate(26deg) scale(1);
+    transform: translateY(5%) translateX(-80%) rotate(20deg) scale(1);
     z-index: 3;
 }
 
@@ -174,15 +138,16 @@ img.menu__img--hover{
 .bolapapel{
     grid-row: 1/2;
     grid-column: 5/6; 
-    transform: scale(1.3) translateX(-366%) translateY(320%) rotate(15deg);
+    transform: scale(1.4) translateX(-320%) translateY(290%) rotate(15deg);
     z-index: 7;
 }
 
 .ilustracion{
     grid-row: 3/5;
     grid-column: 6/7; 
-    transform: translateY(-80%) translateX(70%) rotate(-20deg) scale(1.1);
+    transform: translateY(-80%) translateX(80%) rotate(-20deg) scale(1.2);
     z-index: 3;
+    height: auto;
 }
 
 .mariposa{
@@ -195,24 +160,24 @@ img.menu__img--hover{
 .fae{
     grid-row: 2/4;
     grid-column: 3/5;
-    transform: translateY(0%) translateX(-8%) rotate(6deg) scale(1.25);
+    transform: translateY(8%) translateX(-8%) rotate(6deg) scale(1.3);
 }
 
 .comadeja{
     grid-row: 3/5;
     grid-column: 1/2 ;
-    transform: translateY(-64%) translateX(76%) rotate(24deg) scale(1.6);
+    transform: translateY(-55%) translateX(76%) rotate(24deg) scale(1.6);
 }
 
 .foto{
     grid-row: 4/5;
     grid-column: 2/4 ;
-    transform: translateY(-55%) translateX(110%) rotate(32deg) scale(1.1);
+    transform: translateY(-40%) translateX(110%) rotate(29deg) scale(1.2);
 }
 
 .cinta{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     background: url("../imagenes/landing/lg_cinta.png");
     background-size: contain;
@@ -220,14 +185,14 @@ img.menu__img--hover{
     background-position: center;
     grid-row: 4/5;
     grid-column: 4/6;
-    transform: translateY(6%) translateX(-47%) rotate(14deg) scale(0.8);
+    transform: translateY(6%) translateX(-47%) rotate(14deg) scale(1);
     z-index: 7;
     transition: var(--transition-standard);
 }
 
 .ventana__boton--ordenar,
 .ventana__boton--desordenar {
-    width: 40%;
+    width: 34%;
     height: 100%;
     background: transparent;
     border: none;
@@ -249,68 +214,139 @@ img.menu__img--hover{
 .letras{
     grid-row: 1/3;
     grid-column: 2/3;
-    background-image: url("../imagenes/landing/lg_letras.png");
-    background-size: contain;
-    background-repeat: no-repeat;
     transform: scale(1.3) translateX(-6%) translateY(20%) rotate(15deg);
 }
 
-img.letras__img {width: 50%; align-self: flex-start;}
+.letras__fondo {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    top: 0;
+}
+
+.ventana__item--drag .letras__img {width: 50%; align-self: flex-start;}
 
 .aguja{
     grid-row: 3/4;
     grid-column: 2/3;
-    transform: translateY(100%) translateX(320%) rotate(-10deg) scale(1.2);
+    transform: translateY(100%) translateX(300%) rotate(-10deg) scale(1.2);
     z-index: 2;
 }
 
 .papel2{
     grid-row: 1/3;
     grid-column: 1/2;
-    transform: translateY(-12%) translateX(30%) rotate(45deg) scale(1);
+    transform: translateY(-10%) translateX(30%) rotate(30deg) scale(1);
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    max-height: 80%;
+    min-width: 130px;
+
 }
 
 .ventana__item--drag__texto{
-    background-image: url("../imagenes/landing/lg_papel_02.png");
-    background-size: cover;
-    background-repeat: no-repeat;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
     flex-direction: column;
-    padding: 20% 20px 20px 20px;
-    height: 90%;
+    padding: 1vmax 1.5vmax 3vmax 1.5vmax;
+    width: 90%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #dfdccf;
+    background: repeating-linear-gradient(
+                transparent 0,
+                transparent calc(1lh - 1px),
+               #CFC7AB calc(1lh - 1px),
+               #CFC7AB 1lh), #e9e6dc;
+
+    mask: radial-gradient(
+          calc(0.5 * var(--f) * 1lh) at calc(0.5 * var(--b)),
+         #0000 calc(100% - 1px),) 0 0/ 100% 1lh;
+}
+
+.ventana__item--drag__texto ul{
+    width: 100%;
+    margin: 10px 0;
+    border-bottom: var(--line-dashed);
+    font-size: clamp(0.6rem, 1vmax, 0.9rem);
+    flex-grow: 0.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.ventana__item--drag__texto__h2{
+    border-bottom: var(--line-dashed);
+    width: 100%;
+    text-align: center;
+    font-size: 2vmax;
+}
+
+img.ventana__item--drag__deco{
+    position: relative;
+    top:10px;
+    left: 10px;
+    width:70%;
+    rotate: -17deg;
+}
+
+.ventana__item--drag__texto__footer{
+    display: flex;
+    overflow: hidden;
+    }
+
+.ventana__item--drag__texto__footer img{
+    width: 100%;
+}
+
+
+
+.ventana__item--drag__texto__enlace{
+    text-align-last: justify;
+    text-align: justify;
+    color: #000;
+    width: 100%;
+    margin: 3px 0;
 }
 
 .dibujar{
     grid-row: 1/2;
     grid-column: 7/8;
-    transform: translateY(40%) translateX(-40%) rotate(0deg) scale(1.9);
+    transform: translateY(34%) translateX(-30%) rotate(0deg) scale(1.7);
     z-index: 4;
 }
 
 .human{
     grid-row: 4/5;
     grid-column: 2/4 ;
-    transform: translateY(-25%) translateX(40%) rotate(-22deg) scale(0.9);
+    transform: translateY(-25%) translateX(20%) rotate(-22deg) scale(1.2);
     z-index: 4;
-    display: block;
 }
 
 /* MARK: OBJETOS ORDENADOS*/
 
 .ventana.ordenada a.ventana__item--drag {transition: 0.6s ease;}
-.ventana.ordenada a.ventana__item--drag:hover {scale: 1.1;}
-.ventana.ordenada .ventana__item--drag__texto{background-size: cover; background-position: bottom center; padding: 20px;}
-.ventana.ordenada .ventana__item--drag, .ventana.ordenada .cinta {transform: none;}
-.ventana.ordenada .letras {transform: scale(1.1) translateY(20px) rotate(6deg); overflow: hidden;}
-.ventana.ordenada .mariposa {transform: rotate(-10deg);}
-.ventana.ordenada .mariposa{transform: rotate(-10deg);}
-.ventana.ordenada .fae{transform: none; }
-.ventana.ordenada .comadeja{transform: none;}
-.ventana.ordenada .papel2{transform: translateY(-3%);}
+
+.ventana.ordenada .cinta {transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
+.ventana.ordenada .letras {transform: scale(1.1) translateY(20px) rotate(-3deg);}
+.ventana.ordenada .mariposa {transform: scale(1) translateY(0px) translateX(0px) rotate(-10deg); align-self: flex-end;}
+.ventana.ordenada .fae{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
+.ventana.ordenada .comadeja{transform: scale(0.8) translateY(0px) translateX(0px) rotate(-0deg);}
+.ventana.ordenada .papel2{transform: scale(1) translateY(-3%) translateX(0px) rotate(-0deg); align-self: start;}
 .ventana.ordenada .human{display: none;}
-.ventana.ordenada .letras{transform: scale(1.1) translateY(20px) rotate(6deg);}
+.ventana.ordenada .foto {transform: scale(1) translateY(0px) translateX(0px) rotate(-2deg);}
+.ventana.ordenada .bolapapel{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
+.ventana.ordenada .aguja{transform: scale(1) translateY(0px) translateX(0px) rotate(20deg);}
+.ventana.ordenada .comics{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
+.ventana.ordenada .ilustracion{transform: scale(0.8) translateY(0px) translateX(0px) rotate(-0deg); align-self: flex-end;}
+.ventana.ordenada .diy{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
+.ventana.ordenada .dibujar{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
+.ventana.ordenada .sticker{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
+.ventana.ordenada .papel1{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
+.ventana.ordenada .punk{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
+.ventana.ordenada .estrella{transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
+
 
 /*MARK: sobre mí*/
 
@@ -342,11 +378,6 @@ img.letras__img {width: 50%; align-self: flex-start;}
     transition: 0.5s;
 }
 
-.experiencia__texto:hover{
-    transform: translateY(-3dvh);
-    transition: 0.5s;
-}
-
 .experiencia__texto__titulo{
     display: flex;
     margin: 50px 50px 0 50px;
@@ -359,7 +390,6 @@ img.letras__img {width: 50%; align-self: flex-start;}
 }
 
 .experiencia__foto{
-    display: block;
     width: 160px;
     z-index: 1;
     position: absolute;
@@ -453,7 +483,6 @@ img.letras__img {width: 50%; align-self: flex-start;}
     position: absolute;
     background-color: #fff;
     margin: 0 40px;
-
 }
 
 .--izq{
@@ -471,11 +500,6 @@ img.letras__img {width: 50%; align-self: flex-start;}
 }
 
 /*MARK:skills*/
-
-.skills:hover{
-    transform: translateY(-3dvh);
-    transition: 0.5s;
-}
 
 .skills{
     background-image: url("../imagenes/sobremi/sm_hoja1.png");
@@ -532,11 +556,6 @@ img.letras__img {width: 50%; align-self: flex-start;}
 
 
 /*MARK: sobremi texto*/
-
-.textosm:hover{
-    transform: translateY(-1dvh);
-    transition: 0.3s ease-in-out;
-}
 
 .textosm{
     background-color: rgb(223, 221, 214);
@@ -631,13 +650,11 @@ img.letras__img {width: 50%; align-self: flex-start;}
 
 .sobre__svg:first-child{
     height: 100%;
-    display: block;
     filter: drop-shadow(-1px -0px 1px rgba(0, 0, 0, 0.4))
 }
 
 .sobre__svg:last-child{
     height: 100%;
-    display: block;
     filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.4))
 }
 
@@ -791,10 +808,6 @@ img.letras__img {width: 50%; align-self: flex-start;}
     padding-bottom: 40px;
 }
 
-.sobre__enlace:hover {
-    text-decoration: underline;
-}
-
 .sobre__contactame {
     position: absolute;
     bottom: 30px;
@@ -895,11 +908,6 @@ img.letras__img {width: 50%; align-self: flex-start;}
   position: relative;
 }
 
-.archivo__fila:hover{
-    background-color: #000;
-    color: white;
-}
-
 .archivo__celda {
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -939,10 +947,6 @@ img.letras__img {width: 50%; align-self: flex-start;}
   transition: opacity 0.3s ease;
   z-index: 10;
 }
-
-.archivo__fila:hover .archivo__foto {opacity: 1;}
-.archivo__fila--destacada:hover {background-color: #333;}
-
 
 /*MARK: Trabajos*/
 
@@ -1056,7 +1060,6 @@ div.trabajos__imagen img{
   animation: scroll-left var(--animation-speed) linear infinite;
 }
 
-/* Elemento Slide (el contenedor de cada foto) */
 .carousel__slide {
   width: var(--slide-width);
   flex-shrink: 0;
@@ -1064,20 +1067,13 @@ div.trabajos__imagen img{
   box-sizing: border-box;
 }
 
-/* Elemento Imagen */
 .carousel__image {
-  width: 100%;
   height: auto;
-  display: block;
   object-fit: contain;
 }
 
-/* Modificador (opcional: si quieres que el carrusel se detenga al pasar el mouse) */
-.carousel:hover .carousel__track {
-  animation-play-state: paused;
-}
+/* Animaciones */
 
-/* Animación */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
@@ -1098,16 +1094,254 @@ div.trabajos__imagen img{
 
     }
 
+    
+@keyframes sketch {
+	0% {
+		filter: url("#sketchy-0");
+	}
+	20% {
+		filter: url("#sketchy-1");
+	}
+	40% {
+		filter: url("#sketchy-2");
+	}
+	60% {
+		filter: url("#sketchy-3");
+	}
+	80% {
+		filter: url("#sketchy-4");
+	}
+	100% {
+		filter: url("#sketchy-5");
+	}
+}
+
+@keyframes loop-horizontal {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%); 
+    }
+}
+
 /*MARK: media queries*/
 
-@media screen and (max-width: 960px){
+@media screen and (max-width: 890px){
+
+/*MENU*/
+.menu ul{
+    padding: 1rem 1rem;
+    font-size: 0.9rem;
+
+}
+/*LANDING*/
+
+.ventana{
+  grid-template-columns: 1.2fr 1.1fr 0.8fr 0.8fr 1fr 1.1fr 1.4fr;
+}
+
+.aguja{
+    transform: translateY(100%) translateX(200%) rotate(-10deg) scale(1.2);
+}
+
+.papel2{
+    min-width: none;
+    /*position: absolute;*/
+}
+
+.ventana.ordenada .papel2{
+    min-width: none;
+    position: relative;
 
 }
 
+.ventana__item--drag__texto__enlace{
+    text-align: left;
+    text-align-last: left;
+}
+
+.comadeja{
+    transform: translateY(-38%) translateX(30%) rotate(20deg) scale(1.3);
+}
+
+.fae{
+    transform: translateY(8%) translateX(-16%) rotate(6deg) scale(1.3);
+}
+
+.bolapapel{
+    transform: scale(1.4) translateX(-280%) translateY(290%) rotate(15deg);
+}
+
+.ventana__item--drag__texto{
+    height: auto;
+}
 
 
+}
 
-@media screen and (max-width: 480px){
+@media screen and (orientation: portrait){
+
+/*LANDING*/
+/*MARK: COMUN*/
+
+.ventana{
+  grid-template-columns: 1.3fr 1fr 1fr 1.3fr;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 0.6fr) minmax(0, 1fr) minmax(0, 0.5fr) minmax(0, 0.7fr) minmax(0, 0.9fr) minmax(0, 0.8fr);
+}
+
+.ventana__item--drag__texto__h2{
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+img.ventana__item--drag__deco{
+    position: relative;
+    top:20%;
+    left: 5%;
+    width:40%;
+    z-index: 2;
+}
+
+
+.ventana__item--drag__texto{
+    align-self: center; 
+    margin-top:10px; 
+    padding: 10px 10px 10% 10px;
+    height: auto;
+    position: relative;
+
+}
+
+.ventana__item--drag__texto ul{
+    font-size: clamp(0.6rem, 1vmax, 1.1rem);
+}
+
+/*MARK: OBJETOS DESORDENADOS*/
+
+.sticker{
+    grid-row: 6/7;
+    grid-column: 4/5; 
+    transform: translateY(80%) translateX(-0%) rotate(20deg) scale(1.1);}
+
+.papel1{
+    grid-row: 4/6;
+    grid-column: 2/4;
+    transform: translateY(90%) translateX(70%) rotate(-10deg) scale(1);}
+
+.diy{
+    grid-row: 3/4;
+    grid-column: 4/5;
+    transform: translateX(-0%) translateY(100%) scale(1.1);
+    mix-blend-mode: normal;}
+
+.punk{
+    grid-row: 2/3;
+    grid-column: 2/3;
+    transform: translateY(-20%) translateX(70%) rotate(10deg) scale(1);}
+
+.comics{
+    grid-row: 3/4;
+    grid-column: 2/4;
+    transform: translateY(130%) translateX(20%) rotate(-20deg) scale(1.7);}
+
+.bolapapel{ 
+    grid-row: 7/8;
+    grid-column: 4/5;
+    transform: scale(1) translateX(-280%) translateY(-110%) rotate(0deg);}
+
+.ilustracion{
+    grid-row: 4/6;
+    grid-column: 4/5;
+    transform: translateY(-130%) translateX(-40%) rotate(8deg) scale(1.3); height:100%;}
+
+.mariposa{
+    grid-row: 5/6;
+    grid-column: 1/2;
+    transform: translateY(-440%) translateX(150%) rotate(-26deg) scale(1.3);}
+
+.fae{
+    grid-row: 1/2;
+    grid-column: 2/3;
+    transform: translateY(160%) translateX(60%) rotate(10deg) scale(1.8);}
+
+.comadeja{
+    grid-row: 6/8;
+    grid-column: 1/2; 
+    transform: translateY(-68%) translateX(40%) rotate(18deg) scale(1.2);}
+
+.foto{
+    grid-row: 6/7;
+    grid-column: 2/4;
+    transform: translateY(40%) translateX(10%) rotate(30deg) scale(1.1);}
+
+.cinta{
+    grid-row: 7/8;
+    grid-column: 2/4;
+    transform: translateY(0%) translateX(-26%) rotate(18deg) scale(1);}
+
+.estrella{
+    grid-row: 2/3;
+    grid-column: 3/4;
+    transform: translateY(500%) translateX(-400%) rotate(0deg) scale(1);}
+
+.letras{
+    grid-row: 2/4;
+    grid-column: 1/2;    
+    transform: scale(1.5) translateX(40%) translateY(-10%) rotate(20deg);}
+
+.aguja{
+    grid-row: 2/3;
+    grid-column: 4/5;
+    transform: translateY(0%) translateX(0%) rotate(25deg) scale(1);}
+
+.papel2{
+    grid-row: 1/2;
+    grid-column: 3/5;
+    transform: translateY(20%) translateX(-160%) rotate(15deg) scale(1);
+    max-width: 60%;
+    }
+
+
+.dibujar{
+    grid-row: 1/2;
+    grid-column: 1/2; 
+    transform: translateY(0%) translateX(240%) rotate(0deg) scale(1.2);}
+
+.human{
+    grid-row: 4/5;
+    grid-column: 1/2;
+    transform: translateY(420%) translateX(30%) rotate(-26deg) scale(1.6); }
+
+
+/*MARK: OBJETOS ORDENADOS*/
+
+.ventana.ordenada .sticker{transform: translateY(-0%) translateX(-0%) rotate(0deg) scale(1);}
+.ventana.ordenada .papel1{transform: translateY(0%) translateX(0%) rotate(0deg) scale(1);}
+.ventana.ordenada .diy{transform: translateX(-0%) translateY(-0%) scale(1);}
+.ventana.ordenada .punk{transform: translateY(0%) translateX(-0%) rotate(0deg) scale(1);}
+.ventana.ordenada .comics{transform: translateY(0%) translateX(-0%) rotate(-0deg) scale(1);}
+.ventana.ordenada .bolapapel{ transform: scale(1) translateX(-0%) translateY(0%) rotate(0deg);}
+.ventana.ordenada .ilustracion{transform: translateY(-0%) translateX(0%) rotate(-0deg) scale(1); height:100%;}
+.ventana.ordenada .mariposa{transform: translateY(0%) translateX(-0%) rotate(-10deg) scale(1);}
+.ventana.ordenada .fae{transform: translateY(0%) translateX(-0%) rotate(0deg) scale(1);}
+.ventana.ordenada .comadeja{transform: translateY(-0%) translateX(0%) rotate(0deg) scale(1);}
+.ventana.ordenada .foto{transform: translateY(-0%) translateX(0%) rotate(0deg) scale(1);}
+.ventana.ordenada .cinta{ transform: translateY(0%) translateX(-0%) rotate(0deg) scale(1);}
+.ventana.ordenada .estrella{transform: translateY(0%) translateX(-0%) rotate(0deg) scale(1);}
+.ventana.ordenada .letras{transform: scale(1) translateX(0%) translateY(0%) rotate(0deg);}
+.ventana.ordenada .aguja{ transform: translateY(0%) translateX(0%) rotate(25deg) scale(1);}
+.ventana.ordenada .papel2{transform: translateY(0%) translateX(0%) rotate(0deg) scale(1); max-width: 100%;}
+.ventana.ordenada .dibujar{transform: translateY(0%) translateX(-0%) rotate(0deg) scale(1);}
+.ventana.ordenada .human{transform: translateY(-0%) translateX(0%) rotate(-0deg) scale(1); display: block;}
+
+.ventana.ordenada .ventana__item--drag__texto__footer{
+    display: none;
+}
+
+}
+
+@media screen and (orientation: portrait) and (max-width: 480px){
 
 /*menu*/
 
@@ -1181,25 +1415,452 @@ header{
         width: 100%;
         height: auto;
 }
+
+/*MARK: LANDING*/
+
+.ventana{
+  width: calc(100% - 40px);
+  height: calc(100dvh - 100px);
+  overflow: hidden;
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  padding: 80px 20px 20px 20px;
+  gap: 15px;
 }
 
-@keyframes sketch {
-	0% {
-		filter: url("#sketchy-0");
-	}
-	20% {
-		filter: url("#sketchy-1");
-	}
-	40% {
-		filter: url("#sketchy-2");
-	}
-	60% {
-		filter: url("#sketchy-3");
-	}
-	80% {
-		filter: url("#sketchy-4");
-	}
-	100% {
-		filter: url("#sketchy-5");
-	}
+/*MARK: OBJETOS DESORDENADOS*/
+
+.ventana__item--drag {
+    width: auto;
+    height: auto;
 }
+
+.sticker{
+    display: block;
+    position: absolute;
+    left:0;
+    top:10%;
+    width: 40%;
+    z-index: 0;
+    transform: rotate(10deg);
+    grid-area:auto;
+}
+
+.diy{
+    display: block;
+    position: absolute;
+    right:-15px;
+    top:20%;
+    width: 40%;
+    z-index: 1;
+    rotate: 10deg;
+    grid-area:auto;
+    transform: none;
+}
+
+.mariposa{
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 40%;
+    z-index: 1;
+    grid-area:auto;
+    transform: scale(1.2) rotate(-30deg);
+}
+
+.punk{
+    display: block;
+    position: absolute;
+    bottom: 25%;
+    right: 0;
+    width: 35%;
+    z-index: 0;
+    grid-area:auto;
+    transform: scale(1.2) rotate(-30deg);
+}
+
+.bolapapel{
+    display: block;
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    width: 30%;
+    z-index: 1;
+    grid-area:auto;
+    transform: rotate(-20deg);
+}
+
+.estrella{
+    display: none;
+}
+
+.letras{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40%;
+    z-index: 0;
+    grid-area:auto;
+    transform: rotate(20deg);
+}
+
+.aguja{
+    display: none;
+}
+
+.dibujar{
+    display: none;
+}
+
+.human{
+    display: block;
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    width: 50%;
+    z-index: 0;
+    grid-area:auto;
+    transform: scale(1.2) rotate(-20deg);
+}
+
+.comics{
+    grid-row: 1/3;
+    grid-column: 1/3; 
+    transform: translateY(-10%) translateX(0%) rotate(30deg) scale(1.3);
+    z-index: 0;
+}
+
+.ilustracion{
+    grid-row: 2/4;
+    grid-column: 1/2; 
+    transform: translateY(-30%) translateX(-10%) rotate(-12deg) scale(1.4);
+    height: auto;
+    z-index: 0;
+}
+
+.fae{
+    grid-row: 2/4;
+    grid-column: 2/3; 
+    transform: translateY(10%) translateX(20%) rotate(30deg) scale(1.3);
+    z-index: 0;}
+
+.comadeja{
+    grid-row: 3/5;
+    grid-column: 1/2; 
+    transform: translateY(-0%) translateX(10%) rotate(-30deg) scale(1.5);
+}
+
+.foto{
+    grid-row: 4/6;
+    grid-column: 1/3; 
+    transform: translateY(-0%) translateX(0%) rotate(10deg) scale(1.5);
+}
+
+.papel1{
+    grid-row: 1/3;
+    grid-column: 2/3;  
+    transform: translateY(-10%) translateX(0%) rotate(20deg) scale(1.2);
+    z-index: 0;
+}
+
+.cinta{
+    grid-row: 3/4;
+    grid-column: 1/3;
+    transform: translateY(0%) translateX(0%) rotate(15deg) scale(1);
+    z-index: 3;
+    padding: 20px 0;
+    position: fixed;
+    bottom:30px;
+}
+
+.papel2{
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    max-height: none;
+    max-width:none;
+    min-width: 130px;
+    position: fixed;
+    top:30%;
+    width: 70%;
+    left: 15%;
+    z-index: 2;
+
+}
+
+.ventana__item--drag__texto{
+    padding: 1vmax 1.5vmax 3vmax 1.5vmax;
+}
+
+.ventana__item--drag__texto ul{
+    margin: 10px 0;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.ventana__item--drag__texto__h2{
+    font-size: 2rem;
+}
+
+img.ventana__item--drag__deco{
+    top:20px;
+    width:30%;
+}
+
+.ventana__item--drag__texto__footer{
+    display:block;
+    margin-top: 20px;
+}
+
+.ventana__item--drag__texto__enlace{
+    text-align-last: justify;
+    text-align: justify;
+    margin: 5px 0;
+}
+
+/* MARK: OBJETOS ORDENADOS*/
+
+.ventana.ordenada{
+  top: 0;
+  width: calc(100% - 40px);
+  height: auto;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: repeat(8, auto);
+  padding: 80px 20px 20px 20px;
+  gap: 15px;
+}
+
+.ventana.ordenada .ventana__item--drag.sticker{
+    display: none;
+}
+
+.ventana.ordenada .ventana__item--drag.diy{
+    display: none;
+}
+
+.ventana.ordenada .mariposa{
+display: none;
+}
+
+.ventana.ordenada .ventana__item--drag.punk{
+  display: none;
+}
+
+.ventana.ordenada .ventana__item--drag.bolapapel{
+    display: none;
+}
+
+.ventana.ordenada .estrella{
+    display: none;
+}
+
+.ventana.ordenada .letras{
+    display: none;
+}
+
+
+.ventana.ordenada .aguja{
+    display: none;
+}
+
+.ventana.ordenada .dibujar{
+    display: none;
+}
+
+.ventana.ordenada .human{
+    display: none;
+}
+
+.ventana.ordenada .comics{
+    grid-row: 4/5;
+    grid-column: 1/3; 
+    transform: translateY(0%) translateX(0%) rotate(0deg) scale(1);
+    z-index: 0;
+}
+
+.ventana.ordenada .ilustracion{
+    grid-row: 5/6;
+    grid-column: 1/2; 
+    transform: translateY(0%) translateX(0%) rotate(0deg) scale(1);
+    height: auto;
+    z-index: 0;
+}
+
+.ventana.ordenada .fae{
+    grid-row: 5/6;
+    grid-column: 2/3; 
+    transform: translateY(0%) translateX(0%) rotate(0deg) scale(1);
+    z-index: 0;}
+
+.ventana.ordenada .comadeja{
+    grid-row: 6/7;
+    grid-column: 1/2; 
+    transform: translateY(0%) translateX(0%) rotate(0deg) scale(1);
+}
+
+.ventana.ordenada .foto{
+    grid-row: 7/8;
+    grid-column: 1/3; 
+    transform: translateY(0%) translateX(0%) rotate(0deg) scale(1);
+}
+
+.ventana.ordenada .papel1{
+    grid-row: 6/7;
+    grid-column: 2/3;  
+    transform: translateY(0%) translateX(0%) rotate(0deg) scale(1);
+    z-index: 0;
+}
+
+.ventana.ordenada .cinta{
+    grid-row: 3/4;
+    grid-column: 1/3;
+    transform: translateY(0%) translateX(0%) rotate(0deg) scale(1);
+    z-index: 2;
+    padding: 20px 0;
+    position: relative;
+    top: 0;
+}
+
+.ventana.ordenada .papel2{
+    grid-row: 1/3;
+    grid-column: 1/3;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    max-height: none;
+    position: relative;
+    max-width:none;
+    min-width: 130px;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.ventana.ordenada .ventana__item--drag__texto{
+    padding: 1vmax 1.5vmax 3vmax 1.5vmax;
+}
+
+.ventana.ordenada .ventana__item--drag__texto ul{
+    margin: 10px 0;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.ventana.ordenada .ventana__item--drag__texto__h2{
+    font-size: 2rem;
+}
+
+.ventana.ordenada img.ventana__item--drag__deco{
+    top:20px;
+    width:30%;
+}
+
+.ventana.ordenada .ventana__item--drag__texto__footer{
+    display:block;
+    margin-top: 20px;
+}
+
+.ventana.ordenada .ventana__item--drag__texto__enlace{
+    text-align-last: justify;
+    text-align: justify;
+    margin: 5px 0;
+}
+
+
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+/*LANDING*/
+
+img.menu__img--hover{
+    display: inline-block;
+    width:100%;
+    vertical-align: middle;
+    position: absolute;
+}
+
+.menu__span--hover{opacity:0;}
+
+.ventana a:hover{scale: 104%;}
+.ventana button:hover{animation: sketch 0.4s linear infinite;}
+
+/*EFECTO HOVER EN EL INDEX*/
+
+.ventana:has(.ventana__item--drag__texto__enlace:hover) .ventana__item--drag {
+    opacity: 0;
+    filter: grayscale(1);
+    transition: var(--transition-standard);
+}
+
+.ventana:has(.ventana__item--drag__texto__enlace:hover) .papel2 {
+    opacity: 1;
+    filter: none;
+}
+.ventana:has(a[href="fae.html"]:hover) .fae,
+.ventana:has(a[href="comadeja.html"]:hover) .comadeja,
+.ventana:has(a[href="vernalizacion.html"]:hover) .ilustracion,
+.ventana:has(a[href="cortocircuito.html"]:hover) .papel1, 
+.ventana:has(a[href="the-magnus-archives.html"]:hover) .comics {
+    opacity: 1;
+    filter: none;
+}
+
+.ventana__item--drag__texto__enlace:hover{
+    color: #ffffff; 
+    background-color: #8ac306;}
+
+.ventana.ordenada a.ventana__item--drag:hover {scale: 1.1;}
+
+/*SOBRE MI*/
+
+.experiencia__texto:hover{
+    transform: translateY(-3dvh);
+    transition: 0.5s;
+}
+
+.skills:hover{
+    transform: translateY(-3dvh);
+    transition: 0.5s;
+}
+
+.textosm:hover{
+    transform: translateY(-1dvh);
+    transition: 0.3s ease-in-out;
+}
+
+/*CONTACTO*/
+
+.sobre__enlace:hover {
+    text-decoration: underline;
+}
+
+/*ARCHIVO*/
+
+.archivo__fila:hover{
+    background-color: #000;
+    color: white;
+}
+
+.archivo__fila:hover .archivo__foto {opacity: 1;}
+.archivo__fila--destacada:hover {background-color: #333;}
+
+/*TRABAJOS*/
+
+/* el carrusel se detiene al pasar el mouse */
+
+.carousel:hover .carousel__track {
+  animation-play-state: paused;
+}
+}
+

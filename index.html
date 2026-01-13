@@ -81,27 +81,44 @@
             <button class="ventana__boton--ordenar"><img src="imagenes/landing/lg_ordenar.svg" alt="ordenar"></button>
         </div>
         <a href="comadeja.html" class="ventana__item--drag comadeja"><img src="imagenes/landing/lg_comadeja.png" alt="comadeja"></a>
-        <img class="ventana__item--drag comics" src="imagenes/landing/lg_comics.png" alt="comics">
+        <a href="the-magnus-archives.html" class="ventana__item--drag comics"> <img src="imagenes/landing/lg_comics.png" alt="comics"> </a>
         <img class="ventana__item--drag dibujar" src="imagenes/landing/lg_dibujar.png" alt="dibujar">
-        <video class="ventana__item--drag diy" src="imagenes/landing/ar_gato.mp4" alt="diy" muted loop autoplay></video>
+        <video class="ventana__item--drag diy" src="imagenes/landing/ar_gato_t.mp4" alt="diy" muted loop autoplay></video>
         <img class="ventana__item--drag estrella" src="imagenes/landing/lg_estrella.svg" alt="estrella">
         <a href="fae.html" class="ventana__item--drag fae"><img src="imagenes/landing/lg_fae.png" alt="fae"></a>
         <a href="sobremi.html" class="ventana__item--drag foto"><img  src="imagenes/landing/lg_foto.png" alt="foto"></a>
-        <a href="ilustraciones.html" class="ventana__item--drag ilustracion"><img  src="imagenes/landing/lg_ilustracion.jpg" alt="ilustracion"></a>
-        <div class="ventana__item--drag letras"><img class="letras__img"src="imagenes/landing/lg_sandrune_01.svg" alt="sandrune 01"></div>
+        <a href="vernalizacion.html" class="ventana__item--drag ilustracion"><img  src="imagenes/landing/lg_vernalizacion.jpg" alt="ilustracion"></a>
+        <div class="ventana__item--drag letras">
+        <img class="letras__img" src="imagenes/landing/lg_sandrune_01.svg">
+        <picture class="letras__fondo">
+            <source media="(min-width: 980px) and (orientation: landscape)" srcset="imagenes/landing/lg_letras.png">
+            <source media="(min-width: 730px) and (orientation: landscape)" srcset="imagenes/landing/lg_letras.png">
+            <source media="(min-width: 730px) and (orientation: portrait)" srcset="imagenes/landing/lg_letras.png">
+            <source media="(min-width: 1px)" srcset="imagenes/landing/lg_letras.png">
+            <img src="imagenes/landing/lg_letras.png" alt="fondo dinámico">
+        </picture>
+        </div>
         <img class="ventana__item--drag mariposa" src="imagenes/landing/lg_mariposa.png" alt="mariposa">
-        <img class="ventana__item--drag papel1" src="imagenes/landing/lg_papel_01.png" alt="papel 01">
+        
+        <a href="cortocircuito.html" class="ventana__item--drag papel1"> 
+            <picture>
+                <source media="(min-width:481px)" srcset="imagenes/landing/cortocircuito.png">
+                <source media="(max-width:480px)" srcset="imagenes/landing/cortocircuito_02.png">
+                <img src="imagenes/landing/cortocircuito.png" alt="papel 01">
+            </picture>
+        </a>
         <div class="ventana__item--drag papel2">
+            <img class="ventana__item--drag__deco" src="imagenes/landing/lg_cinta.png" alt="cinta decorativa">
             <div class="ventana__item--drag__texto">
                 <h2 class="ventana__item--drag__texto__h2">[INDEX]</h2>
                 <ul>
                     <li><a href="fae.html" class="ventana__item--drag__texto__enlace">01. Fae 2025</a></li>
                     <li><a href="comadeja.html" class="ventana__item--drag__texto__enlace">02. Comadeja 2024</a></li>
-                    <li><a href="ilustraciones.html" class="ventana__item--drag__texto__enlace">03. Ilustraciones 2025</a></li>
-                    <li><a href="" class="ventana__item--drag__texto__enlace">04. Por qué dibujo estrellas 2025</a></li>
-                    <li><a href="" class="ventana__item--drag__texto__enlace">05. Fae 2025</a></li>
+                    <li><a href="vernalizacion.html" class="ventana__item--drag__texto__enlace">03. Vernalización 2025</a></li>
+                    <li><a href="cortocircuito.html" class="ventana__item--drag__texto__enlace">04. Cortocircuito 2025</a></li>
+                    <li><a href="the-magnus-archives.html" class="ventana__item--drag__texto__enlace">05. The Magnus Archives 2025</a></li>
                 </ul>
-                <p class="ventana__item--drag__texto__footer">SELECTED WORKS // SELECTED WORKS // SELECTED WORKS //</p>
+                <div class="ventana__item--drag__texto__footer"><img src="imagenes/landing/lg_selectedworks.png" alt="Selected works"></div>
             </div>
         </div>
         <img class="ventana__item--drag punk" src="imagenes/landing/lg_punk.svg" alt="punk">
