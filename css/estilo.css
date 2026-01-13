@@ -76,7 +76,7 @@ header{
 
 .ventana a { background: transparent; border: none;}
 
-.ventana__item--drag{
+.ventana__item{
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -86,7 +86,7 @@ header{
     transition: var(--transition-standard); 
 }
 
-.ventana__item--drag img{
+.ventana__item img{
     background: transparent;
     max-width: 100%;
     max-height: 100%;
@@ -224,7 +224,7 @@ header{
     top: 0;
 }
 
-.ventana__item--drag .letras__img {width: 50%; align-self: flex-start;}
+.ventana__item .letras__img {width: 50%; align-self: flex-start;}
 
 .aguja{
     grid-row: 3/4;
@@ -245,7 +245,7 @@ header{
 
 }
 
-.ventana__item--drag__texto{
+.ventana__item__texto{
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -265,7 +265,7 @@ header{
          #0000 calc(100% - 1px),) 0 0/ 100% 1lh;
 }
 
-.ventana__item--drag__texto ul{
+.ventana__item__texto ul{
     width: 100%;
     margin: 10px 0;
     border-bottom: var(--line-dashed);
@@ -276,14 +276,14 @@ header{
     justify-content: space-evenly;
 }
 
-.ventana__item--drag__texto__h2{
+.ventana__item__texto__h2{
     border-bottom: var(--line-dashed);
     width: 100%;
     text-align: center;
     font-size: 2vmax;
 }
 
-img.ventana__item--drag__deco{
+img.ventana__item__deco{
     position: relative;
     top:10px;
     left: 10px;
@@ -291,18 +291,18 @@ img.ventana__item--drag__deco{
     rotate: -17deg;
 }
 
-.ventana__item--drag__texto__footer{
+.ventana__item__texto__footer{
     display: flex;
     overflow: hidden;
     }
 
-.ventana__item--drag__texto__footer img{
+.ventana__item__texto__footer img{
     width: 100%;
 }
 
 
 
-.ventana__item--drag__texto__enlace{
+.ventana__item__texto__enlace{
     text-align-last: justify;
     text-align: justify;
     color: #000;
@@ -326,7 +326,7 @@ img.ventana__item--drag__deco{
 
 /* MARK: OBJETOS ORDENADOS*/
 
-.ventana.ordenada a.ventana__item--drag {transition: 0.6s ease;}
+.ventana.ordenada a.ventana__item {transition: 0.6s ease;}
 
 .ventana.ordenada .cinta {transform: scale(1) translateY(0px) translateX(0px) rotate(-0deg);}
 .ventana.ordenada .letras {transform: scale(1.1) translateY(20px) rotate(-3deg);}
@@ -1156,7 +1156,7 @@ div.trabajos__imagen img{
 
 }
 
-.ventana__item--drag__texto__enlace{
+.ventana__item__texto__enlace{
     text-align: left;
     text-align-last: left;
 }
@@ -1173,7 +1173,7 @@ div.trabajos__imagen img{
     transform: scale(1.4) translateX(-280%) translateY(290%) rotate(15deg);
 }
 
-.ventana__item--drag__texto{
+.ventana__item__texto{
     height: auto;
 }
 
@@ -1190,12 +1190,12 @@ div.trabajos__imagen img{
   grid-template-rows: minmax(0, 1fr) minmax(0, 0.6fr) minmax(0, 1fr) minmax(0, 0.5fr) minmax(0, 0.7fr) minmax(0, 0.9fr) minmax(0, 0.8fr);
 }
 
-.ventana__item--drag__texto__h2{
+.ventana__item__texto__h2{
     margin-bottom: 5px;
     font-size: 0.9rem;
 }
 
-img.ventana__item--drag__deco{
+img.ventana__item__deco{
     position: relative;
     top:20%;
     left: 5%;
@@ -1204,7 +1204,7 @@ img.ventana__item--drag__deco{
 }
 
 
-.ventana__item--drag__texto{
+.ventana__item__texto{
     align-self: center; 
     margin-top:10px; 
     padding: 10px 10px 10% 10px;
@@ -1213,7 +1213,7 @@ img.ventana__item--drag__deco{
 
 }
 
-.ventana__item--drag__texto ul{
+.ventana__item__texto ul{
     font-size: clamp(0.6rem, 1vmax, 1.1rem);
 }
 
@@ -1335,7 +1335,7 @@ img.ventana__item--drag__deco{
 .ventana.ordenada .dibujar{transform: translateY(0%) translateX(-0%) rotate(0deg) scale(1);}
 .ventana.ordenada .human{transform: translateY(-0%) translateX(0%) rotate(-0deg) scale(1); display: block;}
 
-.ventana.ordenada .ventana__item--drag__texto__footer{
+.ventana.ordenada .ventana__item__texto__footer{
     display: none;
 }
 
@@ -1432,7 +1432,7 @@ header{
 
 /*MARK: OBJETOS DESORDENADOS*/
 
-.ventana__item--drag {
+.ventana__item {
     width: auto;
     height: auto;
 }
@@ -1592,11 +1592,11 @@ header{
 
 }
 
-.ventana__item--drag__texto{
+.ventana__item__texto{
     padding: 1vmax 1.5vmax 3vmax 1.5vmax;
 }
 
-.ventana__item--drag__texto ul{
+.ventana__item__texto ul{
     margin: 10px 0;
     font-size: 0.8rem;
     display: flex;
@@ -1604,21 +1604,21 @@ header{
     justify-content: space-evenly;
 }
 
-.ventana__item--drag__texto__h2{
+.ventana__item__texto__h2{
     font-size: 2rem;
 }
 
-img.ventana__item--drag__deco{
+img.ventana__item__deco{
     top:20px;
     width:30%;
 }
 
-.ventana__item--drag__texto__footer{
+.ventana__item__texto__footer{
     display:block;
     margin-top: 20px;
 }
 
-.ventana__item--drag__texto__enlace{
+.ventana__item__texto__enlace{
     text-align-last: justify;
     text-align: justify;
     margin: 5px 0;
@@ -1638,11 +1638,11 @@ img.ventana__item--drag__deco{
   gap: 15px;
 }
 
-.ventana.ordenada .ventana__item--drag.sticker{
+.ventana.ordenada .ventana__item.sticker{
     display: none;
 }
 
-.ventana.ordenada .ventana__item--drag.diy{
+.ventana.ordenada .ventana__item.diy{
     display: none;
 }
 
@@ -1650,11 +1650,11 @@ img.ventana__item--drag__deco{
 display: none;
 }
 
-.ventana.ordenada .ventana__item--drag.punk{
+.ventana.ordenada .ventana__item.punk{
   display: none;
 }
 
-.ventana.ordenada .ventana__item--drag.bolapapel{
+.ventana.ordenada .ventana__item.bolapapel{
     display: none;
 }
 
@@ -1744,11 +1744,11 @@ display: none;
     width: 100%;
 }
 
-.ventana.ordenada .ventana__item--drag__texto{
+.ventana.ordenada .ventana__item__texto{
     padding: 1vmax 1.5vmax 3vmax 1.5vmax;
 }
 
-.ventana.ordenada .ventana__item--drag__texto ul{
+.ventana.ordenada .ventana__item__texto ul{
     margin: 10px 0;
     font-size: 1.3rem;
     display: flex;
@@ -1756,21 +1756,21 @@ display: none;
     justify-content: space-evenly;
 }
 
-.ventana.ordenada .ventana__item--drag__texto__h2{
+.ventana.ordenada .ventana__item__texto__h2{
     font-size: 2rem;
 }
 
-.ventana.ordenada img.ventana__item--drag__deco{
+.ventana.ordenada img.ventana__item__deco{
     top:20px;
     width:30%;
 }
 
-.ventana.ordenada .ventana__item--drag__texto__footer{
+.ventana.ordenada .ventana__item__texto__footer{
     display:block;
     margin-top: 20px;
 }
 
-.ventana.ordenada .ventana__item--drag__texto__enlace{
+.ventana.ordenada .ventana__item__texto__enlace{
     text-align-last: justify;
     text-align: justify;
     margin: 5px 0;
@@ -1797,13 +1797,13 @@ img.menu__img--hover{
 
 /*EFECTO HOVER EN EL INDEX*/
 
-.ventana:has(.ventana__item--drag__texto__enlace:hover) .ventana__item--drag {
+.ventana:has(.ventana__item__texto__enlace:hover) .ventana__item {
     opacity: 0;
     filter: grayscale(1);
     transition: var(--transition-standard);
 }
 
-.ventana:has(.ventana__item--drag__texto__enlace:hover) .papel2 {
+.ventana:has(.ventana__item__texto__enlace:hover) .papel2 {
     opacity: 1;
     filter: none;
 }
@@ -1816,11 +1816,11 @@ img.menu__img--hover{
     filter: none;
 }
 
-.ventana__item--drag__texto__enlace:hover{
+.ventana__item__texto__enlace:hover{
     color: #ffffff; 
     background-color: #8ac306;}
 
-.ventana.ordenada a.ventana__item--drag:hover {scale: 1.1;}
+.ventana.ordenada a.ventana__item:hover {scale: 1.1;}
 
 /*SOBRE MI*/
 
@@ -1853,7 +1853,6 @@ img.menu__img--hover{
 }
 
 .archivo__fila:hover .archivo__foto {opacity: 1;}
-.archivo__fila--destacada:hover {background-color: #333;}
 
 /*TRABAJOS*/
 

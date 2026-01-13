@@ -103,7 +103,7 @@ const parrafos = document.querySelectorAll(".archivo__celda.archivo__celda--proy
 const botonOrdenar = document.querySelector(".ventana__boton--ordenar");
 const botonDesordenar = document.querySelector(".ventana__boton--desordenar");
 const ventanaContenedor = document.querySelector(".ventana");
-const itemsVentana = document.querySelectorAll(".ventana__item--drag, .cinta");
+const itemsVentana = document.querySelectorAll(".ventana__item, .cinta");
 
 if (botonOrdenar && botonDesordenar) {
     
