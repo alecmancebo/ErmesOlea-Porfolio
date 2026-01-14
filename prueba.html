@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+:root {
+  --h: 100px;
+}
+
+.accordion-flat {
+  perspective: 1500px;
+  position: relative;
+  width: 300px;
+  margin: 50px auto;
+  height: calc(var(--h) * 3);
+}
+
+.fold-flat {
+  position: absolute;
+  width: 100%;
+  height: var(--h);
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* --- POSICIONAMIENTO Y ROTACIÓN --- */
+
+/* 1. Panel Superior: Siempre arriba y fijo */
+.fold-1 {
+  top: 0;
+  z-index: 3;
+  transform-origin: bottom;
+}
+
+/* 2. Panel Medio: Rota hacia adelante desde la parte superior */
+.fold-2 {
+  top: var(--h);
+  z-index: 2;
+  transform-origin: top;
+}
+
+/* 3. Panel Inferior: Rota hacia atrás desde la parte superior */
+.fold-3 {
+  top: calc(var(--h) * 2);
+  z-index: 1;
+  transform-origin: top;
+}
+
+/* --- ESTADO CERRADO (ZIGZAG MANUAL) --- */
+/* Al no estar anidados, tenemos que "subirlos" manualmente con translateY */
+
+.accordion-flat:not(.is-open) .fold-2 {
+  /* Se dobla 180 grados y sube para tapar al 1 */
+  transform: translateY(calc(var(--h) * -1)) rotateX(179deg);
+}
+
+.accordion-flat:not(.is-open) .fold-3 {
+  /* Se queda detrás del 1 también */
+  transform: translateY(calc(var(--h) * -2)) rotateX(0deg);
+  opacity: 0; /* Lo ocultamos para evitar parpadeos */
+}
+
+/* --- ESTADO ABIERTO --- */
+.accordion-flat.is-open .fold-flat {
+  transform: translateY(0) rotateX(0deg);
+  opacity: 1;
+}
+
+/* Delays para el orden de apertura (de abajo a arriba) */
+.is-open .fold-3 { transition-delay: 0s; }
+.is-open .fold-2 { transition-delay: 0.2s; }
+.is-open .fold-1 { transition-delay: 0.4s; }
+    </style>
+</head>
+<body>
+<div class="accordion-flat">
+  <div class="fold-flat fold-1">1. Superior (Fijo)</div>
+  <div class="fold-flat fold-2">2. Medio (Zig)</div>
+  <div class="fold-flat fold-3">3. Inferior (Zag)</div>
+</div>
+
+<button id="toggleBtn">Abrir / Cerrar</button>
+
+<button onclick="document.querySelector('.accordion-flat').classList.toggle('is-open')">
+  Abrir / Cerrar
+</button>
+
+<script>
+
+</script>
+</body>
+</html>

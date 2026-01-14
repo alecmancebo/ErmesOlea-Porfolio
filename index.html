@@ -27,7 +27,9 @@
      <script defer src="js/funciones.js"></script>
 </head>
 <body class="index">
-    <div class="cursor"></div>
+    <img class="minibicho" src="imagenes/minibichos/minibicho01_escalado.png" alt="">
+    <img class="minibicho" src="imagenes/minibichos/minibicho05_escalado.png" alt="">
+    <img class="minibicho" src="imagenes/minibichos/minibicho04_escalado.png" alt="">
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="filters">
 	<defs>
 		<filter id="sketchy-0">
@@ -94,7 +96,27 @@
         </div>
         <a href="comadeja.html" class="ventana__item comadeja"><img src="imagenes/landing/lg_comadeja.png" alt="comadeja"></a>
         <a href="the-magnus-archives.html" class="ventana__item comics"> <img src="imagenes/landing/lg_comics.png" alt="comics"> </a>
-        <img class="ventana__item dibujar" src="imagenes/landing/lg_dibujar.png" alt="dibujar">
+        <div class="ventana_item dibujar">
+            <div class="dibujar__contenedor">
+                <div class="dibujar__ventana">
+                    <div class="ventana__barra-titulo">
+                        <p class="ventana__titulo">🗒️ Dibuja Aquí</p>
+                        <div class="ventana__controles">
+                            <img class="ventana__controles--boton" src="imagenes/minibichos/minibicho01_escalado.png" alt="minimizar">
+                            <img class="ventana__controles--boton" src="imagenes/minibichos/minibicho02_escalado1.png" alt="minimizar">
+                            <img class="ventana__controles--boton" src="imagenes/minibichos/minibicho05_escalado.png" alt="minimizar">
+                            <span class="ventana__controles--boton ventana__controles--boton-cerrar">X</span>
+                        </div>
+                    </div>
+                    <div class="ventana__area-contenido">
+                        <canvas class="ventana__lienzo"></canvas>
+                        <div class="ventana__scrollbar ventana__scrollbar--vertical">▲<div class="ventana__scrollbar__pulgar"></div>▼</div>
+                        <div class="ventana__scrollbar ventana__scrollbar--horizontal">◄<div class="ventana__scrollbar__pulgar"></div>►</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <video class="ventana__item diy" src="imagenes/landing/ar_gato_t.mp4" alt="diy" muted loop autoplay></video>
         <img class="ventana__item estrella" src="imagenes/landing/lg_estrella.svg" alt="estrella">
         <a href="fae.html" class="ventana__item fae"><img src="imagenes/landing/lg_fae.png" alt="fae"></a>

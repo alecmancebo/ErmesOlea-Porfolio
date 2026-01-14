@@ -173,3 +173,87 @@ cinta.addEventListener('click', () => {
             }
         });
     });
+
+   
+    // Animación de movimiento aleatorio para imágenes
+
+function animarBichos(selector, velocidad = 2) {
+    const elementos = document.querySelectorAll(selector);
+    const datosImagenes = [];
+
+    elementos.forEach(el => {
+
+        el.style.position = 'fixed';
+        el.style.top = '0';
+        el.style.left = '0';
+
+
+        const xInicial = Math.random() * (window.innerWidth - el.offsetWidth);
+        const yInicial = Math.random() * (window.innerHeight - el.offsetHeight);
+
+        el.style.transform = `translate(${xInicial}px, ${yInicial}px) scale(1)`;
+
+        const info = {
+            el: el,
+            x: xInicial,
+            y: yInicial,
+            horizontal: (Math.random() - 0.5) * velocidad,
+            vertical: (Math.random() - 0.5) * velocidad,
+            estaPausado: false
+        };
+
+        el.addEventListener('mouseenter', () => info.estaPausado = true);
+        el.addEventListener('mouseleave', () => info.estaPausado = false);
+
+        datosImagenes.push(info);
+    });
+
+    function actualizar() {
+        datosImagenes.forEach(img => {
+            if (!img.estaPausado) {
+                img.x += img.horizontal;
+                img.y += img.vertical;
+
+                // Rebote en bordes
+                if (img.x <= 0 || img.x + img.el.offsetWidth >= window.innerWidth) {
+                    img.horizontal *= -1;
+                }
+                if (img.y <= 0 || img.y + img.el.offsetHeight >= window.innerHeight) {
+                    img.vertical *= -1;
+                }
+            }
+
+            const escalaActual = img.estaPausado ? 1.2 : 1;
+            img.el.style.transform = `translate(${img.x}px, ${img.y}px) scale(${escalaActual})`;
+            img.el.style.transition = 'transform 0.2s ease-out';
+        });
+
+        requestAnimationFrame(actualizar);
+    }
+
+    actualizar();
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    animarBichos(".minibicho", 0.2);
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const zonaDibujo = document.querySelector('.dibujar');
+    const botonCerrar = document.querySelector('.ventana__controles--boton-cerrar');
+
+    // Al hacer clic en el área de dibujo, se expande
+    zonaDibujo.addEventListener('click', (e) => {
+        // Evitamos que se expanda si ya lo está o si clicamos específicamente en el lienzo para dibujar
+        if (!zonaDibujo.classList.contains('expandido')) {
+            zonaDibujo.classList.add('expandido');
+        }
+    });
+
+    // Lógica para cerrar la ventana con el botón X
+    botonCerrar.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evita que el evento clic llegue al padre (.dibujar)
+        zonaDibujo.classList.remove('expandido');
+    });
+});
