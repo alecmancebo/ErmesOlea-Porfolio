@@ -7,7 +7,6 @@
   FUNCIONALIDADES PRINCIPALES:
   1. Menú móvil - toggle (abrir/cerrar) menú en pantallas pequeñas
   2. Animación de letras punk - cambio de imágenes al hover en menu links
-  3. Rotación aleatoria de letras - efecto en textos del archivo
   4. Ordenar/desordenar - toggle de clases para grid principal
   5. Sobre interactivo - click para abrir/cerrar sobre de contacto
   6. Secciones interactivas - click para expandir/contraer (sobre mi)
@@ -94,24 +93,6 @@ hoverMenu(document.querySelector('.menu__link--contacto'), punkImgsContacto);
 
 animarLetras(document.querySelector('.letras__img'), punkImagesSandrune);
 
-//rotacion letras
-const parrafos = document.querySelectorAll(".archivo__celda.archivo__celda--proyecto");
-
-    parrafos.forEach(parrafo => {
-    parrafo.innerHTML = parrafo.innerText.split('').map(letra => letra === ' ' ? ' ' : `<span class="archivo__celda--letra">${letra}</span>`).join('');
-
-    const spans = parrafo.querySelectorAll('.archivo__celda--letra');
-    spans.forEach(span => {
-    span.style.display = 'inline-block';
-
-    const rot = Math.floor(Math.random() * 21) - 10;
-    const cambioTamaño = Math.random() * 0.2;
-    const remactual = 0.4;
-
-    span.style.transform = `rotate(${rot}deg)`;
-    span.style.fontSize = `${remactual + cambioTamaño}rem`;
-    });
-    });
 
 // ordenar/desordenar
 const botonOrdenar = document.querySelector(".ventana__boton--ordenar");
@@ -175,8 +156,7 @@ cinta.addEventListener('click', () => {
     });
 
    
-    // Animación de movimiento aleatorio para imágenes
-
+// Animación de movimiento aleatorio para imágenes
 function animarBichos(selector, velocidad = 2) {
     const elementos = document.querySelectorAll(selector);
     const datosImagenes = [];
@@ -214,7 +194,6 @@ function animarBichos(selector, velocidad = 2) {
                 img.x += img.horizontal;
                 img.y += img.vertical;
 
-                // Rebote en bordes
                 if (img.x <= 0 || img.x + img.el.offsetWidth >= window.innerWidth) {
                     img.horizontal *= -1;
                 }
@@ -238,22 +217,54 @@ window.addEventListener('DOMContentLoaded', () => {
     animarBichos(".minibicho", 0.2);
 });
 
+// Archivo.html - Lógica combinada hover y auto-loop responsive*/
 
 document.addEventListener('DOMContentLoaded', () => {
-    const zonaDibujo = document.querySelector('.dibujar');
-    const botonCerrar = document.querySelector('.ventana__controles--boton-cerrar');
-
-    // Al hacer clic en el área de dibujo, se expande
-    zonaDibujo.addEventListener('click', (e) => {
-        // Evitamos que se expanda si ya lo está o si clicamos específicamente en el lienzo para dibujar
-        if (!zonaDibujo.classList.contains('expandido')) {
-            zonaDibujo.classList.add('expandido');
+    const filas = document.querySelectorAll('.archivo__fila');
+    const fotoArchivo = document.querySelector('.archivo__foto');
+    
+    let intervaloArchivo = null;
+    let indiceActual = 0;
+    // 1. Función para actualizar la imagen
+    const actualizarImagen = (elemento) => {
+        const nuevaImagen = elemento.getAttribute('data-image');
+        if (nuevaImagen && fotoArchivo.src !== nuevaImagen) {
+            fotoArchivo.src = nuevaImagen;
         }
+    };
+
+    // 2. Para Escritorio
+    filas.forEach(fila => {
+        fila.addEventListener('mouseenter', () => {
+            actualizarImagen(fila);
+            indiceActual = Array.from(filas).indexOf(fila);
+        });
     });
 
-    // Lógica para cerrar la ventana con el botón X
-    botonCerrar.addEventListener('click', (e) => {
-        e.stopPropagation(); // Evita que el evento clic llegue al padre (.dibujar)
-        zonaDibujo.classList.remove('expandido');
-    });
+    // 3. Para Tablet/Móvil
+    const iniciarAutoLoop = () => {
+        if (!intervaloArchivo) {
+            intervaloArchivo = setInterval(() => {
+                indiceActual = (indiceActual + 1) % filas.length;
+                actualizarImagen(filas[indiceActual]);
+            }, 2000); 
+        }
+    };
+
+    const detenerAutoLoop = () => {
+        clearInterval(intervaloArchivo);
+        intervaloArchivo = null;
+    };
+
+    // 4. Control de Resposive (Breakpoint 960px)
+    const gestionarComportamiento = () => {
+        if (window.innerWidth <= 960) {
+            iniciarAutoLoop();
+        } else {
+            detenerAutoLoop();
+        }
+    };
+
+    gestionarComportamiento();
+    window.addEventListener('resize', gestionarComportamiento);
 });
