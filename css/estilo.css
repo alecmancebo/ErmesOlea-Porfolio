@@ -71,6 +71,10 @@
 }
 
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: var(--font-main);
     font-variation-settings: "wdth" 75;
@@ -862,13 +866,12 @@ margin-bottom: 20px;
     justify-content: center;
     align-items: flex-end;
     height: 100dvh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .sobre {
     position: relative;
     object-fit: contain;
-    height: 50vmin;
     transition: 0.5s ease;
     margin-bottom: 5%;
     display: flex;
@@ -1044,13 +1047,15 @@ margin-bottom: 20px;
     list-style: none;
 }
 
-.sobre__enlace {
+.enlace {
     display: inline-block;
-    padding: 0 0 5px 0;
+    margin: 0 0 5px 0;
+    position: relative;
 }
 
+
 .sobre__enlace--gmail{
-    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .sobre__contactame {
@@ -1065,14 +1070,24 @@ margin-bottom: 20px;
 
 /*MARK: CONTENIDO ABIERTO*/
 
-.sobre.esta-abierto .sobre__delantera {z-index: 9;}
-.sobre.esta-abierto .sobre__delantera svg{opacity: 0;}
+.sobre.esta-abierto{
+    height: 70%;
+}
+
+.sobre.esta-abierto .sobre__delantera {z-index: 0;}
+.sobre.esta-abierto .sobre__delantera svg {opacity: 0;}
 
 .sobre.esta-abierto .sobre__contenido {
     width: 90%;
     transform: translateY(-10%);
     z-index: 7;
     grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    height: 80%;
+}
+
+.sobre.esta-abierto .sobre__tarjeta {
+    pointer-events: auto;
 }
 
 .sobre.esta-abierto .sobre__tarjeta--dibujo {transform: translateY(0) translateX(0) rotate(0deg) scale(1);}
@@ -1103,6 +1118,14 @@ margin-bottom: 20px;
   position: relative;
   padding-top: 12dvh;
   overflow: hidden;
+  display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: repeat(2,auto);
+}
+
+.introduccion{
+    grid-column: 1/3;
+    grid-row: 1/2;
 }
 
 .introduccion__titulo {
@@ -1125,10 +1148,12 @@ margin-bottom: 20px;
 
 .archivo__foto__div{
     position: relative;
-    width: 20%;
-    max-width: 30%;
+    width: 80%;
+    max-width: 300px;
     padding: 20px;
     align-self: flex-end;
+    grid-row: 2/3;
+    grid-column: 1/2;
 }
 
 .archivo__foto {
@@ -1144,6 +1169,8 @@ margin-bottom: 20px;
 .archivo {
   margin-bottom: 20px;
   flex-grow: 1;
+      grid-row: 2/3;
+    grid-column: 2/3;
 }
 
 .archivo__categoria {
@@ -1161,7 +1188,7 @@ margin-bottom: 20px;
 
 .archivo__celda {
   font-size: var(--font-size-texto);
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 .archivo__celda--nombre {width: 20%;}
@@ -1352,7 +1379,7 @@ div.trabajos__imagen img{
 .mosaico__contenedor-abanico {
   position: relative;
   width: 100%;
-  height: 34vh;
+  height: 28vh;
   overflow: hidden; 
 }
 
@@ -1837,8 +1864,8 @@ header {
     min-width: auto;
 }
 
-.sobre__enlace {padding: 0;}
-.sobre__enlace--gmail{padding-bottom: 5px;}
+.enlace {margin: 0;}
+.sobre__enlace--gmail{margin-bottom: 5px;}
 
 /*MARK: SOBRE CONTENIDO ABIERTO*/
 
@@ -1926,8 +1953,8 @@ header {
     min-width: auto;
 }
 
-.sobre.esta-abierto .sobre__enlace {padding: 0;}
-.sobre.esta-abierto .sobre__enlace--gmail{padding-bottom: 5px;}
+.sobre.esta-abierto .enlace {margin: 0;}
+.sobre.esta-abierto .sobre__enlace--gmail{margin-bottom: 5px;}
 
 
 
@@ -2128,7 +2155,50 @@ header {
     height: 80%;
 }
 
+/*MARK: ARCHIVOS*/
+
+.introduccion{
+    grid-column: 1/2;
+    grid-row: 1/2;
 }
+
+.archivo__foto__div{
+    grid-row: 1/2;
+    grid-column: 2/3;
+    max-width: 130px;
+    height: 100%;
+    position: absolute;
+    padding: 0;
+    right: 0;
+    top: 0px;
+}
+
+.archivo__foto{
+    position: absolute;
+}
+
+.archivo{
+    grid-row: 2/3;
+    grid-column: 1/3;
+}
+
+.introduccion__titulo {
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+.archivo__categoria {
+    font-size: var(--font-size-encabezado);
+    margin: 15px 0 20px 0;
+    font-weight: bold;
+}
+
+.archivo__fila{
+    margin-bottom: 5px;
+}
+
+}
+
 @media screen and (orientation: portrait){
 
 /*LANDING*/
@@ -2385,20 +2455,25 @@ header{
   gap: 15px;
 }
 
+.ventana__item{
+    height: auto;
+}
+
 /*MARK: OBJETOS DESORDENADOS*/
 
 .sticker{
-    display: block;
+    display: none;
     position: absolute;
     left:0;
-    top:10%;
-    width: 40%;
+    top:0%;
+    width: 30%;
     z-index: 0;
     transform: rotate(10deg);
+    
 }
 
 .diy{
-    display: block;
+    display: none;
     position: absolute;
     right:-15px;
     top:20%;
@@ -2409,7 +2484,7 @@ header{
 }
 
 .mariposa{
-    display: block;
+    display: none;
     position: absolute;
     top: 50%;
     right: 0;
@@ -2419,7 +2494,7 @@ header{
 }
 
 .punk{
-    display: block;
+    display: none;
     position: absolute;
     bottom: 25%;
     right: 0;
@@ -2429,7 +2504,7 @@ header{
 }
 
 .bolapapel{
-    display: block;
+    display: none;
     position: absolute;
     bottom: 0%;
     left: 0;
@@ -2443,7 +2518,7 @@ header{
 }
 
 .letras{
-    display: block;
+    display: none;
     position: absolute;
     top: 0;
     left: 20%;
@@ -2466,7 +2541,7 @@ img.letras__img{
 }
 
 .human{
-    display: block;
+    display: none;
     position: absolute;
     bottom: 10%;
     right: 0;
@@ -2476,7 +2551,8 @@ img.letras__img{
 }
 
 .comics{
-    position: absolute;
+    display: none;
+    position: none;
     left: 0;
     top: 0;
     width: 100%;
@@ -2487,6 +2563,7 @@ img.letras__img{
 }
 
 .ilustracion{
+    display: none;
     position: absolute;
     left: 0;
     top: 25%;
@@ -2499,6 +2576,7 @@ img.letras__img{
 }
 
 .fae{
+    display: none;
     position: absolute;
     left: 50%;
     top: 25%;
@@ -2506,9 +2584,11 @@ img.letras__img{
     grid-row: 2/4;
     grid-column: 2/3; 
     transform: translateY(10%) translateX(20%) rotate(30deg) scale(1.3);
-    z-index: 0;}
+    z-index: 0;
+}
 
 .comadeja{
+    display: none;
     position: absolute;
     left: 0;
     top: 50%;
@@ -2519,6 +2599,7 @@ img.letras__img{
 }
 
 .foto{
+    display: none;
     position: absolute;
     left: 0;
     top: 75%;
@@ -2529,6 +2610,7 @@ img.letras__img{
 }
 
 .cortocircuito{
+    display: none;
     position: absolute;
     left: 50%;
     top: 0;
@@ -2552,14 +2634,12 @@ img.letras__img{
 .indice{
     transform: none;
     display: flex;
-    flex-direction: column;
-    max-height: none;
     max-width:none;
-    min-width: 130px;
     position: fixed;
     top:10%;
-    width: 70%;
-    left: 15%;
+    width: 90%;
+    left: 5%;
+    height: 80%;
     z-index: 2;
 
 }
@@ -2570,7 +2650,7 @@ img.letras__img{
 
 .indice__texto ul{
     margin: 10px 0;
-    font-size: 0.8rem;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -2954,7 +3034,7 @@ display: none;
     min-width: auto;
 }
 
-.sobre__enlace {padding: 0;}
+.enlace {margin: 0;}
 .sobre__enlace--gmail{padding-bottom: 20px;}
 
 
@@ -3012,7 +3092,7 @@ display: none;
 }
 
 .mosaico__contenedor-abanico {
-    height: 24dvh;
+    height: 20dvh;
 }
 
 .mosaico__abanico{
@@ -3028,6 +3108,71 @@ display: none;
 .mosaico_deco__1, .mosaico__deco__3, .mosaico__deco__4, .mosaico__deco__2
 { display: none;}
 
+/*MARK: ARCHIVO*/
+
+.contenedor-archivo{
+   grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+
+}
+
+.introduccion{
+    grid-column: auto;
+    grid-row: 1/2;
+}
+
+.introduccion__descripcion{
+    margin-bottom: 10px;
+}
+
+.archivo__foto__div{
+    grid-row: 2/3;
+    grid-column: auto;
+    position: relative;
+    width: 100%;
+    max-width: none;
+    height: 50dvh;
+    display: flex;
+    justify-content: center;
+    max-width: none;
+}
+
+.archivo{
+    grid-row: 3/4;
+    grid-column: auto;}
+
+.archivo__foto{
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.archivo__categoria { margin: 15px 0 10px 0;
+font-weight: 800;}
+
+.archivo__fila {
+    flex-wrap: wrap;
+    gap: 2%;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.archivo__celda--nombre {
+    width: 100%;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.archivo__celda--proyecto {
+    width: 78%;
+    padding-left: 0px;
+}
+
+.archivo__celda--numero {
+    width: 15%;
+    text-align: right;
+}
 
 }
 
@@ -3107,8 +3252,26 @@ img.menu__img--hover{
 
 /*CONTACTO*/
 
-.sobre__enlace:hover {
-    text-decoration: underline;
+
+.enlace::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: height 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.enlace:hover::before {
+    height: 100%;
+}
+
+.enlace:hover {
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
 }
 
 /*ARCHIVO*/

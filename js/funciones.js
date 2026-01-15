@@ -227,8 +227,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let indiceActual = 0;
     // 1. Función para actualizar la imagen
     const actualizarImagen = (elemento) => {
+        if (!elemento) return;
         const nuevaImagen = elemento.getAttribute('data-image');
-        if (nuevaImagen && fotoArchivo.src !== nuevaImagen) {
+        if (nuevaImagen && fotoArchivo && fotoArchivo.src !== nuevaImagen) {
             fotoArchivo.src = nuevaImagen;
         }
     };
@@ -268,3 +269,4 @@ document.addEventListener('DOMContentLoaded', () => {
     gestionarComportamiento();
     window.addEventListener('resize', gestionarComportamiento);
 });
+
