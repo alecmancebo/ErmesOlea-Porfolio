@@ -270,3 +270,58 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', gestionarComportamiento);
 });
 
+        const animationInterval = animarLetras(document.querySelector("#marcador-palabra img"), [
+            'imagenes/punk_letters/cargando_01.png',
+            'imagenes/punk_letters/cargando_02.png',
+            'imagenes/punk_letters/cargando_03.png'
+        ]);
+
+
+// --- Lógica del Loader ---
+const marcador = document.querySelector("#marcador--palabra img");
+if (marcador) {
+    animarLetras(marcador, [
+        'imagenes/punk_letters/cargando_01.png',
+        'imagenes/punk_letters/cargando_02.png',
+        'imagenes/punk_letters/cargando_03.png'
+    ]);
+}
+
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    if (loader) {
+        setTimeout(() => {
+            loader.classList.remove("pos-centro");
+            loader.classList.add("pos-abajo");
+            document.body.classList.remove("loading");
+        }, 1200);
+    }
+});
+
+// --- Navegación entre páginas ---
+document.querySelectorAll(".menu a").forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (this.hostname === window.location.hostname && !this.hash && this.target !== "_blank") {
+            const urlDestino = this.href;
+            const loader = document.getElementById("loader");
+
+            if (loader) {
+                e.preventDefault();
+                loader.style.transition = "none";
+                loader.classList.remove("pos-abajo");
+                loader.classList.add("pos-arriba");
+
+                setTimeout(() => {
+                    loader.style.transition = "transform 0.8s cubic-bezier(0.77, 0, 0.175, 1)";
+                    loader.classList.remove("pos-arriba");
+                    loader.classList.add("pos-centro");
+                }, 50);
+
+                setTimeout(() => {
+                    window.location.href = urlDestino;
+                }, 650);
+            }
+        }
+    });
+});
+// ELIMINA CUALQUIER LLAVE } QUE SOBRE AQUÍ AL FINAL

@@ -1,165 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-:root {
-  --fondo: #0d0d0d;
-  --blanco: #ffffff;
-  --gris: #999;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader Punk Letters</title>
+    <style>
+        .contenedor-carga {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100vh;
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center;     /* Centra verticalmente */
+            margin: 0;
+            overflow: hidden;
+            z-index: 9999;
+            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
 
-/* Encabezado */
-.mosaico__encabezado {
-  padding: 60px 8% 20px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-}
+            /* Fondo Libreta */
+            background: 
+                repeating-linear-gradient(#0000 0 calc(1.2rem - 1px), #99bfd8 0 1.2rem) left top / 100% 100%, 
+                linear-gradient(red 0 0) 30px 0 / 2px 100% #fff;
+            background-repeat: no-repeat;
 
-.mosaico__titulo {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  margin: 0;
-  line-height: 1.1;
-  flex: 1.2;
-}
+            -webkit-mask: radial-gradient(circle .8rem at 50% 2px, #0000 98%, #000) 0 0 / 2.4rem 100%;
+            mask: radial-gradient(circle .8rem at 50% 2px, #0000 98%, #000) 0 0 / 2.4rem 100%;
+        }
 
-.mosaico__descripcion {
-  flex: 0.8;
-  color: var(--gris);
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin: 0;
-}
+        .contenedor-carga--oculto {
+            transform: translateY(100%);
+        }
 
-/* Contenedor principal que permite que las fotos suban libremente */
-.mosaico__contenedor-abanico {
-  position: relative;
-  width: 100%;
-  margin-top: 50px;
-  /* El overflow hidden solo aquí para cortar la base */
-  overflow: hidden; 
-}
+        /* Contenedor único para las letras */
+        .palabra {
+            display: flex;
+            gap: 0px;
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+            object-fit: contain;
+        }
 
-/* El área donde viven las fotos */
-.mosaico__abanico {
-  position: relative;
-  width: 100%;
-  height: 550px; /* Suficiente altura para que se vean completas arriba */
-  display: flex;
-  align-items: flex-end; /* Alinea los items al fondo */
-}
+        .palabra__letra {
+            /* Control de tamaño: Ajusta este % o usa px (ej. 40px) */
+            width: 10%; 
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.1s ease-in-out;
+        }
 
-.mosaico__item {
-  position: absolute;
-  padding: 10px 10px 80px 10px; /* Padding extra abajo para el corte */
-  bottom: -60px; 
-}
-
-.mosaico__img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-/* Ajustes de posición "Abanico" */
-
-.mosaico__item--1 {
-  width: 220px;
-  left: 2%;
-  transform: rotate(-8deg);
-  z-index: 1;
-}
-
-.mosaico__item--2 {
-  width: 320px;
-  left: 18%;
-  bottom: -40px; /* Sube un poco más que las demás */
-  transform: rotate(3deg);
-  z-index: 10;
-}
-
-.mosaico__item--3 {
-  width: 260px;
-  left: 45%;
-  transform: rotate(-2deg);
-  z-index: 2;
-}
-
-.mosaico__item--4 {
-  width: 300px;
-  right: 15%;
-  bottom: -30px;
-  transform: rotate(5deg);
-  z-index: 3;
-}
-
-.mosaico__item--5 {
-  width: 240px;
-  right: 0;
-  transform: rotate(-5deg);
-  z-index: 1;
-}
-
-/* Tarjeta negra */
-.mosaico__tarjeta {
-  position: absolute;
-  bottom: 30px;
-  right: -70px;
-  background: #151515;
-  color: #fff;
-  padding: 20px;
-  font-size: 0.85rem;
-  border-radius: 2px;
-  min-width: 220px;
-  z-index: 11;
-}
-  </style>
+        body.loading { overflow: hidden; }
+    </style>
 </head>
-<body>
-<section class="mosaico">
-  <div class="mosaico__encabezado">
-    <h1 class="mosaico__titulo">Drop by for some eggs.<br>At anytime.</h1>
-    <p class="mosaico__descripcion">
-      A space where we can bounce ideas off each other, support colleagues, 
-      catch up on the weekend's activities or play marralhinha at lunch. 
-      This sense of togetherness is born and nurtured out of our shared space, the office.
-    </p>
-  </div>
+<body class="loading">
 
-  <div class="mosaico__contenedor-abanico">
-    <div class="mosaico__abanico">
-      
-      <article class="mosaico__item mosaico__item--1">
-        <img src="https://picsum.photos/id/20/400/500" alt="Foto 1" class="mosaico__img">
-      </article>
+    <section id="loader" class="contenedor-carga">
+        <div id="marcador-palabra" class="palabra"> <img src="imagenes/punk_letters/cargando_01.png" alt=""></div>
+    </section>
 
-      <article class="mosaico__item mosaico__item--2">
-        <img src="https://picsum.photos/id/11/500/600" alt="Foto 2" class="mosaico__img">
-        <div class="mosaico__tarjeta">
-          <p>Rua da Torrinha 154</p>
-          <p>4050-609 Porto, Portugal</p>
-          <p>(+351) 226 001 751</p>
-        </div>
-      </article>
+    <main>
+        <h1>Web Cargada</h1>
+    </main>
 
-      <article class="mosaico__item mosaico__item--3">
-        <img src="https://picsum.photos/id/30/400/400" alt="Foto 3" class="mosaico__img">
-      </article>
+    <script>
+                
+                function animarLetras(img, imagenes) {
 
-      <article class="mosaico__item mosaico__item--4">
-        <img src="https://picsum.photos/id/45/450/550" alt="Foto 4" class="mosaico__img">
-      </article>
+        if (!img || !imagenes || imagenes.length === 0) return null;
 
-      <article class="mosaico__item mosaico__item--5">
-        <img src="https://picsum.photos/id/55/400/500" alt="Foto 5" class="mosaico__img">
-      </article>
+        let i = 0;
+        const intervalo = setInterval(() => {
 
-    </div>
-  </div>
-</section>
+            if (!img || typeof img.src === 'undefined') {
+            clearInterval(intervalo);
+            return;
+            }
+
+            img.src = imagenes[i];
+            i = (i + 1) % imagenes.length;
+        }, 100);
+
+        return intervalo;
+
+        }
+        
+        animarLetras(document.querySelector("#marcador-palabra img"), [
+            'imagenes/punk_letters/cargando_01.png',
+            'imagenes/punk_letters/cargando_02.png',
+            'imagenes/punk_letters/cargando_03.png'
+        ]);
+
+        // 5. Salida
+        /*window.addEventListener("load", () => {
+            setTimeout(() => {
+                document.getElementById("loader").classList.add("contenedor-carga--oculto");
+                document.body.classList.remove("loading");
+                setTimeout(() => clearInterval(animationInterval), 800);
+            }, 2000);
+        });*/
+    </script>
 </body>
 </html>
