@@ -141,7 +141,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Obtener el href del enlace
             const href = enlace.getAttribute('href');
-            console.log('href:', href);
+            console.log('href completo:', href);
+            console.log('href type:', typeof href);
+            console.log('mapeo keys:', Object.keys(mapeo));
             
             // Mapeo de href a clase de ventana__item
             const mapeo = {
