@@ -121,15 +121,27 @@ cinta.addEventListener('click', () => {
     sobre.classList.toggle('esta-abierto');
 }); }
 
+
+
 // Hover en indice__enlace para mostrar solo la imagen correspondiente
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded disparado');
+    
     const indiceEnlaces = document.querySelectorAll('.indice__enlace');
     const ventana = document.querySelector('.ventana');
+    
+    console.log('indiceEnlaces encontrados:', indiceEnlaces.length);
+    console.log('ventana encontrada:', ventana);
 
-    indiceEnlaces.forEach(enlace => {
+    indiceEnlaces.forEach((enlace, index) => {
+        console.log(`Configurando enlace ${index}:`, enlace.textContent);
+        
         enlace.addEventListener('mouseenter', () => {
+            console.log('HOVER en:', enlace.textContent);
+            
             // Obtener el href del enlace
             const href = enlace.getAttribute('href');
+            console.log('href:', href);
             
             // Mapeo de href a clase de ventana__item
             const mapeo = {
@@ -141,8 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             
             const clase = mapeo[href];
+            console.log('clase mapeada:', clase);
             
             if (clase && ventana) {
+                console.log('Aplicando estilos...');
                 // Oscurecer todos los items
                 ventana.querySelectorAll('.ventana__item').forEach(item => {
                     item.style.opacity = '0';
@@ -151,14 +165,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Mostrar solo el correspondiente
                 const itemActivo = ventana.querySelector('.' + clase);
+                console.log('itemActivo encontrado:', itemActivo);
                 if (itemActivo) {
                     itemActivo.style.opacity = '1';
                     itemActivo.style.filter = 'none';
+                    console.log('itemActivo mostrado');
                 }
+            } else {
+                console.log('NO se cumple condición: clase=' + clase + ', ventana=' + ventana);
             }
         });
         
         enlace.addEventListener('mouseleave', () => {
+            console.log('Mouse leave:', enlace.textContent);
             if (ventana) {
                 // Restaurar opacidad
                 ventana.querySelectorAll('.ventana__item').forEach(item => {
@@ -167,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+
     });
 });
 
