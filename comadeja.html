@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ermes Olea - Comadeja</title>
      
     <!-- Página: ARCHIVO
          Propósito: Catálogo completo de proyectos organizados por categorías
@@ -42,8 +42,8 @@
         <div id="marcador--palabra" class="palabra"> <img src="imagenes/punk_letters/cargando_01.png" alt=""></div>
     </section>
     <header>
-    <button class="boton--abrir"><img src="imagenes/menu_abrir.svg" alt="abrir menu icono"></button>
     <nav class="menu">
+        <button class="boton--abrir"><img src="imagenes/menu_abrir.svg" alt="abrir menu icono"></button>
         <button class="menu__boton--cerrar"><img src="imagenes/menu_cerrar.svg" alt="cerrar menu icono"></button>
         <ul>
             <li class="menu__logo"><a href="index.html"><img src="logo/logo.svg" alt="logo"></a></li>
@@ -66,6 +66,9 @@
                     <span>Contacto</span>
                 </a>
             </li>
+                        <li class="menu__deco">
+                <img src="imagenes/menu_estrellas.svg" alt="">
+            </li>
         </ul>
     </nav>
     </header>
@@ -73,6 +76,36 @@
     <section class="trabajos">
 
     <div class="trabajos__imagenes">
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="filters">
+	<defs>
+		<filter id="sketchy-0">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="0" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+		<filter id="sketchy-1">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="1" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+		<filter id="sketchy-2">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="2" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+		<filter id="sketchy-3">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="3" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+		<filter id="sketchy-4">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="4" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+		<filter id="sketchy-5">
+			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="5" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+		</filter>
+	</defs>
+    </svg>
+
         <img src="imagenes/trabajos/comadeja/ermes_tfg_02.jpg" alt="" class="trabajos__imagen">
         <img class="trabajos__imagen uno" src="imagenes/trabajos/comadeja/ermes_tfg_fanzine_2.png" alt="" class="trabajos__imagen">
         <div class="trabajos__imagen">
@@ -91,7 +124,7 @@
     </div>
 
         <div class="trabajos__explicacion">
-            <a href="archivo.html" class="trabajos__explicacion-volver enlace"> VOLVER A ARCHIVO</a>
+            <a href="archivo.html" class="trabajos__explicacion-volver"> <img  class="trabajos__explicacion-volver flecha" src="imagenes/archivo/ar_flecha.svg" alt=""> VOLVER A ARCHIVO</a>
             <img src="imagenes/trabajos/comadeja/ermes_tfg_logo.png" alt="hada" class="trabajos__explicacion__marco logo">
             <div class="trabajos__explicacion__contenido">
                 <span class="trabajos__explicacion__categoria">EDITORIAL//</span>

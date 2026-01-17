@@ -20,7 +20,9 @@ const botonesSobre = document.querySelectorAll(".boton--abrir, .menu__boton--cer
     botonesSobre.forEach(boton => {
         boton.addEventListener("click", () => {
             nav.classList.toggle("menu--desplegado");
+
             })
+
     });
 
 //hover de enlaces de menu y animación letrtas landing page
@@ -75,15 +77,19 @@ function hoverMenu(enlace, imagenes) {
     const span = enlace.querySelector("span");
 
     enlace.addEventListener("mouseenter", () => {
-        img.classList.add("menu__img--hover");
-        span.classList.add("menu__span--hover");
-        intervalo = animarLetras(img, imagenes);
+        if (window.innerWidth > 960) {
+            img.classList.add("menu__img--hover");
+            span.classList.add("menu__span--hover");
+            intervalo = animarLetras(img, imagenes);
+        }
     });
 
     enlace.addEventListener("mouseleave", () => {
-        img.classList.remove("menu__img--hover");
-        span.classList.remove("menu__span--hover");
-        clearInterval(intervalo);
+        if (window.innerWidth > 960) {
+            img.classList.remove("menu__img--hover");
+            span.classList.remove("menu__span--hover");
+            clearInterval(intervalo);
+        }
     });
 }
 
@@ -92,6 +98,22 @@ hoverMenu(document.querySelector('.menu__link--sobremi'), punkImgsSobreMi);
 hoverMenu(document.querySelector('.menu__link--contacto'), punkImgsContacto);
 
 animarLetras(document.querySelector('.letras__img'), punkImagesSandrune);
+
+// Cambiar src de imágenes del menú según tamaño de pantalla
+function actualizarImagenesMenu() {
+    const imgArchivo = document.querySelector('.menu__link--archivo img');
+    const imgSobreMi = document.querySelector('.menu__link--sobremi img');
+    const imgContacto = document.querySelector('.menu__link--contacto img');
+    
+    if (window.innerWidth <= 480) {
+        if (imgArchivo) imgArchivo.src = 'imagenes/menu_archivo.svg';
+        if (imgSobreMi) imgSobreMi.src = 'imagenes/menu_sobremi.svg';
+        if (imgContacto) imgContacto.src = 'imagenes/menu_contacto.svg';
+    }
+}
+
+actualizarImagenesMenu();
+window.addEventListener('resize', actualizarImagenesMenu);
 
 
 // ordenar/desordenar
@@ -132,10 +154,15 @@ document.addEventListener('DOMContentLoaded', () => {
         enlace.addEventListener('mouseenter', () => {
             const mapeo = {
                 '/fae': 'fae',
+                'fae.html': 'fae',
                 '/comadeja': 'comadeja',
+                'comadeja.html': 'comadeja',
                 '/vernalizacion': 'ilustracion',
+                'vernalizacion.html': 'ilustracion',
                 '/cortocircuito': 'cortocircuito',
-                '/the-magnus-archives': 'comics'
+                'cortocircuito.html': 'cortocircuito',
+                '/the-magnus-archives': 'comics',
+                'the-magnus-archives.html': 'comics'
             };
             
             const href = enlace.getAttribute('href');

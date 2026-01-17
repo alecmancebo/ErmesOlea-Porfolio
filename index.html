@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ermes Olea - Portfolio</title>
 
     <!-- Página: LANDING / PORTADA
          Propósito: Página principal del portfolio - muestra una cuadrícula interactiva 
@@ -39,36 +39,37 @@
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="filters">
 	<defs>
 		<filter id="sketchy-0">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="0" />
+			<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="6" result="noise" seed="0" />
 			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
 		</filter>
 		<filter id="sketchy-1">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="1" />
+			<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="5" result="noise" seed="1" />
 			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
 		</filter>
 		<filter id="sketchy-2">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="2" />
+			<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="4" result="noise" seed="2" />
 			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
 		</filter>
 		<filter id="sketchy-3">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="3" />
+			<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="5" result="noise" seed="3" />
 			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
 		</filter>
 		<filter id="sketchy-4">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="4" />
+			<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="4" result="noise" seed="4" />
 			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
 		</filter>
 		<filter id="sketchy-5">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="5" />
+			<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="6" result="noise" seed="5" />
 			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
 		</filter>
 	</defs>
     </svg>
 
     <header>
-    <button class="boton--abrir"><img src="imagenes/menu_abrir.svg" alt="abrir menu icono"></button>
+    
     <nav class="menu">
         <button class="menu__boton--cerrar"><img src="imagenes/menu_cerrar.svg" alt="cerrar menu icono"></button>
+        <button class="boton--abrir"><img src="imagenes/menu_abrir.svg" alt="abrir menu icono"></button>
         <ul>
             <li class="menu__logo"><a href="index.html"><img src="logo/logo.svg" alt="logo"></a></li>
             <li class="menu__descripcion">Ermes Olea - diseñadore, ilustradore y artista multidisciplinar de Madrid, España. <br>@2026</li>
@@ -80,15 +81,18 @@
             </li>
             <li class="menu__item">
                 <a class="menu__link--sobremi"href="sobremi.html">
-                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina sobremi">
+                    <img class="menu__img" src="imagenes/punk_letters/sobremi_letras_01.svg" alt="link a pagina sobremi">
                     <span>Sobre mí</span>
                 </a>
             </li>
             <li class="menu__item">
-                <a class="menu__link--contacto"href="contacto.html">
-                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina contacto">
+                <a class="menu__link--contacto" href="contacto.html">
+                    <img class="menu__img" src="imagenes/punk_letters/contacto_letras_01.svg" alt="link a pagina contacto">
                     <span>Contacto</span>
                 </a>
+            </li>
+            <li class="menu__deco">
+                <img src="imagenes/menu_estrellas.svg" alt="">
             </li>
         </ul>
     </nav>
@@ -102,7 +106,7 @@
         </div>
         <a href="comadeja.html" class="ventana__item comadeja"><img src="imagenes/landing/lg_comadeja.png" alt="comadeja"></a>
         <a href="the-magnus-archives.html" class="ventana__item comics"> <img src="imagenes/landing/lg_comics.png" alt="comics"> </a>
-        <div class="ventana_item dibujar">
+        <div class="ventana__item dibujar">
             <div class="dibujar__contenedor">
                 <div class="dibujar__ventana">
                     <div class="ventana__barra-titulo">
