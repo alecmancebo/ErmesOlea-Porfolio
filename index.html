@@ -27,13 +27,15 @@
      <script defer src="js/funciones.js"></script>
 </head>
 
-<section id="loader" class="contenedor--carga pos-centro">
-    <div id="marcador--palabra" class="palabra"> <img src="imagenes/punk_letters/cargando_01.png" alt=""></div>
-</section>
 <body class="index">
+    <section id="loader" class="contenedor--carga pos-centro">
+        <div id="marcador--palabra" class="palabra"> <img src="imagenes/punk_letters/cargando_01.png" alt=""></div>
+    </section>
+
     <img class="minibicho" src="imagenes/minibichos/minibicho01_escalado.png" alt="">
     <img class="minibicho" src="imagenes/minibichos/minibicho05_escalado.png" alt="">
     <img class="minibicho" src="imagenes/minibichos/minibicho04_escalado.png" alt="">
+    
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="filters">
 	<defs>
 		<filter id="sketchy-0">
@@ -113,7 +115,7 @@
                         </div>
                     </div>
                     <div class="ventana__area-contenido">
-                        <canvas class="ventana__lienzo"></canvas>
+                        <div class="ventana__lienzo"></div>
                         <div class="ventana__scrollbar ventana__scrollbar--vertical">▲<div class="ventana__scrollbar__pulgar"></div>▼</div>
                         <div class="ventana__scrollbar ventana__scrollbar--horizontal">◄<div class="ventana__scrollbar__pulgar"></div>►</div>
                     </div>

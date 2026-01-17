@@ -91,25 +91,24 @@ a, button, .archivo__fila, .sobre {cursor: url("../imagenes/minibichos/green_poi
 
 /*LOADER*/
 
-/*LOADER*/
-.contenedor--carga { /* Asegúrate de que coincida con el HTML */
+.contenedor--carga { 
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Usa vw para asegurar ancho total */
+    width: 100vw; 
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     overflow: hidden;
-    z-index: 99999; /* Aumenta el z-index para estar sobre el menú */
+    z-index: 99999; 
     transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
-    background-color: #000000; /* Forzamos color negro */
+    background-color: #000000; 
     visibility: visible;
 }
 
-/* Clases de estado */
+
 .pos-centro { transform: translateY(0); }
 .pos-arriba { transform: translateY(-100%); }
 .pos-abajo { transform: translateY(100%); }

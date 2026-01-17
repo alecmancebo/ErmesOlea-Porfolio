@@ -125,21 +125,11 @@ cinta.addEventListener('click', () => {
 
 // Hover en indice__enlace para mostrar solo la imagen correspondiente
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOMContentLoaded disparado');
-    
     const indiceEnlaces = document.querySelectorAll('.indice__enlace');
     const ventana = document.querySelector('.ventana');
-    
-    console.log('indiceEnlaces encontrados:', indiceEnlaces.length);
-    console.log('ventana encontrada:', ventana);
 
-    indiceEnlaces.forEach((enlace, index) => {
-        console.log(`Configurando enlace ${index}:`, enlace.textContent);
-        
+    indiceEnlaces.forEach((enlace) => {
         enlace.addEventListener('mouseenter', () => {
-            console.log('HOVER en:', enlace.textContent);
-            
-            // Mapeo de href a clase de ventana__item - PRIMERO
             const mapeo = {
                 '/fae': 'fae',
                 '/comadeja': 'comadeja',
@@ -148,47 +138,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 '/the-magnus-archives': 'comics'
             };
             
-            // Obtener el href del enlace
             const href = enlace.getAttribute('href');
-            console.log('href completo:', href);
-            console.log('href type:', typeof href);
-            console.log('mapeo keys:', Object.keys(mapeo));
-            
             const clase = mapeo[href];
-            console.log('clase mapeada:', clase);
             
             if (clase && ventana) {
-                console.log('Aplicando estilos...');
-                // Oscurecer todos los items
                 ventana.querySelectorAll('.ventana__item').forEach(item => {
                     item.style.opacity = '0';
                     item.style.filter = 'grayscale(1)';
                 });
                 
-                // Mostrar solo el correspondiente
                 const itemActivo = ventana.querySelector('.' + clase);
-                console.log('itemActivo encontrado:', itemActivo);
                 if (itemActivo) {
                     itemActivo.style.opacity = '1';
                     itemActivo.style.filter = 'none';
-                    console.log('itemActivo mostrado');
                 }
-            } else {
-                console.log('NO se cumple condición: clase=' + clase + ', ventana=' + ventana);
             }
         });
         
         enlace.addEventListener('mouseleave', () => {
-            console.log('Mouse leave:', enlace.textContent);
             if (ventana) {
-                // Restaurar opacidad
                 ventana.querySelectorAll('.ventana__item').forEach(item => {
                     item.style.opacity = '';
                     item.style.filter = '';
                 });
             }
         });
-
     });
 });
 
@@ -288,7 +262,7 @@ window.addEventListener('DOMContentLoaded', () => {
     animarBichos(".minibicho", 0.2);
 });
 
-// Archivo.html - Lógica combinada hover y auto-loop responsive*/
+// Archivo.html - hover y loop*/
 
 document.addEventListener('DOMContentLoaded', () => {
     const filas = document.querySelectorAll('.archivo__fila');
@@ -296,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let intervaloArchivo = null;
     let indiceActual = 0;
-    // 1. Función para actualizar la imagen
+
     const actualizarImagen = (elemento) => {
         if (!elemento) return;
         const nuevaImagen = elemento.getAttribute('data-image');
@@ -370,7 +344,7 @@ window.addEventListener("load", () => {
 });
 
 // --- Navegación entre páginas ---
-document.querySelectorAll(".menu a").forEach(link => {
+document.querySelectorAll("a").forEach(link => {
     link.addEventListener('click', function(e) {
         if (this.hostname === window.location.hostname && !this.hash && this.target !== "_blank") {
             const urlDestino = this.href;
