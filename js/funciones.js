@@ -121,6 +121,53 @@ cinta.addEventListener('click', () => {
     sobre.classList.toggle('esta-abierto');
 }); }
 
+// Hover en indice__enlace para mostrar solo la imagen correspondiente
+const indiceEnlaces = document.querySelectorAll('.indice__enlace');
+const ventana = document.querySelector('.ventana');
+
+indiceEnlaces.forEach(enlace => {
+    enlace.addEventListener('mouseenter', () => {
+        // Obtener el href del enlace
+        const href = enlace.getAttribute('href');
+        
+        // Mapeo de href a clase de ventana__item
+        const mapeo = {
+            'fae.html': 'fae',
+            'comadeja.html': 'comadeja',
+            'vernalizacion.html': 'ilustracion',
+            'cortocircuito.html': 'cortocircuito',
+            'the-magnus-archives.html': 'comics'
+        };
+        
+        const clase = mapeo[href];
+        
+        if (clase && ventana) {
+            // Oscurecer todos los items
+            ventana.querySelectorAll('.ventana__item').forEach(item => {
+                item.style.opacity = '0';
+                item.style.filter = 'grayscale(1)';
+            });
+            
+            // Mostrar solo el correspondiente
+            const itemActivo = ventana.querySelector('.' + clase);
+            if (itemActivo) {
+                itemActivo.style.opacity = '1';
+                itemActivo.style.filter = 'none';
+            }
+        }
+    });
+    
+    enlace.addEventListener('mouseleave', () => {
+        if (ventana) {
+            // Restaurar opacidad
+            ventana.querySelectorAll('.ventana__item').forEach(item => {
+                item.style.opacity = '';
+                item.style.filter = '';
+            });
+        }
+    });
+});
+
 
 //función click secciones en sobremi.html
     const secciones = [
@@ -257,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
         intervaloArchivo = null;
     };
 
-    // 4. Control de Resposive (Breakpoint 960px)
+    // Control de Resposive (Breakpoint 960px)
     const gestionarComportamiento = () => {
         if (window.innerWidth <= 960) {
             iniciarAutoLoop();
@@ -277,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ]);
 
 
-// --- Lógica del Loader ---
+// --- Loader ---
 const marcador = document.querySelector("#marcador--palabra img");
 if (marcador) {
     animarLetras(marcador, [
@@ -324,4 +371,3 @@ document.querySelectorAll(".menu a").forEach(link => {
         }
     });
 });
-// ELIMINA CUALQUIER LLAVE } QUE SOBRE AQUÍ AL FINAL

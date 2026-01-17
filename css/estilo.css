@@ -3170,27 +3170,6 @@ img.menu__img--hover{
 .ventana a:hover{scale: 104%;}
 .ventana button:hover{animation: sketch 0.4s linear infinite;}
 
-/*EFECTO HOVER EN EL INDEX*/
-
-.ventana:has(.indice__enlace:hover) .ventana__item {
-    opacity: 0;
-    filter: grayscale(1);
-    transition: var(--transition-standard);
-}
-
-.ventana:has(.indice__enlace:hover) .indice {
-    opacity: 1;
-    filter: none;
-}
-.ventana:has(a[href="fae.html"]:hover) .fae,
-.ventana:has(a[href="comadeja.html"]:hover) .comadeja,
-.ventana:has(a[href="vernalizacion.html"]:hover) .ilustracion,
-.ventana:has(a[href="cortocircuito.html"]:hover) .cortocircuito, 
-.ventana:has(a[href="the-magnus-archives.html"]:hover) .comics {
-    opacity: 1;
-    filter: none;
-}
-
 .indice__enlace:hover{
     color: var(--color-white); 
     background-color: var(--color-primary);}
