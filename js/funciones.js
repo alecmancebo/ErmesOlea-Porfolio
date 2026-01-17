@@ -145,11 +145,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Mapeo de href a clase de ventana__item
             const mapeo = {
-                'fae.html': 'fae',
-                'comadeja.html': 'comadeja',
-                'vernalizacion.html': 'ilustracion',
-                'cortocircuito.html': 'cortocircuito',
-                'the-magnus-archives.html': 'comics'
+                '/fae': 'fae',
+                '/comadeja': 'comadeja',
+                '/vernalizacion': 'ilustracion',
+                '/cortocircuito': 'cortocircuito',
+                '/the-magnus-archives': 'comics'
             };
             
             const clase = mapeo[href];
