@@ -107,23 +107,6 @@ a, button, .archivo__fila, .sobre {cursor: url("../imagenes/minibichos/green_poi
     visibility: visible;
 }
 
-
-.pos-centro { transform: translateY(0); }
-.pos-arriba { transform: translateY(-100%); }
-.pos-abajo { transform: translateY(100%); }
-
-.palabra {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;}
-
-.palabra img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
 .pos-centro { transform: translateY(0); }
 .pos-arriba { transform: translateY(100%); }
 .pos-abajo { transform: translateY(100%); }
@@ -136,15 +119,6 @@ a, button, .archivo__fila, .sobre {cursor: url("../imagenes/minibichos/green_poi
             width: 60%;
             object-fit: contain;
         }
-
-        .palabra__letra {
-            width: 10%; 
-            height: auto;
-            object-fit: contain;
-            transition: transform 0.1s ease-in-out;
-        }
-
-        body.loading { overflow: hidden; }
 
 /* ========================================
    MENÚ DE NAVEGACIÓN
@@ -295,7 +269,6 @@ header{
 .mariposa{
     grid-row: 1/2;
     grid-column: 3/5;
-    transform: rotate(-10deg);
     transform: translateY(20%) translateX(-0%) rotate(15deg) scale(1.6);
 }
 
@@ -649,14 +622,6 @@ img.indice__deco{
     width: 100%;
     padding: 20px 0;
     text-indent: 1rem;
-}
-
-.experiencia__foto{
-    width: 160px;
-    z-index: 1;
-    position: absolute;
-    right: 48px;
-    rotate: 25deg;
 }
 
 .experiencia__lista {
@@ -1355,7 +1320,7 @@ margin-bottom: 20px;
     max-height: 300px;
     object-fit: cover;
     transform:translateX(50%) translateY(-33%) rotate(-10deg);
-    overflow: clip;
+    overflow: visible;
 
 }
 
@@ -1535,7 +1500,6 @@ div.trabajos__imagen img{
     bottom: 0;
     left: 4%;
     width: 10%;
-    z-index: 0;
     rotate: 20deg;
     z-index: 12;
 }
@@ -1545,7 +1509,6 @@ div.trabajos__imagen img{
     top:30%;
     right: 12%;
     width: 12%;
-    z-index: 0;
     rotate: -15deg;
     z-index: 12;
 }
@@ -1555,7 +1518,6 @@ div.trabajos__imagen img{
     top:50%;
     right: 0%;
     height: 60%;
-    z-index: 0;
     rotate: -220deg;
     z-index: 12;
 }
@@ -1565,7 +1527,6 @@ div.trabajos__imagen img{
     top: 50%;
     right: 28%;
     width: 18%;
-    z-index: 0;
     rotate: -25deg;
     z-index: 12;
 }
@@ -1963,12 +1924,6 @@ header {
     display: none;
 }
 
-.sobre.esta-abierto .sobre__papel--columnas{
-    flex-direction: column;
-    gap: 10px;
-
-}
-
 .sobre.esta-abierto .sobre__tarjeta--redes {
     width:calc(50% - 20px);
     transform: translateX(0%) translateY(0%);
@@ -2029,114 +1984,100 @@ header {
     justify-content: space-between;
     align-items: flex-start;
     flex-direction:column;       
-    padding: 16dvh 40px 40px 40px;            /**/  
+    padding: 16dvh 40px 40px 40px;              
     gap: 40px;                    
 }
 
 .trabajos__imagenes {
     flex: 1;                      
-    width: 100%;  /*/*/               
+    width: 100%;                 
     display: flex;
-    flex-direction: column;  /**/
+    flex-direction: column;  
     position: relative;
     padding-top: 6%;
-   max-width: 100vw;/**/
-   overflow:hidden;/**/
+   max-width: 100vw;
+   overflow:hidden;
 }
 
 .trabajos__explicacion {
-    width: 100%; /**/
-    max-width: none; /**/       
-    position: relative;  /**/           
+    width: 100%; 
+    max-width: none;        
+    position: relative;             
     top:0;
-    height: auto; /**/
-    order: -1; /**/
-    border: 1px solid black; /**/
+    height: auto; 
+    order: -1; 
+    border: 1px solid black; 
     background-color: #f0eeef;
     padding-top: 6%;
 }
 
-.trabajos__explicacion__contenido{
-    opacity: 0.95;
-    position: relative;
-    padding: 40px 20px;
-    align-self: flex-start;
-    margin-top: 80px;
-}
-
 .trabajos__explicacion__ficha {
     grid-template-columns: 0.5fr 1fr;
-    grid-template-rows: repeat(3, auto);
-    gap: 20px 30px;
 }
 
 .trabajos__explicacion__marco {
-    height: 40%; /*/*/
-    width: auto /**/;
-    max-width: 42%;/**/
+    height: 40%; 
+    width: auto ;
+    max-width: 42%;
     top: 30px;
-    object-fit: contain;
-    object-position: top;
-    
-}/**/
+}
     
 
 .logo{
-    width: auto;/**/
-    height: 28%;/**/
+    width: auto;
+    height: 28%;
 }
 
 .trabajos__explicacion-volver {
-    font-size: 1.2rem;/**/
-    font-weight: 700;/**/
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 .tres {
-    scale: 1;/**/
-    rotate: 0deg;/**/
+    scale: 1;
+    rotate: 0deg;
 }
 
 
     .cuatro {
-        width: 100%;/**/
-        transform: translateY(10%);/**/
+        width: 100%;
+        transform: translateY(10%);
     }
 
 .cinco {
-        width: 100%;/**/
-        max-height: none;/**/
+        width: 100%;
+        max-height: none;
         object-fit: cover;
-        transform: none;/**/
+        transform: none;
     }
 
 .siete {
-    transform: rotate(18deg) translateY(-60%) translateX(50%);/**/
+    transform: rotate(18deg) translateY(-60%) translateX(50%);
 }
 
 
 
 .mosaico__item--1 {
-    width: 40%;/**/
-    left: -2%;/**/
-    top: auto;/**/
-    transform: rotate(-8deg);/**/
+    width: 40%;
+    left: -2%;
+    top: auto;
+    transform: rotate(-8deg);
     bottom: -3%;
-        max-height: 100%;
-        object-fit: contain;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .mosaico__deco__6 {
-    position: absolute;
-    top: 18%;/**/
-    left: 20%;/**/
-    width: 8%;/**/
+    top: 18%;
+    left: 20%;
+    width: 8%;
 }
 
 .mosaico__item--2 {
-    width: 27%;/**/
-    left: 18%;/**/
-    top: auto;/**/
-    transform: rotate(8deg);/**/
+    width: 27%;
+    left: 18%;
+    top: auto;
+    transform: rotate(8deg);
     bottom: -3%;
         max-height: 100%;
         object-fit: contain;
@@ -2145,42 +2086,33 @@ header {
 
 .mosaico__deco__3 {
     position: absolute;
-    top: 50%;/**/
-    left: 5%;/**/
-    height: 60%;/**/
+    top: 50%;
+    left: 5%;
+    height: 60%;
 }
 
 .mosaico__item--6 {
-    width: 28%;/**/
-    left: 40%;/**/
-    top: 30%;/**/
-    transform: rotate(-10deg);/**/
+    width: 28%;
+    left: 40%;
+    top: 30%;
+    transform: rotate(-10deg);
 }
 
 .mosaico__deco__2 {
     position: absolute;
-    bottom: 0%;/**/
+    bottom: 0%;
     top: auto;
-    right: 3%;/**/
-    width: 20%;/**/
-    rotate: -15deg;/**/
-    max-height: 100%;/**/
-            object-fit: contain;/**/
+    right: 3%;
+    width: 20%;
+    rotate: -15deg;
+    max-height: 100%;
+            object-fit: contain;
 }
 
 .mosaico__item--3 {
-    width: 28%;/**/
-    left: 55%;/**/
-    top: auto;/**/
-    bottom: 0;
-        max-height: 100%;
-        object-fit: contain;
-}
-
-.mosaico__deco__5 {
-    top: auto;/**/
-    right: 12%;/*/*/
-    width: 22%;/**/
+    top: auto;
+    right: 12%;
+    width: 22%;
     bottom:0;
     max-height: 100%;
         object-fit: contain;
@@ -2189,28 +2121,28 @@ header {
 
 .mosaico__deco__4 {
     position: absolute;
-    top: 55%;/**/
-    right: 20%;/**/
-    width: 28%;/**/
+    top: 55%;
+    right: 20%;
+    width: 28%;
 }
 
 .mosaico__item--4 {
-    width: 32%;/**/
-    right: 10%;/**/
-    top: auto;/**/
+    width: 32%;
+    right: 10%;
+    top: auto;
         bottom: 0%;
         max-height: 100%;
         object-fit: contain;
 }
 
-.mosaico__deco__1 {left: 4%;/**/}
+.mosaico__deco__1 {left: 4%;}
 
 .mosaico__item--5 {
-        width: 24%;/**/
-        right: -2%;/**/
-        bottom: -2%;/**/
-        top: auto;/**/
-        max-height: 100%;/**/
+        width: 24%;
+        right: -2%;
+        bottom: -2%;
+        top: auto;
+        max-height: 100%;
     }
 
 .mosaico__tarjeta{
