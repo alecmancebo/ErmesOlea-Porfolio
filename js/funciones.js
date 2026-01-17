@@ -139,13 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         enlace.addEventListener('mouseenter', () => {
             console.log('HOVER en:', enlace.textContent);
             
-            // Obtener el href del enlace
-            const href = enlace.getAttribute('href');
-            console.log('href completo:', href);
-            console.log('href type:', typeof href);
-            console.log('mapeo keys:', Object.keys(mapeo));
-            
-            // Mapeo de href a clase de ventana__item
+            // Mapeo de href a clase de ventana__item - PRIMERO
             const mapeo = {
                 '/fae': 'fae',
                 '/comadeja': 'comadeja',
@@ -153,6 +147,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 '/cortocircuito': 'cortocircuito',
                 '/the-magnus-archives': 'comics'
             };
+            
+            // Obtener el href del enlace
+            const href = enlace.getAttribute('href');
+            console.log('href completo:', href);
+            console.log('href type:', typeof href);
+            console.log('mapeo keys:', Object.keys(mapeo));
             
             const clase = mapeo[href];
             console.log('clase mapeada:', clase);
