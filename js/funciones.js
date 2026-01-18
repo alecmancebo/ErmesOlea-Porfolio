@@ -400,15 +400,16 @@ if (marcador) {
 window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
     if (loader) {
-        loader.style.transition = "none";
-        loader.classList.remove("pos-centro", "pos-arriba");
-        loader.classList.add("pos-abajo");
 
         if (prefersReducedMotion) {
+            loader.classList.remove("pos-centro");
+            loader.classList.add("pos-abajo");
             document.body.classList.remove("loading");
             return;
         }
         setTimeout(() => {
+            loader.classList.remove("pos-centro");
+            loader.classList.add("pos-abajo");
             document.body.classList.remove("loading");
         }, 1200);
     }
