@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@75,200..900&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/jpg" href="logo/logo_favicon.ico"/>
+    <link rel="icon" type="image/jpg" href="logo/logo_favicon.ico">
     <link rel="stylesheet" href="css/estilo.css">
     <script defer src="js/funciones.js"></script>
 </head>
@@ -34,36 +34,36 @@
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="filters">
     <defs>
         <filter id="sketchy-0">
-            <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="0" />
+            <feTurbulence id="turbulence-0" baseFrequency="0.1" numOctaves="10" result="noise" seed="0" />
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
         </filter>
         <filter id="sketchy-1">
-            <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="1" />
+            <feTurbulence id="turbulence-1" baseFrequency="0.1" numOctaves="10" result="noise" seed="1" />
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
         </filter>
         <filter id="sketchy-2">
-            <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="2" />
+            <feTurbulence id="turbulence-2" baseFrequency="0.1" numOctaves="10" result="noise" seed="2" />
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
         </filter>
         <filter id="sketchy-3">
-            <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="3" />
+            <feTurbulence id="turbulence-3" baseFrequency="0.1" numOctaves="10" result="noise" seed="3" />
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
         </filter>
         <filter id="sketchy-4">
-            <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="4" />
+            <feTurbulence id="turbulence-4" baseFrequency="0.1" numOctaves="10" result="noise" seed="4" />
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
         </filter>
         <filter id="sketchy-5">
-            <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="5" />
+            <feTurbulence id="turbulence-5" baseFrequency="0.1" numOctaves="10" result="noise" seed="5" />
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
         </filter>
     </defs>
     </svg>
 
     <!-- Loader: Animación de carga inicial -->
-    <section id="loader" class="contenedor--carga pos-centro">
+    <div id="loader" class="contenedor--carga pos-centro">
         <div id="marcador--palabra" class="palabra"> <img src="imagenes/global/punk_letters/cargando_01.png" alt="Cartel punk con la palabra cargando"></div>
-    </section>
+    </div>
     <!-- Elementos decorativos animados: Minibichos -->
     <img class="minibicho" src="imagenes/global/minibichos/minibicho01.png" alt="Ilustración de minibicho 01">
     <img class="minibicho" src="imagenes/global/minibichos/minibicho05.png" alt="Ilustración de minibicho 05">
@@ -105,27 +105,26 @@
     <!-- MAIN CONTENT: Galería de proyecto - Imágenes con disposición desordenada -->
     <section class="trabajos">
 
-    <div class="trabajos__imagenes">
-        <div class="trabajos__imagen">
-            <img src="imagenes/trabajos/the-magnus-archives/tma_01.jpg" alt="Página maquetada de The Magnus Archives con texto corrido" class="trabajos__imagen">
-            <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_02.jpg" alt="Detalle de doble página con encabezados del libro The Magnus Archives">
+        <div class="trabajos__imagenes">
+            <div class="trabajos__imagen">
+                <img src="imagenes/trabajos/the-magnus-archives/tma_01.jpg" alt="Página maquetada de The Magnus Archives con texto corrido" class="trabajos__imagen">
+                <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_02.jpg" alt="Detalle de doble página con encabezados del libro The Magnus Archives">
+            </div>
+            <div class="trabajos__imagen">
+                <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_03.jpg" alt="Vista de composición tipográfica con notas manuscritas en The Magnus Archives">
+                <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_04.jpg" alt="Página con ilustraciones y texto superpuesto del libro The Magnus Archives">
+            </div>
+            <div class="trabajos__imagen">
+                <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_05.jpg" alt="Detalle de maqueta con manchas de color y texto en The Magnus Archives">
+                <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_11.jpg" alt="Página con ilustración y notas de archivo de The Magnus Archives">
+            </div>
+            <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_07.png" alt="Ilustración del archivo The Magnus Archives">
+            <img src="imagenes/trabajos/the-magnus-archives/tma_08.png" alt="Doble página con collage de texto y símbolos en The Magnus Archives" class="trabajos__imagen">
+            <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_09.png" alt="Detalle de texto manuscrito y diagramas en The Magnus Archives">
+            <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_10.png" alt="Página final con títulos en The Magnus Archives">
+            <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_06.png" alt="Página ilustrada de The Magnus Archives">
+            <img src="imagenes/trabajos/the-magnus-archives/tma_12.jpg" alt="Portada con título The Magnus Archives" class="trabajos__imagen">
         </div>
-        <div class="trabajos__imagen">
-            <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_03.jpg" alt="Vista de composición tipográfica con notas manuscritas en The Magnus Archives">
-            <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_04.jpg" alt="Página con ilustraciones y texto superpuesto del libro The Magnus Archives">
-        </div>
-        <div class="trabajos__imagen">
-            <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_05.jpg" alt="Detalle de maqueta con manchas de color y texto en The Magnus Archives">
-            <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_11.jpg" alt="Página con ilustración y notas de archivo de The Magnus Archives">
-        </div>
-        <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_07.png" alt="Ilustración del archivo The Magnus Archives">
-        <img src="imagenes/trabajos/the-magnus-archives/tma_08.png" alt="Doble página con collage de texto y símbolos en The Magnus Archives" class="trabajos__imagen">
-        <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_09.png" alt="Detalle de texto manuscrito y diagramas en The Magnus Archives">
-        <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_10.png" alt="Página final con títulos en The Magnus Archives">
-        <img class="trabajos__imagen" src="imagenes/trabajos/the-magnus-archives/tma_06.png" alt="Página ilustrada de The Magnus Archives">
-        <img src="imagenes/trabajos/the-magnus-archives/tma_12.jpg" alt="Portada con título The Magnus Archives" class="trabajos__imagen">
-
-    </div>
 
         <div class="trabajos__explicacion">
                     <a href="archivo.html" class="trabajos__explicacion-volver"> <img  class="trabajos__explicacion-volver flecha" src="imagenes/archivo/ar_flecha.svg" alt="Flecha para volver a archivo"> VOLVER A ARCHIVO</a>
@@ -154,7 +153,7 @@
     </section>
 
     <!-- FOOTER: Mosaico/Abanico de navegación (otros proyectos) -->
-    <section class="mosaico__contenedor-abanico">
+    <div class="mosaico__contenedor-abanico">
         <div class="mosaico__abanico">
             <div class="mosaico__item mosaico__item--1">
                 <img src="imagenes/trabajos/the-magnus-archives/tma_12.jpg" alt="Portada de The Magnus Archives con textura" class="mosaico__img">
@@ -186,7 +185,7 @@
                 <img src="imagenes/landing/lg_cortocircuito_02.png" alt="Cartel del proyecto Cortocircuito" class="mosaico__img">
             </div>
         </div>
-    </section>
+    </div>
   <!-- FIN FOOTER -->
 </body>
 </html>

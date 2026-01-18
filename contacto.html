@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,15 +24,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@75,200..900&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/jpg" href="logo/logo_favicon.ico"/>
+    <link rel="icon" type="image/jpg" href="logo/logo_favicon.ico">
     <link rel="stylesheet" href="css/estilo.css">
     <script defer src="js/funciones.js"></script>
 </head>
 <body>
     <!-- Loader: Animación de carga inicial -->
-    <section id="loader" class="contenedor--carga pos-centro">
+    <div id="loader" class="contenedor--carga pos-centro">
         <div id="marcador--palabra" class="palabra"> <img src="imagenes/global/punk_letters/cargando_01.png" alt="Cartel punk con la palabra cargando"></div>
-    </section>
+    </div>
 
     <!-- Elementos decorativos animados: Minibichos -->
     <img class="minibicho" src="imagenes/global/minibichos/minibicho01.png" alt="Ilustración de minibicho 01">
@@ -85,10 +85,10 @@
 
             <!-- Capa 2: Contenido del sobre (4 tarjetas: LinkedIn, Redes, Comisiones, Hoja comisiones) -->
             <div class="sobre__contenido">
-                <section class="sobre__tarjeta sobre__tarjeta--dibujo">
+                <div class="sobre__tarjeta sobre__tarjeta--dibujo">
                     <a href="https://www.linkedin.com/in/ermes-orion/"><img class="sobre__imagen" src="imagenes/contacto/ct_dibujo_01.svg" alt="Ilustración de sobre con enlace a LinkedIn"></a> 
-                </section>
-                <section class="sobre__tarjeta sobre__tarjeta--redes">
+                </div>
+                <div class="sobre__tarjeta sobre__tarjeta--redes">
                     <div class="sobre__papel--columnas">
                         <h3 class="sobre__titulo">ERMES OLEA</h3>
                         <ul class="sobre__lista">
@@ -105,8 +105,8 @@
                             <li><a href="https://ko-fi.com/sandrune" class="enlace">KO-FI</a></li>
                         </ul>
                     </div>
-                </section>
-                <section class="sobre__tarjeta sobre__tarjeta--comisiones">
+                </div>
+                <div class="sobre__tarjeta sobre__tarjeta--comisiones">
                     <img class="sobre__info__foto" src="imagenes/contacto/ct_comisiones.png" alt="Tarjeta ilustrada de comisiones disponible">
                     <div class="sobre__info">
                         <p class="sobre__texto">
@@ -120,11 +120,11 @@
                         </ul>
                         <img src="imagenes/contacto/ct_ermes.png" alt="Retrato ilustrado de Ermes para la sección de comisiones" class="sobre__info__dibujo">
                     </div>
-                </section>
+                </div>
 
-                <section class="sobre__tarjeta sobre__tarjeta--hoja">
+                <div class="sobre__tarjeta sobre__tarjeta--hoja">
                     <img src="imagenes/contacto/ct_comisiones_foto.png" alt="Hoja de precios y ejemplos de comisiones" class="sobre__imagen">
-                </section>
+                </div>
             </div>
 
             <!-- Capa 3: Parte delantera del sobre (SVG + cinta clickeable) -->
