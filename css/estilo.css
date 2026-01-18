@@ -32,7 +32,6 @@ VARIABLES GLOBALES Y RESET
 :root {
 /* Tipografías */
     --font-main: "Inconsolata", monospace;
-    --font-accent: 'Rock Salt', cursive;
 
 /*Tamaños versión escritorio*/
     --font-size-titulo: 3.8rem;
