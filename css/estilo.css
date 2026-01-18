@@ -3011,6 +3011,7 @@ header {
 
 .sobre__info {
     gap: var(--gap-sm);
+    padding-bottom: 10px;
 }
 
 .sobre__info__foto {
@@ -3040,6 +3041,11 @@ header {
 
 .sobre__enlace--gmail {
     padding-bottom: 20px;
+}
+
+.sobre__lista .enlace{
+    margin-top:10px;
+    font-size: 1.1rem;
 }
 
 /* MARK: Trabajos 480px */
