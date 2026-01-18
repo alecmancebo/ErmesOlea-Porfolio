@@ -415,6 +415,18 @@ window.addEventListener("load", () => {
     }
 });
 
+// Manejador para cuando retrocedes
+window.addEventListener("pageshow", (event) => {
+    const loader = document.getElementById("loader");
+    if (loader && event.persisted) {
+ 
+        loader.style.transition = "none";
+        loader.classList.remove("pos-centro", "pos-arriba");
+        loader.classList.add("pos-abajo");
+        document.body.classList.remove("loading");
+    }
+});
+
 // Navegación entre páginas - transiciones suaves con loader
 
 document.body.addEventListener('click', (e) => {
@@ -441,15 +453,6 @@ document.body.addEventListener('click', (e) => {
                 window.location.href = urlDestino;
             }, 400);
         }
-    }
-});
-
-// Manejo del botón de retroceso del navegador
-window.addEventListener('popstate', () => {
-    const loader = document.getElementById('loader');
-    if (loader) {
-        loader.classList.remove("pos-centro", "pos-arriba");
-        loader.classList.add("pos-abajo");
     }
 });
 
