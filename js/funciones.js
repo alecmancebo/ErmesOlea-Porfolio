@@ -19,7 +19,7 @@ FUNCIONALIDADES PRINCIPALES:
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// FUNCIONALIDAD 1: Menú móvil - toggle (abrir/cerrar) menú en pantallas pequeñas
+// Menú móvil - toggle (abrir/cerrar) menú en pantallas pequeñas
 const nav = document.querySelector(".menu");
 const botonesSobre = document.querySelectorAll(".boton--abrir, .menu__boton--cerrar");
 
@@ -33,7 +33,7 @@ botonesSobre.forEach(boton => {
 });
 
 
-// FUNCIONALIDAD 2: Arrays de imágenes para animaciones en hover
+// Arrays de imágenes para animaciones en hover
 
 const menuEnlaces = document.querySelectorAll(".menu__item a");
 
@@ -264,7 +264,7 @@ function animarBichos(selector, velocidad = 2) {
     let vw = window.innerWidth;
     let vh = window.innerHeight;
 
-    // Actualizar viewport en resize (se hace una sola vez, no cada frame)
+    // Actualizar viewport en resize
     const actualizarViewport = () => {
         vw = window.innerWidth;
         vh = window.innerHeight;
