@@ -1,4 +1,5 @@
-﻿
+﻿/* jshint esversion: 6 */
+
 /*
 ARCHIVO: funciones.js
 
@@ -16,6 +17,7 @@ FUNCIONALIDADES PRINCIPALES:
 9. Navegación - transiciones con loader entre páginas
 */
 
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // FUNCIONALIDAD 1: Menú móvil - toggle (abrir/cerrar) menú en pantallas pequeñas
 const nav = document.querySelector(".menu");
@@ -109,7 +111,10 @@ hoverMenu(document.querySelector('.menu__link--archivo'), punkImgsArchivo);
 hoverMenu(document.querySelector('.menu__link--sobremi'), punkImgsSobreMi);
 hoverMenu(document.querySelector('.menu__link--contacto'), punkImgsContacto);
 
-animarLetras(document.querySelector('.letras__img'), punkImagesSandrune);
+// Solo animar si no hay preferencia de reducción de movimiento
+if (!prefersReducedMotion) {
+    animarLetras(document.querySelector('.letras__img'), punkImagesSandrune);
+}
 
 
 // Cambia imágenes del menú a versión pequeña en pantallas <= 480px
@@ -251,33 +256,47 @@ secciones.forEach((seccion) => {
 // Animación de minibichos - movimiento aleatorio decorativo
 
 function animarBichos(selector, velocidad = 2) {
+
+    if (prefersReducedMotion) return;
+
     const elementos = document.querySelectorAll(selector);
     const datosImagenes = [];
+    let vw = window.innerWidth;
+    let vh = window.innerHeight;
+
+    // Actualizar viewport en resize (se hace una sola vez, no cada frame)
+    const actualizarViewport = () => {
+        vw = window.innerWidth;
+        vh = window.innerHeight;
+        datosImagenes.forEach(info => {
+            info.width = info.el.offsetWidth;
+            info.height = info.el.offsetHeight;
+        });
+    };
+    window.addEventListener('resize', actualizarViewport);
 
     elementos.forEach(el => {
+        el.style.willChange = 'transform';
+        el.style.transition = 'transform 0.2s ease-out';
 
-        el.style.position = 'fixed';
-        el.style.top = '0';
-        el.style.left = '0';
-
-
-        const xInicial = Math.random() * (window.innerWidth - el.offsetWidth);
-        const yInicial = Math.random() * (window.innerHeight - el.offsetHeight);
-
+        const width = el.offsetWidth;
+        const height = el.offsetHeight;
+        const xInicial = Math.random() * (vw - width);
+        const yInicial = Math.random() * (vh - height);
         el.style.transform = `translate(${xInicial}px, ${yInicial}px) scale(1)`;
 
         const info = {
             el: el,
             x: xInicial,
             y: yInicial,
+            width: width,
+            height: height,
             horizontal: (Math.random() - 0.5) * velocidad,
             vertical: (Math.random() - 0.5) * velocidad,
             estaPausado: false
         };
-
         el.addEventListener('mouseenter', () => info.estaPausado = true);
         el.addEventListener('mouseleave', () => info.estaPausado = false);
-
         datosImagenes.push(info);
     });
 
@@ -286,29 +305,26 @@ function animarBichos(selector, velocidad = 2) {
             if (!img.estaPausado) {
                 img.x += img.horizontal;
                 img.y += img.vertical;
-
-                if (img.x <= 0 || img.x + img.el.offsetWidth >= window.innerWidth) {
+                
+                if (img.x <= 0 || img.x + img.width >= vw) {
                     img.horizontal *= -1;
                 }
-
-                if (img.y <= 0 || img.y + img.el.offsetHeight >= window.innerHeight) {
+                if (img.y <= 0 || img.y + img.height >= vh) {
                     img.vertical *= -1;
                 }
             }
-
             const escalaActual = img.estaPausado ? 1.2 : 1;
             img.el.style.transform = `translate(${img.x}px, ${img.y}px) scale(${escalaActual})`;
-            img.el.style.transition = 'transform 0.2s ease-out';
         });
-
         requestAnimationFrame(actualizar);
     }
-
     actualizar();
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    animarBichos(".minibicho", 0.2);
+    if (!prefersReducedMotion) {
+        animarBichos(".minibicho", 0.2);
+    }
 });
 
 
@@ -384,6 +400,13 @@ if (marcador) {
 window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
     if (loader) {
+
+        if (prefersReducedMotion) {
+            loader.classList.remove("pos-centro");
+            loader.classList.add("pos-abajo");
+            document.body.classList.remove("loading");
+            return;
+        }
         setTimeout(() => {
             loader.classList.remove("pos-centro");
             loader.classList.add("pos-abajo");
@@ -394,30 +417,31 @@ window.addEventListener("load", () => {
 
 // Navegación entre páginas - transiciones suaves con loader
 
-document.querySelectorAll("a").forEach(link => {
-    link.addEventListener('click', function(e) {
-        if (this.hostname === window.location.hostname && !this.hash && this.target !== "_blank") {
-            const urlDestino = this.href;
-            const loader = document.getElementById("loader");
+document.body.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+    
+    if (link.hostname === window.location.hostname && !link.hash && link.target !== '_blank') {
+        const urlDestino = link.href;
+        const loader = document.getElementById('loader');
+        
+        if (loader) {
+            e.preventDefault();
+            loader.style.transition = "none";
+            loader.classList.remove("pos-abajo");
+            loader.classList.add("pos-arriba");
 
-            if (loader) {
-                e.preventDefault();
-                loader.style.transition = "none";
-                loader.classList.remove("pos-abajo");
-                loader.classList.add("pos-arriba");
+            setTimeout(() => {
+                loader.style.transition = "transform 0.8s cubic-bezier(0.77, 0, 0.175, 1)";
+                loader.classList.remove("pos-arriba");
+                loader.classList.add("pos-centro");
+            }, 50);
 
-                setTimeout(() => {
-                    loader.style.transition = "transform 0.8s cubic-bezier(0.77, 0, 0.175, 1)";
-                    loader.classList.remove("pos-arriba");
-                    loader.classList.add("pos-centro");
-                }, 50);
-
-                setTimeout(() => {
-                    window.location.href = urlDestino;
-                }, 650);
-            }
+            setTimeout(() => {
+                window.location.href = urlDestino;
+            }, 650);
         }
-    });
+    }
 });
 
 
