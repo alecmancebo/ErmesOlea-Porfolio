@@ -432,15 +432,24 @@ document.body.addEventListener('click', (e) => {
             loader.classList.add("pos-arriba");
 
             setTimeout(() => {
-                loader.style.transition = "transform 0.8s cubic-bezier(0.77, 0, 0.175, 1)";
+                loader.style.transition = "transform 0.3s cubic-bezier(0.77, 0, 0.175, 1)";
                 loader.classList.remove("pos-arriba");
                 loader.classList.add("pos-centro");
             }, 50);
 
             setTimeout(() => {
                 window.location.href = urlDestino;
-            }, 650);
+            }, 400);
         }
+    }
+});
+
+// Manejo del botón de retroceso del navegador
+window.addEventListener('popstate', () => {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.classList.remove("pos-centro", "pos-arriba");
+        loader.classList.add("pos-abajo");
     }
 });
 

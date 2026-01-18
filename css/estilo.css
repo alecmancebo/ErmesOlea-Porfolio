@@ -1676,6 +1676,11 @@ header {
     height: auto;
 }
 
+.indice__texto ul {
+    font-size: clamp(0.4rem, 1vmax, 1.1rem);
+}
+
+
 .landing__dibujar {
     transform: translateY(34%) translateX(-30%) rotate(0deg) scale(1.3);
 }
@@ -2218,7 +2223,7 @@ header {
 }
 
 .indice__texto ul {
-    font-size: clamp(0.9rem, 1vmax, 1.1rem);
+    font-size: clamp(0.5rem, 1vmax, 1.1rem);
 }
 
 /* MARK: Objetos desordenados portrait */
@@ -2633,7 +2638,7 @@ header {
 
 .indice__texto ul {
     margin: 10px 0;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -2762,12 +2767,12 @@ header {
 }
 
 .ventana.esta-ordenada .indice__texto {
-    padding: 1vmax 1.5vmax 3vmax 1.5vmax;
+    padding: 0 1.5vmax 3vmax 1.5vmax;
 }
 
 .ventana.esta-ordenada .indice__texto ul {
-    margin: 10px 0;
-    font-size: 1.3rem;
+    margin: 5px 0;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -2792,7 +2797,7 @@ header {
 .ventana.esta-ordenada .indice__enlace {
     text-align-last: justify;
     text-align: justify;
-    margin: 5px 0;
+    margin: 0;
 }
 
 /* MARK: Sobre mí 480px */
