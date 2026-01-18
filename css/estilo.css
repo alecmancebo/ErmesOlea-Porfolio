@@ -82,7 +82,7 @@ body {
     font-family: var(--font-main);
     font-variation-settings: "wdth" 75;
     cursor: url("../imagenes/global/green_cursor.png"), auto;
-    background: url("../imagenes/global/background.png") center / cover repeat;
+    background-color: var(--color-bg-claro);
 }
 
 /* MARK: Estilos globales */
