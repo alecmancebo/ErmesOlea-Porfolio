@@ -1,8 +1,4 @@
 ﻿/*
-ARCHIVO: estilo.css
-
-Propósito: Hoja de estilos principal del portfolio
-
 SECCIONES PRINCIPALES:
 1. Variables globales (:root) - colores, tipografías, espaciados, transiciones, gaps
 2. Reset y estilos base - body, reset de márgenes, estilos globales
@@ -19,10 +15,7 @@ SECCIONES PRINCIPALES:
 13. Hover Effects - estilos interactivos para escritorio        
 */
 
-/* ========================================
-VARIABLES GLOBALES Y RESET
-======================================== */
-
+/* VARIABLES GLOBALES Y RESET */
 
 * {
     margin:0;
@@ -47,15 +40,12 @@ VARIABLES GLOBALES Y RESET
     --color-primary: #8ac306;
     --color-blanco: #ffffff;
     --color-negro: #000000;
-    --color-bg-papel: #dfdccf;
-    --color-bg-lineas: #e9e6dc;
     --color-lineas: #CFC7AB;
     --color-gris: #808080;
     --color-bg-claro: #f0eeef;
 
 /* Transiciones */
     --transition-standard: all 0.6s ease-in-out;
-    --transition-medium: 0.5s ease;
     --transition-fast: 0.3s ease-in-out;
 
 /* Bordes */
@@ -148,10 +138,6 @@ a, button, .archivo__fila, .sobre {
     object-fit: contain;
 }
 
-/* ========================================
-MENÚ DE NAVEGACIÓN
-======================================== */
-
 /* MARK: Menu */
 
 header {
@@ -204,14 +190,10 @@ header {
 }
 
 
-/* ========================================
-LANDING PAGE - PÁGINA PRINCIPAL
-Cuadrícula interactiva con elementos posicionados
-Objetos desordenados vs ordenados
-======================================== */
+/*LANDING PAGE - PÁGINA PRINCIPAL
+Cuadrícula interactiva con elementos*/
 
 /* MARK: Landing */
-/* MARK: Común para ambos */
 
 .ventana {
     width: calc(100% - 40px);
@@ -418,12 +400,12 @@ Objetos desordenados vs ordenados
     width: 90%;
     height: 100%;
     box-sizing: border-box;
-    background-color: var(--color-bg-papel);
+    background-color: #dfdccf;
     background: repeating-linear-gradient(
     transparent 0,
     transparent calc(1lh - 1px),
     var(--color-lineas) calc(1lh - 1px),
-    var(--color-lineas) 1lh), var(--color-bg-lineas);
+    var(--color-lineas) 1lh), #e9e6dc;
 
     -webkit-mask: radial-gradient(
     calc(0.5 * var(--f) * 1lh) at calc(0.5 * var(--b)),
@@ -597,14 +579,10 @@ Objetos desordenados vs ordenados
     transition: 0.6s ease;
 }
 
-/* Base para todos los items ordenados */
-
 .ventana.esta-ordenada .ventana__item,
 .ventana.esta-ordenada .landing__cinta {
     transform: scale(1) translateY(0px) translateX(0px) rotate(0deg);
 }
-
-/* Excepciones con transforms específicas */
 
 .ventana.esta-ordenada .landing__letras {
     transform: scale(1.1) translateY(20px) rotate(-3deg);
@@ -642,13 +620,13 @@ Objetos desordenados vs ordenados
     align-self: flex-end;
 }
 
-/* ========================================
-PÁGINA SOBRE MÍ
-Tres secciones interactivas: Experiencia, Skills, Textosm
-Sistema de click: apartar/enfocar secciones
-======================================== */
+.ventana.esta-ordenada .dibujar__contenedor {
+    max-height: 100%;
+}
 
-/* MARK: Sobre mí */
+/* PÁGINA SOBRE MÍ
+Tres secciones interactivas: Experiencia, Skills, Textosm
+Sistema de click: apartar/enfocar secciones */
 
 /* MARK: Sobre mí - Experiencia */
 
@@ -675,7 +653,7 @@ Sistema de click: apartar/enfocar secciones
     position: relative;
     color: var(--color-blanco);
     width: 95%;
-    transition: var(--transition-medium);
+    transition: 0.5s ease;
 }
 
 .experiencia__texto__titulo {
@@ -867,7 +845,7 @@ Sistema de click: apartar/enfocar secciones
 /* MARK: Sobre mí - Texto */
 
 .textosm {
-    background-color: var(--color-bg-papel);
+    background-color: #dfdccf;
     max-width:250px;
     padding:2rem;
     text-align: center;
@@ -915,13 +893,9 @@ Sistema de click: apartar/enfocar secciones
     rotate: none;
 }
 
-/* ========================================
-PÁGINA CONTACTO - SOBRE INTERACTIVO
+/* PÁGINA CONTACTO - SOBRE INTERACTIVO
 Sobre que se abre al hacer clic en la cinta
-Contiene tarjetas con redes, comisiones, etc.
-======================================== */
-
-/* MARK: Contacto */
+Contiene tarjetas con redes, comisiones, etc. */
 
 /* MARK: Sobre - Dibujo */
 
@@ -1186,10 +1160,8 @@ Contiene tarjetas con redes, comisiones, etc.
     transition: 0.5s;
 }
 
-/* ========================================
-PÁGINA ARCHIVO - CATÁLOGO DE PROYECTOS
-Lista de proyectos por categoría
-======================================== */
+/* PÁGINA ARCHIVO - CATÁLOGO DE PROYECTOS
+Lista de proyectos por categoría */
 
 /* MARK: Archivo */
 
@@ -1288,13 +1260,9 @@ Lista de proyectos por categoría
     transform-origin: center;
 }
 
-/* ========================================
-PÁGINA DETALLE DE PROYECTO (TRABAJOS)
+/* PÁGINA DETALLE DE PROYECTO (TRABAJOS)
 Galería de imágenes en grid + explicación
-Footer con tarjetas en abanico
-======================================== */
-
-/* MARK: Trabajos */
+Footer con tarjetas en abanico */
 
 .body--trabajos {
     background-size: contain;
@@ -1399,7 +1367,7 @@ Footer con tarjetas en abanico
 }
 
 .seis {
-    transform:translateX(10%) translateY(-8%) rotate(-18deg) scale(1.3);
+    transform:translateX(10%) translateY(-8%) rotate(-18deg) scale(1);
 }
 
 .siete {
@@ -1615,12 +1583,6 @@ div.trabajos__imagen img {
     rotate: -10deg;
 }
 
-/* ========================================
-ANIMACIONES GLOBALES
-escala: efecto de pulsación
-sketch: distorsión con ruido SVG
-======================================== */
-
 /* MARK: Animaciones */
 
 @keyframes escala {
@@ -1653,12 +1615,7 @@ sketch: distorsión con ruido SVG
     }
 }
 
-/* ========================================
-RESPONSIVE DESIGN - MEDIA QUERIES
-890px: ajustes para tablets
-portrait: orientación vertical
-480px: móviles pequeños
-======================================== */
+/* RESPONSIVE DESIGN - MEDIA QUERIES */
 
 /* MARK: Media Queries - Tablet (max-width: 960px) */
 
@@ -2477,7 +2434,7 @@ header {
     transparent 0,
     transparent calc(1lh - 1px),
     var(--color-lineas) calc(1lh - 1px),
-    var(--color-lineas) 1lh), var(--color-bg-lineas);
+    var(--color-lineas) 1lh), #e9e6dc;
 }
 
 .menu ul {
@@ -2519,7 +2476,7 @@ header {
     transparent 0,
     transparent calc(1lh - 1px),
     var(--color-lineas) calc(1lh - 1px),
-    var(--color-lineas) 1lh), var(--color-bg-lineas);
+    var(--color-lineas) 1lh), #e9e6dc;
 }
 
 .menu--abierto ul {
@@ -3106,7 +3063,7 @@ header {
 }
 
 .trabajos__explicacion__ficha {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
 }
 
 .trabajos__explicacion__ficha span:nth-child(odd) {
@@ -3272,12 +3229,12 @@ img.menu__img--hover {
 
 .experiencia__texto:hover {
     transform: translateY(-3dvh);
-    transition: var(--transition-medium);
+    transition: 0.5s ease;
 }
 
 .skills:hover {
     transform: translateY(-3dvh);
-    transition: var(--transition-medium);
+    transition: 0.5s ease;
 }
 
 .textosm:hover {
