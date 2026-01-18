@@ -27,94 +27,99 @@
      <script defer src="js/funciones.js"></script>
 </head>
 
-<body class="index">
+<body>
+    <!-- Loader: Animación de carga inicial -->
     <section id="loader" class="contenedor--carga pos-centro">
-        <div id="marcador--palabra" class="palabra"> <img src="imagenes/punk_letters/cargando_01.png" alt=""></div>
+        <div id="marcador--palabra" class="palabra"> <img src="imagenes/global/punk_letters/cargando_01.png" alt="Cartel punk con la palabra cargando"></div>
     </section>
 
-    <img class="minibicho" src="imagenes/minibichos/minibicho01_escalado.png" alt="">
-    <img class="minibicho" src="imagenes/minibichos/minibicho05_escalado.png" alt="">
-    <img class="minibicho" src="imagenes/minibichos/minibicho04_escalado.png" alt="">
+    <!-- Elementos decorativos animados: Minibichos -->
+    <img class="minibicho" src="imagenes/global/minibichos/minibicho01.png" alt="Ilustración de minibicho 01">
+    <img class="minibicho" src="imagenes/global/minibichos/minibicho05.png" alt="Ilustración de minibicho 05">
+    <img class="minibicho" src="imagenes/global/minibichos/minibicho04.png" alt="Ilustración de minibicho 04">
     
+    <!-- Filtros SVG: Efectos de distorsión sketch para elementos gráficos -->
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="filters">
-	<defs>
-		<filter id="sketchy-0">
-			<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="6" result="noise" seed="0" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-		<filter id="sketchy-1">
-			<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="5" result="noise" seed="1" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-		<filter id="sketchy-2">
-			<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="4" result="noise" seed="2" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-		<filter id="sketchy-3">
-			<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="5" result="noise" seed="3" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-		<filter id="sketchy-4">
-			<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="4" result="noise" seed="4" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-		<filter id="sketchy-5">
-			<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="6" result="noise" seed="5" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-	</defs>
+        <defs>
+            <filter id="sketchy-0">
+                <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="6" result="noise" seed="0" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+            <filter id="sketchy-1">
+                <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="5" result="noise" seed="1" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+            <filter id="sketchy-2">
+                <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="4" result="noise" seed="2" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+            <filter id="sketchy-3">
+                <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="5" result="noise" seed="3" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+            <filter id="sketchy-4">
+                <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="4" result="noise" seed="4" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+            <filter id="sketchy-5">
+                <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="6" result="noise" seed="5" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+        </defs>
     </svg>
 
+    <!-- HEADER: Menú de navegación principal -->
     <header>
-    
-    <nav class="menu">
-        <button class="menu__boton--cerrar"><img src="imagenes/menu_cerrar.svg" alt="cerrar menu icono"></button>
-        <button class="boton--abrir"><img src="imagenes/menu_abrir.svg" alt="abrir menu icono"></button>
-        <ul>
-            <li class="menu__logo"><a href="index.html"><img src="logo/logo.svg" alt="logo"></a></li>
-            <li class="menu__descripcion">Ermes Olea - diseñadore, ilustradore y artista multidisciplinar de Madrid, España. <br>@2026</li>
-            <li class="menu__item">
-                <a class="menu__link--archivo" href="archivo.html">
-                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina archivo">
-                    <span>Archivo</span>
-                </a>
-            </li>
-            <li class="menu__item">
-                <a class="menu__link--sobremi"href="sobremi.html">
-                    <img class="menu__img" src="imagenes/punk_letters/sobremi_letras_01.svg" alt="link a pagina sobremi">
-                    <span>Sobre mí</span>
-                </a>
-            </li>
-            <li class="menu__item">
-                <a class="menu__link--contacto" href="contacto.html">
-                    <img class="menu__img" src="imagenes/punk_letters/contacto_letras_01.svg" alt="link a pagina contacto">
-                    <span>Contacto</span>
-                </a>
-            </li>
-            <li class="menu__deco">
-                <img src="imagenes/menu_estrellas.svg" alt="">
-            </li>
-        </ul>
-    </nav>
+        <nav class="menu">
+            <button class="boton--abrir"><img src="imagenes/global/menu/menu_abrir.svg" alt="Icono para abrir el menú"></button>
+            <button class="menu__boton--cerrar"><img src="imagenes/global/menu/menu_cerrar.svg" alt="Icono para cerrar el menú"></button>
+            <ul>
+                <li class="menu__logo"><a href="index.html"><img src="logo/logo.svg" alt="Logo de Ermes Olea"></a></li>
+                <li class="menu__descripcion">Ermes Olea - diseñadore, ilustradore y artista multidisciplinar de Madrid, España. <br>@2026</li>
+                <li class="menu__item">
+                    <a class="menu__link--archivo" href="archivo.html">
+                        <img class="menu__img" src="imagenes/global/punk_letters/archivo_letras_01.svg" alt="Tipografía punk para Archivo">
+                        <span>Archivo</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link--sobremi" href="sobremi.html">
+                        <img class="menu__img" src="imagenes/global/punk_letters/sobremi_letras_01.svg" alt="Tipografía punk para Sobre mí">
+                        <span>Sobre mí</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link--contacto" href="contacto.html">
+                        <img class="menu__img" src="imagenes/global/punk_letters/contacto_letras_01.svg" alt="Tipografía punk para Contacto">
+                        <span>Contacto</span>
+                    </a>
+                </li>
+                <li class="menu__deco">
+                    <img src="imagenes/global/menu/menu_estrellas.svg" alt="Ilustración de estrellas decorativas">
+                </li>
+            </ul>
+        </nav>
     </header>
+    
+    <!-- MAIN CONTENT: Cuadrícula interactiva de proyectos y elementos desordenados -->
     <section class="ventana">
-        <img class="ventana__item aguja" src="imagenes/landing/lg_aguja.png" alt="aguja">
-        <img class="ventana__item bolapapel" src="imagenes/landing/lg_bolapapel.png" alt="bola papel">
-        <div class="cinta">
-            <button class="ventana__boton--desordenar"><img src="imagenes/landing/lg_desordenar.svg" alt="desordenar"></button>
-            <button class="ventana__boton--ordenar"><img src="imagenes/landing/lg_ordenar.svg" alt="ordenar"></button>
+        <img class="ventana__item landing__aguja" src="imagenes/landing/lg_aguja.png" alt="Ilustración de aguja de coser">
+        <img class="ventana__item landing__bolapapel" src="imagenes/landing/lg_bolapapel.png" alt="Bola de papel arrugada ilustrada">
+        <div class="landing__cinta">
+            <button class="ventana__boton--desordenar"><img src="imagenes/landing/lg_desordenar.svg" alt="Botón para desordenar la cuadrícula"></button>
+            <button class="ventana__boton--ordenar"><img src="imagenes/landing/lg_ordenar.svg" alt="Botón para ordenar la cuadrícula"></button>
         </div>
-        <a href="comadeja.html" class="ventana__item comadeja"><img src="imagenes/landing/lg_comadeja.png" alt="comadeja"></a>
-        <a href="the-magnus-archives.html" class="ventana__item comics"> <img src="imagenes/landing/lg_comics.png" alt="comics"> </a>
-        <div class="ventana__item dibujar">
+        <a href="comadeja.html" class="ventana__item landing__comadeja"><img src="imagenes/landing/lg_comadeja.png" alt="Portada ilustrada del proyecto Comadeja"></a>
+        <a href="the-magnus-archives.html" class="ventana__item landing__comics"> <img src="imagenes/landing/lg_comics.png" alt="Collage experimental de cómics"> </a>
+        <div class="ventana__item landing__dibujar">
             <div class="dibujar__contenedor">
                 <div class="dibujar__ventana">
                     <div class="ventana__barra-titulo">
                         <p class="ventana__titulo">🗒️ Dibuja Aquí</p>
                         <div class="ventana__controles">
-                            <img class="ventana__controles--boton" src="imagenes/minibichos/minibicho01_escalado.png" alt="minimizar">
-                            <img class="ventana__controles--boton" src="imagenes/minibichos/minibicho02_escalado1.png" alt="minimizar">
-                            <img class="ventana__controles--boton" src="imagenes/minibichos/minibicho05_escalado.png" alt="minimizar">
+                            <img class="ventana__controles--boton" src="imagenes/global/minibichos/minibicho01.png" alt="Botón de ventana con minibicho">
+                            <img class="ventana__controles--boton" src="imagenes/global/minibichos/minibicho02.png" alt="Botón de ventana con minibicho">
+                            <img class="ventana__controles--boton" src="imagenes/global/minibichos/minibicho05.png" alt="Botón de ventana con minibicho">
                             <span class="ventana__controles--boton ventana__controles--boton-cerrar">X</span>
                         </div>
                     </div>
@@ -127,32 +132,32 @@
             </div>
         </div>
 
-        <video class="ventana__item diy" src="imagenes/landing/ar_gato_t.mp4" alt="diy" muted loop autoplay></video>
-        <img class="ventana__item estrella" src="imagenes/landing/lg_estrella.svg" alt="estrella">
-        <a href="fae.html" class="ventana__item fae"><img src="imagenes/landing/lg_fae.png" alt="fae"></a>
-        <a href="sobremi.html" class="ventana__item foto"><img  src="imagenes/landing/lg_foto.png" alt="foto"></a>
-        <a href="vernalizacion.html" class="ventana__item ilustracion"><img  src="imagenes/landing/lg_vernalizacion.jpg" alt="ilustracion"></a>
-        <div class="ventana__item letras">
-        <img class="letras__img" src="imagenes/landing/lg_sandrune_01.svg">
-        <picture class="letras__fondo">
-            <source media="(min-width: 980px) and (orientation: landscape)" srcset="imagenes/landing/lg_letras.png">
-            <source media="(min-width: 730px) and (orientation: landscape)" srcset="imagenes/landing/lg_letras.png">
-            <source media="(min-width: 730px) and (orientation: portrait)" srcset="imagenes/landing/lg_letras.png">
-            <source media="(min-width: 1px)" srcset="imagenes/landing/lg_letras.png">
-            <img src="imagenes/landing/lg_letras.png" alt="fondo dinámico">
-        </picture>
+        <video class="ventana__item landing__diy" src="imagenes/landing/lg_gato.mp4" alt="Vídeo loop de gato bordado DIY" muted loop autoplay></video>
+        <img class="ventana__item landing__estrella" src="imagenes/landing/lg_estrella.svg" alt="Sticker en forma de estrella">
+        <a href="fae.html" class="ventana__item landing__fae"><img src="imagenes/landing/lg_fae.png" alt="Ilustración del proyecto FAE con hada"></a>
+        <a href="sobremi.html" class="ventana__item landing__foto"><img  src="imagenes/landing/lg_foto.png" alt="Retrato ilustrado de Ermes"></a>
+        <a href="vernalizacion.html" class="ventana__item landing__ilustracion"><img src="imagenes/landing/lg_vernalizacion.jpg" alt="Portada del fanzine Vernalización"></a>
+        <div class="ventana__item landing__letras">
+            <img class="letras__img" src="imagenes/landing/lg_sandrune_01.svg" alt="Logotipo Sandrune en letras recortadas">
+            <picture class="letras__fondo">
+                <source media="(min-width: 980px) and (orientation: landscape)" srcset="imagenes/landing/lg_letras.png">
+                <source media="(min-width: 730px) and (orientation: landscape)" srcset="imagenes/landing/lg_letras.png">
+                <source media="(min-width: 730px) and (orientation: portrait)" srcset="imagenes/landing/lg_letras.png">
+                <source media="(min-width: 1px)" srcset="imagenes/landing/lg_letras.png">
+                <img src="imagenes/landing/lg_letras.png" alt="Fondo dinámico con letras recortadas">
+            </picture>
         </div>
-        <img class="ventana__item mariposa" src="imagenes/landing/lg_mariposa.png" alt="mariposa">
+            <img class="ventana__item landing__mariposa" src="imagenes/landing/lg_mariposa.png" alt="Mariposa amarilla ilustrada">
         
-        <a href="cortocircuito.html" class="ventana__item cortocircuito"> 
+        <a href="cortocircuito.html" class="ventana__item landing__cortocircuito"> 
             <picture>
-                <source media="(min-width:481px)" srcset="imagenes/landing/cortocircuito.png">
-                <source media="(max-width:480px)" srcset="imagenes/landing/cortocircuito_02.png">
-                <img src="imagenes/landing/cortocircuito.png" alt="cortocircuito">
+                <source media="(min-width:481px)" srcset="imagenes/landing/lg_cortocircuito.png">
+                <source media="(max-width:480px)" srcset="imagenes/landing/lg_cortocircuito_02.png">
+                <img src="imagenes/landing/lg_cortocircuito.png" alt="Portada del proyecto Cortocircuito">
             </picture>
         </a>
-        <div class="indice">
-            <img class="indice__deco" src="imagenes/landing/lg_cinta.png" alt="cinta decorativa">
+        <div class="landing__indice">
+            <img class="indice__deco" src="imagenes/landing/lg_cinta.png" alt="Cinta adhesiva decorativa">
             <div class="indice__texto">
                 <h2 class="indice__titulo">[INDEX]</h2>
                 <ul>
@@ -162,12 +167,12 @@
                     <li><a href="cortocircuito.html" class="indice__enlace">04. Cortocircuito 2025</a></li>
                     <li><a href="the-magnus-archives.html" class="indice__enlace">05. The Magnus Archives 2025</a></li>
                 </ul>
-                <div class="indice__footer"><img src="imagenes/landing/lg_selectedworks.png" alt="Selected works"></div>
+                <div class="indice__footer"><img src="imagenes/landing/lg_selectedworks.png" alt="Texto Selected works en estilo punk"></div>
             </div>
         </div>
-        <img class="ventana__item punk" src="imagenes/landing/lg_punk.svg" alt="punk">
-        <img class="ventana__item sticker" src="imagenes/landing/lg_sticker.png" alt="sticker">
-        <img class="ventana__item human" src="imagenes/landing/lg_nothuman.png" alt="Texto: not human but thats okay">
+        <img class="ventana__item landing__punk" src="imagenes/landing/lg_punk.svg" alt="Ilustración de rayo punk">
+        <img class="ventana__item landing__sticker" src="imagenes/landing/lg_sticker.png" alt="Sticker rasgado">
+        <img class="ventana__item landing__human" src="imagenes/landing/lg_nothuman.png" alt="Texto not human but that's okay">
     </section>
 
 </body>

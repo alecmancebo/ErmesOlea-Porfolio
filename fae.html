@@ -1,23 +1,21 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ermes Olea - Fae</title>
      
-    <!-- Página: ARCHIVO
-         Propósito: Catálogo completo de proyectos organizados por categorías
-         (Editorial, Ilustración, DIY). Cada proyecto es clickeable y muestra
-         una vista previa de imagen al hacer hover.
+    <!-- Página: DETALLE DE PROYECTO - FAE
+         Propósito: Página de detalle que muestra galería de imágenes del proyecto
+         y descripción completa. Incluye navegación a otros proyectos.
          
          Secciones principales:
          - Header con navegación
          - Filtros SVG para efectos sketch
-         - Introducción: título y descripción de qué es el archivo
-         - Objeto3d: elemento decorativo con animación sketch
-         - Archivo: listas de proyectos por categoría
-             * Cada fila contiene: nombre, descripción, número y foto
-             * Hover muestra la imagen del proyecto
+         - Galería de imágenes: grid con imágenes del proyecto
+         - Explicación: descripción, categoría y detalles del proyecto
+         - Mosaico/Footer: galería de otros proyectos para navegación
+         - Interactividad: link para volver al archivo
              * Foto rota aleatoriamente con efectos
     -->
     
@@ -26,107 +24,110 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@75,200..900&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
-
     <link rel="icon" type="image/jpg" href="logo/logo_favicon.ico"/>
     <link rel="stylesheet" href="css/estilo.css">
     <script defer src="js/funciones.js"></script>
 </head>
 
 <body class="body--trabajos">
+    <!-- Loader: Animación de carga inicial -->
     <section id="loader" class="contenedor--carga pos-centro">
-    <div id="marcador--palabra" class="palabra"> <img src="imagenes/punk_letters/cargando_01.png" alt=""></div>
+    <div id="marcador--palabra" class="palabra"> <img src="imagenes/global/punk_letters/cargando_01.png" alt="Cartel punk con la palabra cargando"></div>
 </section>
+    <!-- Elementos decorativos animados: Minibichos -->
+    <img class="minibicho" src="imagenes/global/minibichos/minibicho01.png" alt="Ilustración de minibicho 01">
+    <img class="minibicho" src="imagenes/global/minibichos/minibicho05.png" alt="Ilustración de minibicho 05">
+    <img class="minibicho" src="imagenes/global/minibichos/minibicho04.png" alt="Ilustración de minibicho 04">
 
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="filters">
-	<defs>
-		<filter id="sketchy-0">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="0" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-		<filter id="sketchy-1">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="1" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-		<filter id="sketchy-2">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="2" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-		<filter id="sketchy-3">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="3" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-		<filter id="sketchy-4">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="4" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-		<filter id="sketchy-5">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="5" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-	</defs>
+    <defs>
+        <filter id="sketchy-0">
+            <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="0" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+        </filter>
+        <filter id="sketchy-1">
+            <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="1" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+        </filter>
+        <filter id="sketchy-2">
+            <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="2" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+        </filter>
+        <filter id="sketchy-3">
+            <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="3" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+        </filter>
+        <filter id="sketchy-4">
+            <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="4" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+        </filter>
+        <filter id="sketchy-5">
+            <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="5" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+        </filter>
+    </defs>
     </svg>
 
 
+    
+    <!-- HEADER: Menú de navegación principal -->
     <header>
- 
-    <nav class="menu">
-        <button class="boton--abrir"><img src="imagenes/menu_abrir.svg" alt="abrir menu icono"></button>
-        <button class="menu__boton--cerrar"><img src="imagenes/menu_cerrar.svg" alt="cerrar menu icono"></button>
-        <ul>
-            <li class="menu__logo"><a href="index.html"><img src="logo/logo.svg" alt="logo"></a></li>
-            <li class="menu__descripcion">Ermes Olea - diseñador, ilustrador y artista multidisciplinar de Madrid, España. <br>@2026</li>
-            <li class="menu__item">
-                <a class="menu__link--archivo" href="archivo.html">
-                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina archivo">
-                    <span>Archivo</span>
-                </a>
-            </li>
-            <li class="menu__item">
-                <a class="menu__link--sobremi"href="sobremi.html">
-                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina sobremi">
-                    <span>Sobre mí</span>
-                </a>
-            </li>
-            <li class="menu__item">
-                <a class="menu__link--contacto"href="contacto.html">
-                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina contacto">
-                    <span>Contacto</span>
-                </a>
-            </li>
-                        <li class="menu__deco">
-                <img src="imagenes/menu_estrellas.svg" alt="">
-            </li>
-        </ul>
-    </nav>
+        <nav class="menu">
+            <button class="boton--abrir"><img src="imagenes/global/menu/menu_abrir.svg" alt="Icono para abrir el menú"></button>
+            <button class="menu__boton--cerrar"><img src="imagenes/global/menu/menu_cerrar.svg" alt="Icono para cerrar el menú"></button>
+            <ul>
+                <li class="menu__logo"><a href="index.html"><img src="logo/logo.svg" alt="Logo de Ermes Olea"></a></li>
+                <li class="menu__descripcion">Ermes Olea - diseñadore, ilustradore y artista multidisciplinar de Madrid, España. <br>@2026</li>
+                <li class="menu__item">
+                    <a class="menu__link--archivo" href="archivo.html">
+                        <img class="menu__img" src="imagenes/global/punk_letters/archivo_letras_01.svg" alt="Tipografía punk para Archivo">
+                        <span>Archivo</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link--sobremi" href="sobremi.html">
+                        <img class="menu__img" src="imagenes/global/punk_letters/archivo_letras_01.svg" alt="Tipografía punk para Sobre mí">
+                        <span>Sobre mí</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link--contacto" href="contacto.html">
+                        <img class="menu__img" src="imagenes/global/punk_letters/archivo_letras_01.svg" alt="Tipografía punk para Contacto">
+                        <span>Contacto</span>
+                    </a>
+                </li>
+                <li class="menu__deco">
+                    <img src="imagenes/global/menu/menu_estrellas.svg" alt="Ilustración de estrellas decorativas">
+                </li>
+            </ul>
+        </nav>
     </header>
 
+    <!-- MAIN CONTENT: Galería de proyecto - Imágenes con disposición desordenada -->
     <section class="trabajos">
 
     <div class="trabajos__imagenes">
-        <img src="imagenes/trabajos/fae/ermes_fae_02.jpg" alt="" class="trabajos__imagen">
-        <img class="trabajos__imagen uno" src="imagenes/trabajos/fae/ermes_fae_03.png" alt="" class="trabajos__imagen">
+        <img src="imagenes/trabajos/fae/ermes_fae_02.jpg" alt="Serigrafía de hada del proyecto FAE" class="trabajos__imagen">
+        <img class="trabajos__imagen uno" src="imagenes/trabajos/fae/ermes_fae_03.png" alt="Collage con notas y símbolos en FAE" class="trabajos__imagen">
         <div class="trabajos__imagen">
-            <img class="trabajos__imagen dos" src="imagenes/trabajos/fae/ermes_fae_10.png" alt="">
-            <img src="imagenes/trabajos/fae/ermes_fae_05.jpg" alt="">
+            <img class="trabajos__imagen dos" src="imagenes/trabajos/fae/ermes_fae_10.png" alt="Páginas impresas de FAE">
+            <img src="imagenes/trabajos/fae/ermes_fae_05.jpg" alt="Detalle de ilustración y texto manuscrito en FAE">
         </div>
-        <img class="trabajos__imagen tres" src="imagenes/trabajos/fae/ermes_fae_09.jpg" alt="" class="trabajos__imagen">
-        <img class="trabajos__imagen cuatro" src="imagenes/trabajos/fae/ermes_fae_01.png" alt="">
-        <img class="trabajos__imagen cinco" src="imagenes/trabajos/fae/ermes_fae_12.png" alt="">
-        <img src="imagenes/trabajos/fae/ermes_fae_08.jpg" alt="" class="trabajos__imagen">
-        <img class="trabajos__imagen seis" src="imagenes/trabajos/fae/ermes_fae_07.png" alt="">
-        <img class="trabajos__imagen siete"src="imagenes/trabajos/fae/ermes_fae_16.png" alt="" class="trabajos__imagen">
-        <img class="trabajos__imagen ocho"src="imagenes/trabajos/fae/ermes_fae_13.jpg" alt="">
-        <img src="imagenes/trabajos/fae/ermes_fae_06.png" alt="" class="trabajos__imagen">
-        <img class="trabajos__imagen nueve" src="imagenes/trabajos/fae/ermes_fae_15.png" alt="">
-        <img src="imagenes/trabajos/fae/ermes_fae_04.png" alt="" class="trabajos__imagen diez">
+        <img class="trabajos__imagen tres" src="imagenes/trabajos/fae/ermes_fae_09.jpg" alt="Instalación desplegada de estampas del proyecto FAE" class="trabajos__imagen">
+        <img class="trabajos__imagen cuatro" src="imagenes/trabajos/fae/ermes_fae_01.png" alt="Portada ilustrada con hada en FAE">
+        <img class="trabajos__imagen cinco" src="imagenes/trabajos/fae/ermes_fae_12.png" alt="Páginas con símbolos y texto en FAE">
+        <img src="imagenes/trabajos/fae/ermes_fae_08.jpg" alt="Detalle de grabado iluminado en FAE" class="trabajos__imagen">
+        <img class="trabajos__imagen seis" src="imagenes/trabajos/fae/ermes_fae_07.png" alt="Serie de estampas del proyecto FAE">
+        <img class="trabajos__imagen siete"src="imagenes/trabajos/fae/ermes_fae_16.png" alt="Ilustración de hada en el bosque" class="trabajos__imagen">
+        <img class="trabajos__imagen ocho"src="imagenes/trabajos/fae/ermes_fae_13.jpg" alt="Papel recortado con dibujos y notas en FAE">
+        <img src="imagenes/trabajos/fae/ermes_fae_06.png" alt="Collage del proyecto FAE" class="trabajos__imagen">
+        <img class="trabajos__imagen nueve" src="imagenes/trabajos/fae/ermes_fae_15.png" alt="Detalle de serigrafía con alas en FAE">
+        <img src="imagenes/trabajos/fae/ermes_fae_04.png" alt="Libro desplegado tipo acordeón del proyecto FAE" class="trabajos__imagen diez">
     </div>
 
         <div class="trabajos__explicacion">
-            <a href="archivo.html" class="trabajos__explicacion-volver"> <img  class="trabajos__explicacion-volver flecha" src="imagenes/archivo/ar_flecha.svg" alt=""> VOLVER A ARCHIVO</a>
-            <img src="imagenes/trabajos/fae/hada_marco.svg" alt="hada" class="trabajos__explicacion__marco">
+            <a href="archivo.html" class="trabajos__explicacion-volver"> <img  class="trabajos__explicacion-volver flecha" src="imagenes/archivo/ar_flecha.svg" alt="Flecha para volver a archivo"> VOLVER A ARCHIVO</a>
+            <img src="imagenes/trabajos/fae/hada_marco.svg" alt="Marco ilustrado con hada del proyecto FAE" class="trabajos__marco">
             <div class="trabajos__explicacion__contenido">
                 <span class="trabajos__explicacion__categoria">EDITORIAL//</span>
                 <h2 class="trabajos__explicacion__titulo">FAE</h2>
@@ -150,41 +151,40 @@
         </div>
     </section>
 
-
+    <!-- FOOTER: Mosaico/Abanico de navegación (otros proyectos) -->
     <section class="mosaico__contenedor-abanico">
-    <div class="mosaico__abanico">
-      
-      <article class="mosaico__item mosaico__item--1">
-        <img src="imagenes/trabajos/the-magnus-archives/tma_12.jpg" alt="Foto 1" class="mosaico__img">
-      </article>
-      <img src="imagenes/landing/lg_estrella.svg" alt="Foto 2" class="mosaico__deco__6">
-    <div class="mosaico__tarjeta">
-          <p>Ermes Olea</p>
-          <p>Madrid, España | sandrune.art </p>
-          <p>Porfolio 2025/2026</p>
-    </div>
-      <article class="mosaico__item mosaico__item--2">
-        <img src="imagenes/landing/lg_comadeja.png" alt="Foto 2" class="mosaico__img">
-      </article>
-      <img src="imagenes/landing/lg_aguja.png" alt="" class="mosaico__deco__3">
-            <article class="mosaico__item mosaico__item--6">
-        <img src="imagenes/landing/lg_fae.png" alt="Foto 2" class="mosaico__img">
-      </article>
-      <img src="imagenes/landing/lg_sticker.png" alt="" class="mosaico__deco__2">
-      <article class="mosaico__item mosaico__item--3">
-        <img src="imagenes/landing/lg_vernalizacion.jpg" alt="Foto 3" class="mosaico__img">
-      </article>
-      <img src="imagenes/landing/lg_punk.svg" alt="" class="mosaico__deco__5">
-      <img src="imagenes/landing/lg_letras.png" alt="" class="mosaico__deco__4">
-      <article class="mosaico__item mosaico__item--4">
-        <img src="imagenes/landing/lg_comics.png" alt="Foto 4" class="mosaico__img">
-      </article>
-      <img src="imagenes/landing/lg_bolapapel.png" alt="" class="mosaico__deco__1">
-      <article class="mosaico__item mosaico__item--5">
-        <img src="imagenes/landing/cortocircuito_02.png" alt="Foto 5" class="mosaico__img">
-      </article>
-
-    </div>
-  </section>
+        <div class="mosaico__abanico">
+            <div class="mosaico__item mosaico__item--1">
+                <img src="imagenes/trabajos/the-magnus-archives/tma_12.jpg" alt="Portada de The Magnus Archives con textura" class="mosaico__img">
+            </div>
+            <img src="imagenes/landing/lg_estrella.svg" alt="Sticker en forma de estrella" class="mosaico__deco__6">
+            <div class="mosaico__tarjeta">
+                <p>Ermes Olea</p>
+                <p>Madrid, España | sandrune.art </p>
+                <p>Porfolio 2025/2026</p>
+            </div>
+            <div class="mosaico__item mosaico__item--2">
+                <img src="imagenes/landing/lg_comadeja.png" alt="Portada ilustrada del proyecto Comadeja" class="mosaico__img">
+            </div>
+            <img src="imagenes/landing/lg_aguja.png" alt="Ilustración de aguja de coser" class="mosaico__deco__3">
+            <div class="mosaico__item mosaico__item--6">
+                <img src="imagenes/landing/lg_fae.png" alt="Ilustración del proyecto FAE" class="mosaico__img">
+            </div>
+            <img src="imagenes/landing/lg_sticker.png" alt="Sticker" class="mosaico__deco__2">
+            <div class="mosaico__item mosaico__item--3">
+                <img src="imagenes/landing/lg_vernalizacion.jpg" alt="Portada del fanzine Vernalización" class="mosaico__img">
+            </div>
+            <img src="imagenes/landing/lg_punk.svg" alt="Ilustración de la palabra punk" class="mosaico__deco__5">
+            <img src="imagenes/landing/lg_letras.png" alt="Letras recortadas en estilo collage" class="mosaico__deco__4">
+            <div class="mosaico__item mosaico__item--4">
+                <img src="imagenes/landing/lg_comics.png" alt="Comic" class="mosaico__img">
+            </div>
+            <img src="imagenes/landing/lg_bolapapel.png" alt="Bola de papel arrugada ilustrada" class="mosaico__deco__1">
+            <div class="mosaico__item mosaico__item--5">
+                <img src="imagenes/landing/lg_cortocircuito_02.png" alt="Cartel del proyecto Cortocircuito" class="mosaico__img">
+            </div>
+        </div>
+    </section>
+  <!-- FIN FOOTER -->
 </body>
 </html>

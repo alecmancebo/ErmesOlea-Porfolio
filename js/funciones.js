@@ -1,75 +1,87 @@
-
+﻿
 /*
-  ARCHIVO: funciones.js
-  
-  Propósito: Interactividad y comportamientos dinámicos del portfolio
-  
-  FUNCIONALIDADES PRINCIPALES:
-  1. Menú móvil - toggle (abrir/cerrar) menú en pantallas pequeñas
-  2. Animación de letras punk - cambio de imágenes al hover en menu links
-  4. Ordenar/desordenar - toggle de clases para grid principal
-  5. Sobre interactivo - click para abrir/cerrar sobre de contacto
-  6. Secciones interactivas - click para expandir/contraer (sobre mi)
+ARCHIVO: funciones.js
+
+Propósito: Interactividad y comportamientos dinámicos del portfolio
+
+FUNCIONALIDADES PRINCIPALES:
+1. Menú móvil - toggle (abrir/cerrar) menú en pantallas pequeñas
+2. Animación de letras punk - cambio de imágenes al hover en menu links
+3. Animación de minibichos - movimiento aleatorio de elementos decorativos
+4. Ordenar/desordenar - toggle de clases para grid principal
+5. Sobre interactivo - click para abrir/cerrar sobre de contacto
+6. Secciones interactivas - click para expandir/contraer (sobre mi)
+7. Archivo.html - hover en filas para mostrar imagen correspondiente
+8. Loader - animación de transición entre páginas
+9. Navegación - transiciones con loader entre páginas
 */
 
-//desplegar menú en movil
+
+// FUNCIONALIDAD 1: Menú móvil - toggle (abrir/cerrar) menú en pantallas pequeñas
 const nav = document.querySelector(".menu");
 const botonesSobre = document.querySelectorAll(".boton--abrir, .menu__boton--cerrar");
 
 
-    botonesSobre.forEach(boton => {
-        boton.addEventListener("click", () => {
-            nav.classList.toggle("menu--desplegado");
+botonesSobre.forEach(boton => {
+    boton.addEventListener("click", () => {
+        nav.classList.toggle("menu--abierto");
 
-            })
+    })
 
-    });
+});
 
-//hover de enlaces de menu y animación letrtas landing page
+
+// FUNCIONALIDAD 2: Arrays de imágenes para animaciones en hover
+
 const menuEnlaces = document.querySelectorAll(".menu__item a");
 
 const punkImgsArchivo = [
- 'imagenes/punk_letters/archivo_letras_01.svg',
-    'imagenes/punk_letters/archivo_letras_02.svg',
-    'imagenes/punk_letters/archivo_letras_03.svg'];
+'imagenes/global/punk_letters/archivo_letras_01.svg',
+'imagenes/global/punk_letters/archivo_letras_02.svg',
+'imagenes/global/punk_letters/archivo_letras_03.svg'];
 
 const punkImgsSobreMi = [
-    'imagenes/punk_letters/sobremi_letras_01.svg',
-    'imagenes/punk_letters/sobremi_letras_02.svg',
-    'imagenes/punk_letters/sobremi_letras_03.svg'
+'imagenes/global/punk_letters/sobremi_letras_01.svg',
+'imagenes/global/punk_letters/sobremi_letras_02.svg',
+'imagenes/global/punk_letters/sobremi_letras_03.svg'
 ];
 
 const punkImgsContacto = [
-    'imagenes/punk_letters/contacto_letras_01.svg',
-    'imagenes/punk_letters/contacto_letras_02.svg',
-    'imagenes/punk_letters/contacto_letras_03.svg'
+'imagenes/global/punk_letters/contacto_letras_01.svg',
+'imagenes/global/punk_letters/contacto_letras_02.svg',
+'imagenes/global/punk_letters/contacto_letras_03.svg'
 ];
 
 const punkImagesSandrune = [
-    'imagenes/landing/lg_sandrune_01.svg',
-    'imagenes/landing/lg_sandrune_02.svg',
+'imagenes/landing/lg_sandrune_01.svg',
+'imagenes/landing/lg_sandrune_02.svg',
 ];
 
 
+// Anima un elemento cambiando su src
+
 function animarLetras(img, imagenes) {
 
-  if (!img || !imagenes || imagenes.length === 0) return null;
+    if (!img || !imagenes || imagenes.length === 0) return null;
 
-  let i = 0;
-  const intervalo = setInterval(() => {
+    let i = 0;
+    const intervalo = setInterval(() => {
 
-    if (!img || typeof img.src === 'undefined') {
-      clearInterval(intervalo);
-      return;
-    }
+        if (!img || typeof img.src === 'undefined') {
+            clearInterval(intervalo);
+            return;
+        }
 
-    img.src = imagenes[i];
-    i = (i + 1) % imagenes.length;
-  }, 100);
+        img.src = imagenes[i];
+        i = (i + 1) % imagenes.length;
+    }, 100);
 
-  return intervalo;
+    return intervalo;
 
 }
+
+
+// Configura hover en enlaces del menú para animar imágenes
 
 function hoverMenu(enlace, imagenes) {
     let intervalo;
@@ -77,7 +89,7 @@ function hoverMenu(enlace, imagenes) {
     const span = enlace.querySelector("span");
 
     enlace.addEventListener("mouseenter", () => {
-        if (window.innerWidth > 960) {
+        if (window.innerWidth > 480) {
             img.classList.add("menu__img--hover");
             span.classList.add("menu__span--hover");
             intervalo = animarLetras(img, imagenes);
@@ -85,7 +97,7 @@ function hoverMenu(enlace, imagenes) {
     });
 
     enlace.addEventListener("mouseleave", () => {
-        if (window.innerWidth > 960) {
+        if (window.innerWidth > 480) {
             img.classList.remove("menu__img--hover");
             span.classList.remove("menu__span--hover");
             clearInterval(intervalo);
@@ -99,16 +111,18 @@ hoverMenu(document.querySelector('.menu__link--contacto'), punkImgsContacto);
 
 animarLetras(document.querySelector('.letras__img'), punkImagesSandrune);
 
-// Cambiar src de imágenes del menú según tamaño de pantalla
+
+// Cambia imágenes del menú a versión pequeña en pantallas <= 480px
+
 function actualizarImagenesMenu() {
     const imgArchivo = document.querySelector('.menu__link--archivo img');
     const imgSobreMi = document.querySelector('.menu__link--sobremi img');
     const imgContacto = document.querySelector('.menu__link--contacto img');
-    
+
     if (window.innerWidth <= 480) {
-        if (imgArchivo) imgArchivo.src = 'imagenes/menu_archivo.svg';
-        if (imgSobreMi) imgSobreMi.src = 'imagenes/menu_sobremi.svg';
-        if (imgContacto) imgContacto.src = 'imagenes/menu_contacto.svg';
+        if (imgArchivo) imgArchivo.src = 'imagenes/global/menu/menu_archivo.svg';
+        if (imgSobreMi) imgSobreMi.src = 'imagenes/global/menu/menu_sobremi.svg';
+        if (imgContacto) imgContacto.src = 'imagenes/global/menu/menu_contacto.svg';
     }
 }
 
@@ -116,36 +130,39 @@ actualizarImagenesMenu();
 window.addEventListener('resize', actualizarImagenesMenu);
 
 
-// ordenar/desordenar
+// Ordenar/desordenar - toggle de clases para grid principal
+
 const botonOrdenar = document.querySelector(".ventana__boton--ordenar");
 const botonDesordenar = document.querySelector(".ventana__boton--desordenar");
 const ventanaContenedor = document.querySelector(".ventana");
 const itemsVentana = document.querySelectorAll(".ventana__item, .cinta");
 
 if (botonOrdenar && botonDesordenar) {
-    
+
     botonOrdenar.addEventListener("click", () => {
-        ventanaContenedor.classList.add("ordenada"); 
+        ventanaContenedor.classList.add("esta-ordenada");
     });
 
     botonDesordenar.addEventListener("click", () => {
-        ventanaContenedor.classList.remove("ordenada");
+        ventanaContenedor.classList.remove("esta-ordenada");
     });
 }
 
 
-// click en el sobre de contacto.html
+// Sobre interactivo - click en cinta para abrir/cerrar sobre
+
 const sobre = document.querySelector(".sobre");
 const cinta = document.querySelector(".sobre__cinta")
 
 if (cinta && sobre) {
-cinta.addEventListener('click', () => {
-    sobre.classList.toggle('esta-abierto');
+    cinta.addEventListener('click', () => {
+        sobre.classList.toggle('esta-abierto');
 }); }
 
 
 
 // Hover en indice__enlace para mostrar solo la imagen correspondiente
+
 document.addEventListener('DOMContentLoaded', () => {
     const indiceEnlaces = document.querySelectorAll('.indice__enlace');
     const ventana = document.querySelector('.ventana');
@@ -164,24 +181,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 '/the-magnus-archives': 'comics',
                 'the-magnus-archives.html': 'comics'
             };
-            
+
             const href = enlace.getAttribute('href');
             const clase = mapeo[href];
-            
+
             if (clase && ventana) {
                 ventana.querySelectorAll('.ventana__item').forEach(item => {
                     item.style.opacity = '0';
                     item.style.filter = 'grayscale(1)';
                 });
-                
-                const itemActivo = ventana.querySelector('.' + clase);
+
+                const itemActivo = ventana.querySelector('.landing__' + clase);
                 if (itemActivo) {
                     itemActivo.style.opacity = '1';
                     itemActivo.style.filter = 'none';
                 }
             }
         });
-        
+
         enlace.addEventListener('mouseleave', () => {
             if (ventana) {
                 ventana.querySelectorAll('.ventana__item').forEach(item => {
@@ -194,41 +211,45 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-//función click secciones en sobremi.html
-    const secciones = [
-        { el: document.querySelector(".textosm"), nivel: 3 },
-        { el: document.querySelector(".skills"), nivel: 2 },
-        { el: document.querySelector(".experiencia"), nivel: 1 }
-    ];
+// Secciones interactivas - click para expandir/contraer en sobremi.html
 
-    secciones.forEach((seccion) => {
-        if (!seccion.el) return;
+const secciones = [
+{ el: document.querySelector(".textosm"), nivel: 3 },
+{ el: document.querySelector(".skills"), nivel: 2 },
+{ el: document.querySelector(".experiencia"), nivel: 1 }
+];
 
-        seccion.el.addEventListener("click", () => {
-            const EstaEnfocada = seccion.el.classList.contains("seccion--enfocada");
+secciones.forEach((seccion) => {
+    if (!seccion.el) return;
 
-            if (EstaEnfocada) {
+    seccion.el.addEventListener("click", () => {
+        const EstaEnfocada = seccion.el.classList.contains("seccion--enfocada");
 
-                secciones.forEach(s => s.el.classList.remove("seccion--enfocada", "seccion--apartada"));
-            } else {
-                secciones.forEach(s => {
+        if (EstaEnfocada) {
 
-                    if (s.nivel > seccion.nivel) {
-                        s.el.classList.add("seccion--apartada");
-                        s.el.classList.remove("seccion--enfocada");
-                    } else if (s.nivel === seccion.nivel) {
-                        s.el.classList.add("seccion--enfocada");
-                        s.el.classList.remove("seccion--apartada");
-                    } else {
-                        s.el.classList.remove("seccion--apartada", "seccion--enfocada");
-                    }
-                });
-            }
-        });
+            secciones.forEach(s => s.el.classList.remove("seccion--enfocada", "seccion--apartada"));
+        } else {
+            secciones.forEach(s => {
+
+                if (s.nivel > seccion.nivel) {
+                    s.el.classList.add("seccion--apartada");
+                    s.el.classList.remove("seccion--enfocada");
+                } 
+                else if (s.nivel === seccion.nivel) {
+                s.el.classList.add("seccion--enfocada");
+                s.el.classList.remove("seccion--apartada");
+                } 
+                else {
+            s.el.classList.remove("seccion--apartada", "seccion--enfocada");
+                }
+            });
+        }
     });
+});
 
-   
-// Animación de movimiento aleatorio para imágenes
+
+// Animación de minibichos - movimiento aleatorio decorativo
+
 function animarBichos(selector, velocidad = 2) {
     const elementos = document.querySelectorAll(selector);
     const datosImagenes = [];
@@ -269,6 +290,7 @@ function animarBichos(selector, velocidad = 2) {
                 if (img.x <= 0 || img.x + img.el.offsetWidth >= window.innerWidth) {
                     img.horizontal *= -1;
                 }
+
                 if (img.y <= 0 || img.y + img.el.offsetHeight >= window.innerHeight) {
                     img.vertical *= -1;
                 }
@@ -289,12 +311,14 @@ window.addEventListener('DOMContentLoaded', () => {
     animarBichos(".minibicho", 0.2);
 });
 
-// Archivo.html - hover y loop*/
+
+// Archivo.html - hover en filas para mostrar imagen correspondiente
+// Auto-loop cada 2 segundos en pantallas <= 960px
 
 document.addEventListener('DOMContentLoaded', () => {
     const filas = document.querySelectorAll('.archivo__fila');
     const fotoArchivo = document.querySelector('.archivo__foto');
-    
+
     let intervaloArchivo = null;
     let indiceActual = 0;
 
@@ -304,6 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nuevaImagen && fotoArchivo && fotoArchivo.src !== nuevaImagen) {
             fotoArchivo.src = nuevaImagen;
         }
+
     };
 
     // 2. Para Escritorio
@@ -320,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
             intervaloArchivo = setInterval(() => {
                 indiceActual = (indiceActual + 1) % filas.length;
                 actualizarImagen(filas[indiceActual]);
-            }, 2000); 
+            }, 2000);
         }
     };
 
@@ -334,28 +359,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 960) {
             iniciarAutoLoop();
         } else {
-            detenerAutoLoop();
+        detenerAutoLoop();
         }
-    };
 
-    gestionarComportamiento();
-    window.addEventListener('resize', gestionarComportamiento);
+};
+
+gestionarComportamiento();
+window.addEventListener('resize', gestionarComportamiento);
 });
 
-        const animationInterval = animarLetras(document.querySelector("#marcador-palabra img"), [
-            'imagenes/punk_letters/cargando_01.png',
-            'imagenes/punk_letters/cargando_02.png',
-            'imagenes/punk_letters/cargando_03.png'
-        ]);
-
-
 // --- Loader ---
+
+// Animación de letras durante carga
+
 const marcador = document.querySelector("#marcador--palabra img");
 if (marcador) {
     animarLetras(marcador, [
-        'imagenes/punk_letters/cargando_01.png',
-        'imagenes/punk_letters/cargando_02.png',
-        'imagenes/punk_letters/cargando_03.png'
+    'imagenes/global/punk_letters/cargando_01.png',
+    'imagenes/global/punk_letters/cargando_02.png',
+    'imagenes/global/punk_letters/cargando_03.png'
     ]);
 }
 
@@ -370,7 +392,8 @@ window.addEventListener("load", () => {
     }
 });
 
-// --- Navegación entre páginas ---
+// Navegación entre páginas - transiciones suaves con loader
+
 document.querySelectorAll("a").forEach(link => {
     link.addEventListener('click', function(e) {
         if (this.hostname === window.location.hostname && !this.hash && this.target !== "_blank") {
@@ -396,3 +419,5 @@ document.querySelectorAll("a").forEach(link => {
         }
     });
 });
+
+

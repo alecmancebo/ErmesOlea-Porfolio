@@ -23,65 +23,69 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@75,200..900&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
-
     <link rel="icon" type="image/jpg" href="logo/logo_favicon.ico"/>
     <link rel="stylesheet" href="css/estilo.css">
     <script defer src="js/funciones.js"></script>
 </head>
 
-<body class="sobremi">
+<body>
+    <!-- Loader: Animación de carga inicial -->
     <section id="loader" class="contenedor--carga pos-centro">
-        <div id="marcador--palabra" class="palabra"> <img src="imagenes/punk_letters/cargando_01.png" alt=""></div>
+        <div id="marcador--palabra" class="palabra"> <img src="imagenes/global/punk_letters/cargando_01.png" alt="Cartel punk con la palabra cargando"></div>
     </section>
-    <img class="minibicho" src="imagenes/minibichos/minibicho01_escalado.png" alt="">
-    <img class="minibicho" src="imagenes/minibichos/minibicho05_escalado.png" alt="">
-    <img class="minibicho" src="imagenes/minibichos/minibicho04_escalado.png" alt="">
-    <header>
     
-    <nav class="menu">
-        <button class="boton--abrir"><img src="imagenes/menu_abrir.svg" alt="abrir menu icono"></button>
-        <button class="menu__boton--cerrar"><img src="imagenes/menu_cerrar.svg" alt="cerrar menu icono"></button>
-        <ul>
-            <li class="menu__logo"><a href="index.html"><img src="logo/logo.svg" alt="logo"></a></li>
-            <li class="menu__descripcion">Ermes Olea - diseñador, ilustrador y artista multidisciplinar de Madrid, España. <br>@2026</li>
-            <li class="menu__item">
-                <a class="menu__link--archivo" href="archivo.html">
-                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina archivo">
-                    <span>Archivo</span>
-                </a>
-            </li>
-            <li class="menu__item">
-                <a class="menu__link--sobremi"href="sobremi.html">
-                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina sobremi">
-                    <span>Sobre mí</span>
-                </a>
-            </li>
-            <li class="menu__item">
-                <a class="menu__link--contacto"href="contacto.html">
-                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina contacto">
-                    <span>Contacto</span>
-                </a>
-            </li>
-                        <li class="menu__deco">
-                <img src="imagenes/menu_estrellas.svg" alt="">
-            </li>
-        </ul>
-    </nav>
+    <!-- Elementos decorativos animados: Minibichos -->
+    <img class="minibicho" src="imagenes/global/minibichos/minibicho01.png" alt="Ilustración de minibicho 01">
+    <img class="minibicho" src="imagenes/global/minibichos/minibicho05.png" alt="Ilustración de minibicho 05">
+    <img class="minibicho" src="imagenes/global/minibichos/minibicho04.png" alt="Ilustración de minibicho 04">
+    
+    <!-- HEADER: Menú de navegación principal -->
+    <header>
+            <nav class="menu">
+            <button class="boton--abrir"><img src="imagenes/global/menu/menu_abrir.svg" alt="Icono para abrir el menú"></button>
+            <button class="menu__boton--cerrar"><img src="imagenes/global/menu/menu_cerrar.svg" alt="Icono para cerrar el menú"></button>
+            <ul>
+                <li class="menu__logo"><a href="index.html"><img src="logo/logo.svg" alt="Logo de Ermes Olea"></a></li>
+                <li class="menu__descripcion">Ermes Olea - diseñadore, ilustradore y artista multidisciplinar de Madrid, España. <br>@2026</li>
+                <li class="menu__item">
+                    <a class="menu__link--archivo" href="archivo.html">
+                        <img class="menu__img" src="imagenes/global/punk_letters/archivo_letras_01.svg" alt="Tipografía punk para Archivo">
+                        <span>Archivo</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link--sobremi" href="sobremi.html">
+                        <img class="menu__img" src="imagenes/global/punk_letters/archivo_letras_01.svg" alt="Tipografía punk para Sobre mí">
+                        <span>Sobre mí</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link--contacto" href="contacto.html">
+                        <img class="menu__img" src="imagenes/global/punk_letters/archivo_letras_01.svg" alt="Tipografía punk para Contacto">
+                        <span>Contacto</span>
+                    </a>
+                </li>
+                <li class="menu__deco">
+                    <img src="imagenes/global/menu/menu_estrellas.svg" alt="Ilustración de estrellas decorativas">
+                </li>
+            </ul>
+        </nav>
     </header>
     
+    <!-- MAIN CONTENT: Tres secciones interactivas (Experiencia, Skills, Textosm) -->
     <div class="contenido">
-    <img class="textosm__sujetapapeles" src="imagenes/sobremi/sm_sujetapapeles.svg" alt="sujetapapeles">
-    <section class="experiencia">
-        <div class="experiencia__texto">
-            <div class="experiencia__texto__titulo">
-            <h1 class="experiencia__titulo">
-                ESTUDIOS
-            </h1>
-            </div>
-        <div class="experiencia__lista">
+        <!-- Elemento decorativo: Sujetapapeles -->
+        <img class="textosm__sujetapapeles" src="imagenes/sobremi/sm_sujetapapeles.svg" alt="Ilustración de sujetapapeles">
+        
+        <!-- SECCIÓN 1: Experiencia (Estudios, Experiencia laboral, Freelance) -->
+            <section class="experiencia">
+            <div class="experiencia__texto">
+                <div class="experiencia__texto__titulo">
+                    <h1 class="experiencia__titulo">
+                        ESTUDIOS
+                    </h1>
+                </div>
+                <div class="experiencia__lista">
             <div class="experiencia__lista-header">
                 <span class="experiencia__lista-col"></span>
                 <span class="experiencia__lista-col">Posición</span>
@@ -171,36 +175,36 @@
                 <span class="experiencia__lista-col">Madrid</span>
                 <span class="experiencia__lista-col">2026 (próximamente)</span>
             </div>
-            
+                </div>
+                <div class="experiencia__cuaderno">
+                    <span class="experiencia__linea --izq"></span>
+                    <span class="experiencia__linea --der"></span>
+                    <div class="experiencia__cuaderno__seccion">
+                        <div class="experiencia__cuaderno__agujeros"></div>
+                        <div class="experiencia__cuaderno__agujeros"></div>
+                    </div>
+                    <div class="experiencia__cuaderno__seccion">
+                        <div class="experiencia__cuaderno__agujeros"></div>
+                        <div class="experiencia__cuaderno__agujeros"></div>
+                    </div>
+                    <div class="experiencia__cuaderno__seccion">
+                        <div class="experiencia__cuaderno__agujeros"></div>
+                        <div class="experiencia__cuaderno__agujeros"></div>
+                    </div>
+                </div>
             </div>
-            <div class="experiencia__cuaderno">
-            <span class="experiencia__linea --izq"></span>
-            <span class="experiencia__linea --der"></span>
-            <div class="experiencia__cuaderno__seccion">
-                <div class="experiencia__cuaderno__agujeros"></div>
-                <div class="experiencia__cuaderno__agujeros"></div>
-            </div>
-            <div class="experiencia__cuaderno__seccion">
-                <div class="experiencia__cuaderno__agujeros"></div>
-                <div class="experiencia__cuaderno__agujeros"></div>
-            </div>
-            <div class="experiencia__cuaderno__seccion">
-                <div class="experiencia__cuaderno__agujeros"></div>
-                <div class="experiencia__cuaderno__agujeros"></div>
-            </div>
-        </div>
-        </div>
-    </section>
+        </section>
+            <!-- FIN SECCIÓN EXPERIENCIA -->
 
-    <section class="skills">
-        <h1 class="skills__h1">PROGRAMAS Y APTITUDES</h1>
-        <div class="skills__container">
-
-             <article class="skills__columna">
+        <!-- SECCIÓN 2: Skills (Programas, Sectores, Soft Skills) -->
+        <section class="skills">
+            <h1 class="skills__h1">PROGRAMAS Y APTITUDES</h1>
+            <div class="skills__container">
+                <article class="skills__columna">
                 <div class="skills__bloque flex">
                 </div>
                 <div class="skills__bloque">
-                    <a class="skills__titulo" href="https://www.linkedin.com/in/ermes-orion/">ÉCHALE UN VISTAZO A MI LINKEDIN</a>
+                    <a class="skills__titulo enlace" href="https://www.linkedin.com/in/ermes-orion/">ÉCHALE UN VISTAZO A MI LINKEDIN</a>
                 </div>
             </article>
 
@@ -247,18 +251,22 @@
                     <p class="skills__texto">Pensamiento lateral y resolución de problemas</p>
                 </div>
 
-            </article>
-        </div>
-    </section>
+                </article>
+            </div>
+        </section>
+        <!-- FIN SECCIÓN SKILLS -->
 
-    <section class="textosm">
-        <div class="textosm__titulo"><img class="textosm__png" src="imagenes/sobremi/sm_titulo.svg" alt="sobre mí"></div>
-        <p>Hola! Me llamo Ermes (2002, España) y me dedico al arte, la ilustración y el diseño.  
-        Mi principal campo de trabajo es la ilustración y el diseño editorial, pero también me apasionan otros campos como el diseño de personajes, el arte textil, el mundo del fanzine y el cómic. 
-        En mi obra suelo explorar mundos, personajes e historias de fantasía, inspirados en mi experiencia como persona queer y mezclando un escapismo mágico con  preocupaciones sociales reales.
-        </p>
-        <img class="textosm__simbolo" src="imagenes/sobremi/sm_foto.png" alt="foto Ermes">
-    </section>
-</div>
+        <!-- SECCIÓN 3: Sobre Mí - Texto biografía -->
+        <section class="textosm">
+            <div class="textosm__titulo"><img class="textosm__png" src="imagenes/sobremi/sm_titulo.svg" alt="Título ilustrado Sobre mí"></div>
+            <p>Hola! Me llamo Ermes (2002, España) y me dedico al arte, la ilustración y el diseño.  
+            Mi principal campo de trabajo es la ilustración y el diseño editorial, pero también me apasionan otros campos como el diseño de personajes, el arte textil, el mundo del fanzine y el cómic. 
+            En mi obra suelo explorar mundos, personajes e historias de fantasía, inspirados en mi experiencia como persona queer y mezclando un escapismo mágico con  preocupaciones sociales reales.
+            </p>
+            <img class="textosm__simbolo" src="imagenes/sobremi/sm_foto.png" alt="Retrato ilustrado de Ermes">
+        </section>
+        <!-- FIN SECCIÓN TEXTOSM -->
+    </div>
+    <!-- FIN MAIN CONTENT -->
 </body>
 </html>

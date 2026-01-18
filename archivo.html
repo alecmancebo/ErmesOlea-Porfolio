@@ -18,7 +18,6 @@
          - Archivo: listas de proyectos por categoría
              * Cada fila contiene: nombre, descripción, número y foto
              * Hover muestra la imagen del proyecto
-             * Foto rota aleatoriamente con efectos
     -->
     
     <!-- tipografía Inconsolata Condensed-->
@@ -26,215 +25,218 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@75,200..900&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
-
     <link rel="icon" type="image/jpg" href="logo/logo_favicon.ico"/>
     <link rel="stylesheet" href="css/estilo.css">
     <script defer src="js/funciones.js"></script>
 </head>
 <body>
+    <!-- Loader: Animación de carga inicial -->
     <section id="loader" class="contenedor--carga pos-centro">
-        <div id="marcador--palabra" class="palabra"> <img src="imagenes/punk_letters/cargando_01.png" alt=""></div>
+        <div id="marcador--palabra" class="palabra"> <img src="imagenes/global/punk_letters/cargando_01.png" alt="Cartel punk con la palabra cargando"></div>
     </section>
 
-    <img class="minibicho" src="imagenes/minibichos/minibicho01_escalado.png" alt="">
-    <img class="minibicho" src="imagenes/minibichos/minibicho04_escalado.png" alt="">
+    <!-- Elementos decorativos animados: Minibichos -->
+    <img class="minibicho" src="imagenes/global/minibichos/minibicho01.png" alt="Ilustración de minibicho 01">
+    <img class="minibicho" src="imagenes/global/minibichos/minibicho04.png" alt="Ilustración de minibicho 04">
+    
+    <!-- Filtros SVG: Efectos de distorsión sketch para elementos gráficos -->
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="filters">
-	<defs>
-		<filter id="sketchy-0">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="0" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-		<filter id="sketchy-1">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="1" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-		<filter id="sketchy-2">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="2" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-		<filter id="sketchy-3">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="3" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-		<filter id="sketchy-4">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="4" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-		<filter id="sketchy-5">
-			<feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="5" />
-			<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
-		</filter>
-	</defs>
+        <defs>
+            <filter id="sketchy-0">
+                <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="0" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+            <filter id="sketchy-1">
+                <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="1" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+            <filter id="sketchy-2">
+                <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="2" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+            <filter id="sketchy-3">
+                <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="3" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+            <filter id="sketchy-4">
+                <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="4" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+            <filter id="sketchy-5">
+                <feTurbulence id="turbulence" baseFrequency="0.1" numOctaves="10" result="noise" seed="5" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+        </defs>
     </svg>
 
+    <!-- HEADER: Menú de navegación principal -->
     <header>
-    <nav class="menu">
-        <button class="boton--abrir"><img src="imagenes/menu_abrir.svg" alt="abrir menu icono"></button>
-        <button class="menu__boton--cerrar"><img src="imagenes/menu_cerrar.svg" alt="cerrar menu icono"></button>
-        <ul>
-            <li class="menu__logo"><a href="index.html"><img src="logo/logo.svg" alt="logo"></a></li>
-            <li class="menu__descripcion">Ermes Olea - diseñador, ilustrador y artista multidisciplinar de Madrid, España. <br>@2026</li>
-            <li class="menu__item">
-                <a class="menu__link--archivo" href="archivo.html">
-                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina archivo">
-                    <span>Archivo</span>
-                </a>
-            </li>
-            <li class="menu__item">
-                <a class="menu__link--sobremi"href="sobremi.html">
-                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina sobremi">
-                    <span>Sobre mí</span>
-                </a>
-            </li>
-            <li class="menu__item">
-                <a class="menu__link--contacto"href="contacto.html">
-                    <img class="menu__img" src="imagenes/punk_letters/archivo_letras_01.svg" alt="link a pagina contacto">
-                    <span>Contacto</span>
-                </a>
-            </li>
-        </ul>
-                    <li class="menu__deco">
-                <img src="imagenes/menu_estrellas.svg" alt="">
-            </li>
-    </nav>
+        <nav class="menu">
+            <button class="boton--abrir"><img src="imagenes/global/menu/menu_abrir.svg" alt="Icono para abrir el menú"></button>
+            <button class="menu__boton--cerrar"><img src="imagenes/global/menu/menu_cerrar.svg" alt="Icono para cerrar el menú"></button>
+            <ul>
+                <li class="menu__logo"><a href="index.html"><img src="logo/logo.svg" alt="Logo de Ermes Olea"></a></li>
+                <li class="menu__descripcion">Ermes Olea - diseñadore, ilustradore y artista multidisciplinar de Madrid, España. <br>@2026</li>
+                <li class="menu__item">
+                    <a class="menu__link--archivo" href="archivo.html">
+                        <img class="menu__img" src="imagenes/global/punk_letters/archivo_letras_01.svg" alt="Tipografía punk para Archivo">
+                        <span>Archivo</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link--sobremi" href="sobremi.html">
+                        <img class="menu__img" src="imagenes/global/punk_letters/archivo_letras_01.svg" alt="Tipografía punk para Sobre mí">
+                        <span>Sobre mí</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link--contacto" href="contacto.html">
+                        <img class="menu__img" src="imagenes/global/punk_letters/archivo_letras_01.svg" alt="Tipografía punk para Contacto">
+                        <span>Contacto</span>
+                    </a>
+                </li>
+                <li class="menu__deco">
+                    <img src="imagenes/global/menu/menu_estrellas.svg" alt="Ilustración de estrellas decorativas">
+                </li>
+            </ul>
+        </nav>
     </header>
 
+    <!-- MAIN CONTENT: Catálogo de proyectos con búsqueda visual (hover muestra imagen) -->
     <div class="contenedor-archivo">
+        
+        <!-- Sección introducción -->
         <section class="introduccion">
-            <img class="introduccion__titulo" src="imagenes/archivo/ar_titulo.svg" alt="Archivo">
+            <img class="introduccion__titulo" src="imagenes/archivo/ar_titulo.svg" alt="Título ilustrado de Archivo">
             <p class="introduccion__descripcion">
             Aquí comparto una recopilación de mis proyectos pasados y actuales. Este espacio sirve como archivo de los trabajos que he ido realizando a lo largo de los últimos años.
             </p>
         </section>
         <article class="archivo__foto__div">
-            <img src="imagenes/trabajos/comadeja/ermes_tfg_01.jpg" alt="Proyecto 1" class="archivo__foto">
+            <img src="imagenes/trabajos/comadeja/ermes_tfg_01.jpg" alt="Revista Comadeja abierta mostrando páginas" class="archivo__foto">
         </article>
         <article class="archivo">
             <h2 class="archivo__categoria">EDITORIAL</h2>
             
             <div class="archivo__lista">
-            <a href="comadeja.html" class="archivo__fila" data-image="imagenes/trabajos/comadeja/ermes_tfg_01.jpg">
-                <span class="archivo__celda archivo__celda--nombre">COMADEJA</span>
-                <span class="archivo__celda archivo__celda--proyecto">Ganchillo accesible e inclusivo basado en la ética punk y la cultura DIY</span>
-                <span class="archivo__celda archivo__celda--numero">0.0.1</span>
-            </a>
+                <a href="comadeja.html" class="archivo__fila" data-image="imagenes/trabajos/comadeja/ermes_tfg_01.jpg">
+                    <span class="archivo__celda archivo__celda--nombre">COMADEJA</span>
+                    <span class="archivo__celda archivo__celda--proyecto">Ganchillo accesible e inclusivo basado en la ética punk y la cultura DIY</span>
+                    <span class="archivo__celda archivo__celda--numero">0.0.1</span>
+                </a>
 
-            <a href="fae.html" class="archivo__fila" data-image="imagenes/trabajos/fae/ermes_fae_10.png">
-                <span class="archivo__celda archivo__celda--nombre">LO QUE APRENDÍ DE LES FAE</span>
-                <span class="archivo__celda archivo__celda--proyecto">Libro de artista sobre disidencia, naturaleza y fascinación por la fantasía</span>
-                <span class="archivo__celda archivo__celda--numero">0.0.2</span>
-            </a>
+                    <a href="fae.html" class="archivo__fila" data-image="imagenes/trabajos/fae/ermes_fae_10.png">
+                    <span class="archivo__celda archivo__celda--nombre">LO QUE APRENDÍ DE LES FAE</span>
+                    <span class="archivo__celda archivo__celda--proyecto">Libro de artista sobre disidencia, naturaleza y fascinación por la fantasía</span>
+                    <span class="archivo__celda archivo__celda--numero">0.0.2</span>
+                </a>
 
-            <a href="vernalizacion.html" class="archivo__fila" data-image="imagenes/trabajos/vernalizacion/comichadas_01.jpg">
-                <span class="archivo__celda archivo__celda--nombre">VERNALIZACIÓN</span>
-                <span class="archivo__celda archivo__celda--proyecto">Cómic corto sobre autodescubrimiento, crecimiento y comunidad indudablemente queer inspirada por vivencias personales.</span>
-                <span class="archivo__celda archivo__celda--numero">0.0.3</span>
-            </a>
+                <a href="vernalizacion.html" class="archivo__fila" data-image="imagenes/trabajos/vernalizacion/comichadas_01.jpg">
+                    <span class="archivo__celda archivo__celda--nombre">VERNALIZACIÓN</span>
+                    <span class="archivo__celda archivo__celda--proyecto">Cómic corto sobre autodescubrimiento, crecimiento y comunidad indudablemente queer inspirada por vivencias personales.</span>
+                    <span class="archivo__celda archivo__celda--numero">0.0.3</span>
+                </a>
 
-            <a href="cortocircuito.html" class="archivo__fila" data-image="imagenes/trabajos/cortocircuito/cortocircuito_09.jpg">
-                <span class="archivo__celda archivo__celda--nombre">CORTOCIRCUITO</span>
-                <span class="archivo__celda archivo__celda--proyecto">Libro de artista que explora los miedos, deseos y sueños desde los márgenes</span>
-                <span class="archivo__celda archivo__celda--numero">0.0.4</span>
-            </a>
+                <a href="cortocircuito.html" class="archivo__fila" data-image="imagenes/trabajos/cortocircuito/cortocircuito_09.jpg">
+                    <span class="archivo__celda archivo__celda--nombre">CORTOCIRCUITO</span>
+                    <span class="archivo__celda archivo__celda--proyecto">Libro de artista que explora los miedos, deseos y sueños desde los márgenes</span>
+                    <span class="archivo__celda archivo__celda--numero">0.0.4</span>
+                </a>
 
-            <a href="the-magnus-archives.html" class="archivo__fila" data-image="imagenes/trabajos/the-magnus-archives/tma_12.jpg">
-                <span class="archivo__celda archivo__celda--nombre">THE MAGNUS ARCHIVES</span>
-                <span class="archivo__celda archivo__celda--proyecto">Proyecto de maquetación e ilustración de los textos del podcast de terror The Magnus Archives.</span>
-                <span class="archivo__celda archivo__celda--numero">0.0.5</span>
-            </a>
+                <a href="the-magnus-archives.html" class="archivo__fila" data-image="imagenes/trabajos/the-magnus-archives/tma_12.jpg">
+                    <span class="archivo__celda archivo__celda--nombre">THE MAGNUS ARCHIVES</span>
+                    <span class="archivo__celda archivo__celda--proyecto">Proyecto de maquetación e ilustración de los textos del podcast de terror The Magnus Archives.</span>
+                    <span class="archivo__celda archivo__celda--numero">0.0.5</span>
+                </a>
             </div>
 
             <h2 class="archivo__categoria">ILUSTRACIONES</h2>
 
             <div class="archivo__lista">
-            <a href="https://www.instagram.com/p/DSUz0OziELo/" class="archivo__fila" data-image="imagenes/trabajos/ilustracion/estrellas.jpg">
-                <span class="archivo__celda archivo__celda--nombre">POR QUÉ DIBUJAMOS ESTRELLAS</span>
-                <span class="archivo__celda archivo__celda--proyecto">Pequeño zine sobre por qué dibujamos estrellas</span>
-                <span class="archivo__celda archivo__celda--numero">0.0.6</span>
-            </a>
+                <a href="https://www.instagram.com/p/DSUz0OziELo/" class="archivo__fila" data-image="imagenes/trabajos/ilustracion/estrellas.jpg">
+                    <span class="archivo__celda archivo__celda--nombre">POR QUÉ DIBUJAMOS ESTRELLAS</span>
+                    <span class="archivo__celda archivo__celda--proyecto">Pequeño zine sobre por qué dibujamos estrellas</span>
+                    <span class="archivo__celda archivo__celda--numero">0.0.6</span>
+                </a>
 
-            <a href="https://www.instagram.com/p/DQb8c4jiPKU/" class="archivo__fila" data-image="imagenes/trabajos/ilustracion/mastectomia.png">
-                <span class="archivo__celda archivo__celda--nombre">MASTECTOMÍAS</span>
-                <span class="archivo__celda archivo__celda--proyecto">Un zine sobre personajes de ficción y mastectomías</span>
-                <span class="archivo__celda archivo__celda--numero">0.0.7</span>
-            </a>
+                <a href="https://www.instagram.com/p/DQb8c4jiPKU/" class="archivo__fila" data-image="imagenes/trabajos/ilustracion/mastectomia.png">
+                    <span class="archivo__celda archivo__celda--nombre">MASTECTOMÍAS</span>
+                    <span class="archivo__celda archivo__celda--proyecto">Un zine sobre personajes de ficción y mastectomías</span>
+                    <span class="archivo__celda archivo__celda--numero">0.0.7</span>
+                </a>
 
-            <a href="https://www.instagram.com/p/DH_U3XxCaA1/" class="archivo__fila" data-image="imagenes/trabajos/ilustracion/bicho-raro.jpg">
-                <span class="archivo__celda archivo__celda--nombre">BICHO RARO</span>
-                <span class="archivo__celda archivo__celda--proyecto">Ilustraciones para el colectivo Bicho Raro Ediciones</span>
-                <span class="archivo__celda archivo__celda--numero">0.0.8</span>
-            </a>
+                <a href="https://www.instagram.com/p/DH_U3XxCaA1/" class="archivo__fila" data-image="imagenes/trabajos/ilustracion/bicho-raro.jpg">
+                    <span class="archivo__celda archivo__celda--nombre">BICHO RARO</span>
+                    <span class="archivo__celda archivo__celda--proyecto">Ilustraciones para el colectivo Bicho Raro Ediciones</span>
+                    <span class="archivo__celda archivo__celda--numero">0.0.8</span>
+                </a>
 
-            <a href="https://www.instagram.com/p/DEPmr3NCram/" class="archivo__fila" data-image="imagenes/trabajos/ilustracion/estampas.png">
-                <span class="archivo__celda archivo__celda--nombre">ESTAMPAS</span>
-                <span class="archivo__celda archivo__celda--proyecto">Varias estampas de linóleo inspiradas en el arte prehistórico</span>
-                <span class="archivo__celda archivo__celda--numero">0.0.9</span>
-            </a>
-
+                <a href="https://www.instagram.com/p/DEPmr3NCram/" class="archivo__fila" data-image="imagenes/trabajos/ilustracion/estampas.png">
+                    <span class="archivo__celda archivo__celda--nombre">ESTAMPAS</span>
+                    <span class="archivo__celda archivo__celda--proyecto">Varias estampas de linóleo inspiradas en el arte prehistórico</span>
+                    <span class="archivo__celda archivo__celda--numero">0.0.9</span>
+                </a>
             </div>
 
             <h2 class="archivo__categoria">DIY</h2>
 
             <div class="archivo__lista">
-            <a href="https://www.instagram.com/p/DS7w13zCDRD/?igsh=a2l4bGR4dWo4cmxy" class="archivo__fila" data-image="imagenes/trabajos/diy/escarabajo.jpg">
-                <span class="archivo__celda archivo__celda--nombre">BEETLE SWEATER</span>
-                <span class="archivo__celda archivo__celda--proyecto">Jersey de patchwork</span>
-                <span class="archivo__celda archivo__celda--numero">0.1.0</span>
-            </a>
+                <a href="https://www.instagram.com/p/DS7w13zCDRD/?igsh=a2l4bGR4dWo4cmxy" class="archivo__fila" data-image="imagenes/trabajos/diy/escarabajo.jpg">
+                    <span class="archivo__celda archivo__celda--nombre">BEETLE SWEATER</span>
+                    <span class="archivo__celda archivo__celda--proyecto">Jersey de patchwork</span>
+                    <span class="archivo__celda archivo__celda--numero">0.1.0</span>
+                </a>
 
-            <a href="https://www.instagram.com/p/DRKD-SLiA53/?igsh=MXZ3bnZuOW1pcjdjOA==" class="archivo__fila" data-image="imagenes/trabajos/diy/gato.jpg">
-                <span class="archivo__celda archivo__celda--nombre">PIN DE FIELTRO</span>
-                <span class="archivo__celda archivo__celda--proyecto">Pines de fieltro de gatos</span>
-                <span class="archivo__celda archivo__celda--numero">0.1.1</span>
-            </a>
+                <a href="https://www.instagram.com/p/DRKD-SLiA53/?igsh=MXZ3bnZuOW1pcjdjOA==" class="archivo__fila" data-image="imagenes/trabajos/diy/gato.jpg">
+                    <span class="archivo__celda archivo__celda--nombre">PIN DE FIELTRO</span>
+                    <span class="archivo__celda archivo__celda--proyecto">Pines de fieltro de gatos</span>
+                    <span class="archivo__celda archivo__celda--numero">0.1.1</span>
+                </a>
 
-            <a href="https://www.instagram.com/p/DJZDTe_IW8o/?img_index=3&igsh=MWU3M2x3NHpleDc0cQ==" class="archivo__fila" data-image="imagenes/trabajos/diy/ganchillo.png">
-                <span class="archivo__celda archivo__celda--nombre">JERSEY A GANCHILLO</span>
-                <span class="archivo__celda archivo__celda--proyecto">Jersey realizado a ganchillo</span>
-                <span class="archivo__celda archivo__celda--numero">0.1.2</span>
-            </a>
+                <a href="https://www.instagram.com/p/DJZDTe_IW8o/?img_index=3&igsh=MWU3M2x3NHpleDc0cQ==" class="archivo__fila" data-image="imagenes/trabajos/diy/ganchillo.png">
+                    <span class="archivo__celda archivo__celda--nombre">JERSEY A GANCHILLO</span>
+                    <span class="archivo__celda archivo__celda--proyecto">Jersey realizado a ganchillo</span>
+                    <span class="archivo__celda archivo__celda--numero">0.1.2</span>
+                </a>
             </div>
             
         </article>
-</div>
-
-<section class="mosaico__contenedor-abanico">
-    <div class="mosaico__abanico">
-      
-      <article class="mosaico__item mosaico__item--1">
-        <img src="imagenes/trabajos/the-magnus-archives/tma_12.jpg" alt="Foto 1" class="mosaico__img">
-      </article>
-      <img src="imagenes/landing/lg_estrella.svg" alt="Foto 2" class="mosaico__deco__6">
-    <div class="mosaico__tarjeta">
-          <p>Ermes Olea</p>
-          <p>Madrid, España | sandrune.art </p>
-          <p>Porfolio 2025/2026</p>
     </div>
-      <article class="mosaico__item mosaico__item--2">
-        <img src="imagenes/landing/lg_comadeja.png" alt="Foto 2" class="mosaico__img">
-      </article>
-      <img src="imagenes/landing/lg_aguja.png" alt="" class="mosaico__deco__3">
-            <article class="mosaico__item mosaico__item--6">
-        <img src="imagenes/landing/lg_fae.png" alt="Foto 2" class="mosaico__img">
-      </article>
-      <img src="imagenes/landing/lg_sticker.png" alt="" class="mosaico__deco__2">
-      <article class="mosaico__item mosaico__item--3">
-        <img src="imagenes/landing/lg_vernalizacion.jpg" alt="Foto 3" class="mosaico__img">
-      </article>
-      <img src="imagenes/landing/lg_punk.svg" alt="" class="mosaico__deco__5">
-      <img src="imagenes/landing/lg_letras.png" alt="" class="mosaico__deco__4">
-      <article class="mosaico__item mosaico__item--4">
-        <img src="imagenes/landing/lg_comics.png" alt="Foto 4" class="mosaico__img">
-      </article>
-      <img src="imagenes/landing/lg_bolapapel.png" alt="" class="mosaico__deco__1">
-      <article class="mosaico__item mosaico__item--5">
-        <img src="imagenes/landing/cortocircuito_02.png" alt="Foto 5" class="mosaico__img">
-      </article>
 
-    </div>
-  </section>
+    <!-- FOOTER: Mosaico/Abanico de navegación (otros proyectos) -->
+    <section class="mosaico__contenedor-abanico">
+        <div class="mosaico__abanico">
+            <div class="mosaico__item mosaico__item--1">
+                <img src="imagenes/trabajos/the-magnus-archives/tma_12.jpg" alt="Portada de The Magnus Archives con textura" class="mosaico__img">
+            </div>
+            <img src="imagenes/landing/lg_estrella.svg" alt="Sticker en forma de estrella" class="mosaico__deco__6">
+            <div class="mosaico__tarjeta">
+                <p>Ermes Olea</p>
+                <p>Madrid, España | sandrune.art </p>
+                <p>Porfolio 2025/2026</p>
+            </div>
+            <div class="mosaico__item mosaico__item--2">
+                <img src="imagenes/landing/lg_comadeja.png" alt="Portada ilustrada del proyecto Comadeja" class="mosaico__img">
+            </div>
+            <img src="imagenes/landing/lg_aguja.png" alt="Ilustración de aguja de coser" class="mosaico__deco__3">
+            <div class="mosaico__item mosaico__item--6">
+                <img src="imagenes/landing/lg_fae.png" alt="Ilustración del proyecto FAE" class="mosaico__img">
+            </div>
+            <img src="imagenes/landing/lg_sticker.png" alt="Sticker" class="mosaico__deco__2">
+            <div class="mosaico__item mosaico__item--3">
+                <img src="imagenes/landing/lg_vernalizacion.jpg" alt="Portada del fanzine Vernalización" class="mosaico__img">
+            </div>
+            <img src="imagenes/landing/lg_punk.svg" alt="Ilustración de la palabra punk" class="mosaico__deco__5">
+            <img src="imagenes/landing/lg_letras.png" alt="Letras recortadas en estilo collage" class="mosaico__deco__4">
+            <div class="mosaico__item mosaico__item--4">
+                <img src="imagenes/landing/lg_comics.png" alt="Comic" class="mosaico__img">
+            </div>
+            <img src="imagenes/landing/lg_bolapapel.png" alt="Bola de papel arrugada" class="mosaico__deco__1">
+            <div class="mosaico__item mosaico__item--5">
+                <img src="imagenes/landing/lg_cortocircuito_02.png" alt="Cartel del proyecto Cortocircuito" class="mosaico__img">
+            </div>
+        </div>
+    </section>
+    <!-- FIN FOOTER -->
 </body>
 </html>
