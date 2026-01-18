@@ -152,7 +152,7 @@ if (botonOrdenar && botonDesordenar) {
 // Sobre interactivo - click en cinta para abrir/cerrar sobre
 
 const sobre = document.querySelector(".sobre");
-const cinta = document.querySelector(".sobre__cinta")
+const cinta = document.querySelector(".sobre__cinta");
 
 if (cinta && sobre) {
     cinta.addEventListener('click', () => {
