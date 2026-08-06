@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ermes Olea - Portfolio</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <!-- Página: LANDING / PORTADA
          Propósito: Página principal del portfolio - muestra una cuadrícula interactiva 
@@ -174,6 +175,18 @@
         <img loading="lazy" decoding="async" class="ventana__item landing__sticker" src="imagenes/landing/lg_sticker.png" alt="Sticker rasgado">
         <img loading="lazy" decoding="async" class="ventana__item landing__human" src="imagenes/landing/lg_nothuman.png" alt="Texto not human but that's okay">
     </section>
+
+    <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
