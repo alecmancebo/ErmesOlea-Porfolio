@@ -7,23 +7,23 @@
       "title": "COMADEJA, UNA REVISTA PUNKI DE GANCHILLO",
       "summary": "Ganchillo accesible e inclusivo basado en la etica punk y la cultura DIY",
       "version": "0.0.1",
-      "thumbnail": "imagenes/trabajos/comadeja/ermes_tfg_01.jpg",
+      "thumbnail": "/imagenes/trabajos/comadeja/ermes_tfg_01.jpg",
       "detailMode": "dynamic",
       "year": "2024",
       "type": "REVISTA AUTOPUBLICADA",
       "size": "18 x 24 cm",
       "detailText": "Comadeja es una revista sobre ganchillo influenciada por la cultura del DIY, el punk y el deseo de hacer accesible esta actividad entre nuevas personas interesadas en ella, especialmente personas jovenes y con unos intereses alternativos.",
       "detailDescription": "El primer numero de la revista incluye informacion sobre la historia del ganchillo, curiosidades sobre este, recomendaciones de patrones e instrucciones sencillas sobre algunas tecnicas basicas.",
-      "logo": "imagenes/trabajos/comadeja/ermes_tfg_logo.png",
+      "logo": "/imagenes/trabajos/comadeja/ermes_tfg_logo.png",
       "ctaLabel": "LEE AQUI EL ZINE",
       "ctaUrl": "https://readymag.website/u3806460250/comadeja/",
       "gallery": [
-        "imagenes/trabajos/comadeja/ermes_tfg_02.jpg",
-        "imagenes/trabajos/comadeja/ermes_tfg_fanzine_2.png",
-        "imagenes/trabajos/comadeja/ermes_tfg_04.jpg",
-        "imagenes/trabajos/comadeja/ermes_tfg_08.jpg",
-        "imagenes/trabajos/comadeja/ermes_tfg_03.jpg",
-        "imagenes/trabajos/comadeja/ermes_tfg_comadreja.jpg"
+        "/imagenes/trabajos/comadeja/ermes_tfg_02.jpg",
+        "/imagenes/trabajos/comadeja/ermes_tfg_fanzine_2.png",
+        "/imagenes/trabajos/comadeja/ermes_tfg_04.jpg",
+        "/imagenes/trabajos/comadeja/ermes_tfg_08.jpg",
+        "/imagenes/trabajos/comadeja/ermes_tfg_03.jpg",
+        "/imagenes/trabajos/comadeja/ermes_tfg_comadreja.jpg"
       ]
     },
     {
@@ -33,21 +33,21 @@
       "title": "FAE",
       "summary": "Libro de artista sobre disidencia, naturaleza y fascinacion por la fantasia",
       "version": "0.0.2",
-      "thumbnail": "imagenes/trabajos/fae/ermes_fae_10.png",
+      "thumbnail": "/imagenes/trabajos/fae/ermes_fae_10.png",
       "detailMode": "dynamic",
       "year": "2025",
       "type": "LIBRO DE ARTISTA",
       "size": "20 x 15 cm",
       "detailText": "Este libro de artista trata sobre mi experiencia como persona trans que nunca se ha sentido muy persona y cuyo mayor deseo siempre ha sido escapar al bosque con las hadas donde todo puede ser diferente.",
       "detailDescription": "Instalacion compuesta por 25 estampas y piezas mixtas con tecnicas como serigrafia, puntaseca, acuarela, recorte y textil.",
-      "logo": "imagenes/trabajos/fae/hada_marco.svg",
+      "logo": "/imagenes/trabajos/fae/hada_marco.svg",
       "gallery": [
-        "imagenes/trabajos/fae/ermes_fae_02.jpg",
-        "imagenes/trabajos/fae/ermes_fae_03.png",
-        "imagenes/trabajos/fae/ermes_fae_10.png",
-        "imagenes/trabajos/fae/ermes_fae_05.jpg",
-        "imagenes/trabajos/fae/ermes_fae_09.jpg",
-        "imagenes/trabajos/fae/ermes_fae_01.png"
+        "/imagenes/trabajos/fae/ermes_fae_02.jpg",
+        "/imagenes/trabajos/fae/ermes_fae_03.png",
+        "/imagenes/trabajos/fae/ermes_fae_10.png",
+        "/imagenes/trabajos/fae/ermes_fae_05.jpg",
+        "/imagenes/trabajos/fae/ermes_fae_09.jpg",
+        "/imagenes/trabajos/fae/ermes_fae_01.png"
       ]
     },
     {
@@ -57,22 +57,22 @@
       "title": "VERNALIZACION",
       "summary": "Comic corto sobre autodescubrimiento, crecimiento y comunidad queer inspirada por vivencias personales.",
       "version": "0.0.3",
-      "thumbnail": "imagenes/trabajos/vernalizacion/comichadas_01.jpg",
+      "thumbnail": "/imagenes/trabajos/vernalizacion/comichadas_01.jpg",
       "detailMode": "dynamic",
       "year": "2025",
       "type": "COMIC CORTO",
       "size": "10,5 x 15,5 cm | 16 paginas",
       "detailText": "Cuando llega el invierno, la planta se mantiene en un estado durmiente hasta que las condiciones ambientales son adecuadas para florecer.",
       "detailDescription": "Una historia fugaz de autodescubrimiento, crecimiento y comunidad inspirada por vivencias personales.",
-      "logo": "imagenes/trabajos/vernalizacion/comichadas_logo.png",
+      "logo": "/imagenes/trabajos/vernalizacion/comichadas_logo.png",
       "ctaLabel": "LEE EL COMIC AQUI",
       "ctaUrl": "https://www.instagram.com/p/DHx57LrC6wq/?img_index=1",
       "gallery": [
-        "imagenes/trabajos/vernalizacion/comichadas_03.png",
-        "imagenes/trabajos/vernalizacion/comichadas_01.jpg",
-        "imagenes/trabajos/vernalizacion/comichadas_02.jpg",
-        "imagenes/trabajos/vernalizacion/comichadas_05.jpg",
-        "imagenes/trabajos/vernalizacion/comichadas_04.png"
+        "/imagenes/trabajos/vernalizacion/comichadas_03.png",
+        "/imagenes/trabajos/vernalizacion/comichadas_01.jpg",
+        "/imagenes/trabajos/vernalizacion/comichadas_02.jpg",
+        "/imagenes/trabajos/vernalizacion/comichadas_05.jpg",
+        "/imagenes/trabajos/vernalizacion/comichadas_04.png"
       ]
     },
     {
@@ -82,23 +82,23 @@
       "title": "CORTOCIRCUITO",
       "summary": "Libro de artista que explora los miedos, deseos y suenos desde los margenes",
       "version": "0.0.4",
-      "thumbnail": "imagenes/trabajos/cortocircuito/cortocircuito_09.jpg",
+      "thumbnail": "/imagenes/trabajos/cortocircuito/cortocircuito_09.jpg",
       "detailMode": "dynamic",
       "year": "2025",
       "type": "LIBRO DE ARTISTA",
       "size": "5 x 20 cm, 54 paginas",
       "detailText": "Libro de artista que explora los miedos, deseos y suenos compartidos por personas que se sienten deshumanizadas y alienadas.",
       "detailDescription": "Encuadernado con variacion del punto de feston en bordado, lomo interior al descubierto y cinco librillos interiores.",
-      "logo": "imagenes/trabajos/cortocircuito/cortocircuito__logo.png",
+      "logo": "/imagenes/trabajos/cortocircuito/cortocircuito__logo.png",
       "ctaLabel": "MIRA EL LIBRO COMPLETO AQUI",
       "ctaUrl": "https://www.behance.net/gallery/237039991/Cortocircuito",
       "gallery": [
-        "imagenes/trabajos/cortocircuito/cortocircuito_09.jpg",
-        "imagenes/trabajos/cortocircuito/cortocircuito_03.png",
-        "imagenes/trabajos/cortocircuito/cortocircuito_08.jpg",
-        "imagenes/trabajos/cortocircuito/cortocircuito_06.jpg",
-        "imagenes/trabajos/cortocircuito/cortocircuito_07.jpg",
-        "imagenes/trabajos/cortocircuito/cortocircuito_04.png"
+        "/imagenes/trabajos/cortocircuito/cortocircuito_09.jpg",
+        "/imagenes/trabajos/cortocircuito/cortocircuito_03.png",
+        "/imagenes/trabajos/cortocircuito/cortocircuito_08.jpg",
+        "/imagenes/trabajos/cortocircuito/cortocircuito_06.jpg",
+        "/imagenes/trabajos/cortocircuito/cortocircuito_07.jpg",
+        "/imagenes/trabajos/cortocircuito/cortocircuito_04.png"
       ]
     },
     {
@@ -108,21 +108,21 @@
       "title": "THE MAGNUS ARCHIVES",
       "summary": "Proyecto de maquetacion e ilustracion de los textos del podcast de terror The Magnus Archives.",
       "version": "0.0.5",
-      "thumbnail": "imagenes/trabajos/the-magnus-archives/tma_12.jpg",
+      "thumbnail": "/imagenes/trabajos/the-magnus-archives/tma_12.jpg",
       "detailMode": "dynamic",
       "year": "2025",
       "type": "LIBRO",
       "size": "20 x 15 cm",
       "detailText": "Maquetacion en formato libro de los textos escritos del podcast de terror The Magnus Archives.",
       "detailDescription": "Proyecto personal que mezcla pasion por el terror y narrativa con diseno editorial.",
-      "logo": "imagenes/trabajos/the-magnus-archives/tma_logo.png",
+      "logo": "/imagenes/trabajos/the-magnus-archives/tma_logo.png",
       "gallery": [
-        "imagenes/trabajos/the-magnus-archives/tma_01.jpg",
-        "imagenes/trabajos/the-magnus-archives/tma_02.jpg",
-        "imagenes/trabajos/the-magnus-archives/tma_03.jpg",
-        "imagenes/trabajos/the-magnus-archives/tma_04.jpg",
-        "imagenes/trabajos/the-magnus-archives/tma_05.jpg",
-        "imagenes/trabajos/the-magnus-archives/tma_11.jpg"
+        "/imagenes/trabajos/the-magnus-archives/tma_01.jpg",
+        "/imagenes/trabajos/the-magnus-archives/tma_02.jpg",
+        "/imagenes/trabajos/the-magnus-archives/tma_03.jpg",
+        "/imagenes/trabajos/the-magnus-archives/tma_04.jpg",
+        "/imagenes/trabajos/the-magnus-archives/tma_05.jpg",
+        "/imagenes/trabajos/the-magnus-archives/tma_11.jpg"
       ]
     },
     {
@@ -132,7 +132,7 @@
       "title": "POR QUE DIBUJAMOS ESTRELLAS",
       "summary": "Pequeno zine sobre por que dibujamos estrellas",
       "version": "0.0.6",
-      "thumbnail": "imagenes/trabajos/ilustracion/estrellas.jpg",
+      "thumbnail": "/imagenes/trabajos/ilustracion/estrellas.jpg",
       "detailMode": "external",
       "externalUrl": "https://www.instagram.com/p/DSUz0OziELo/"
     },
@@ -143,7 +143,7 @@
       "title": "MASTECTOMIAS",
       "summary": "Un zine sobre personajes de ficcion y mastectomias",
       "version": "0.0.7",
-      "thumbnail": "imagenes/trabajos/ilustracion/mastectomia.png",
+      "thumbnail": "/imagenes/trabajos/ilustracion/mastectomia.png",
       "detailMode": "external",
       "externalUrl": "https://www.instagram.com/p/DQb8c4jiPKU/"
     },
@@ -154,7 +154,7 @@
       "title": "BICHO RARO",
       "summary": "Ilustraciones para el colectivo Bicho Raro Ediciones",
       "version": "0.0.8",
-      "thumbnail": "imagenes/trabajos/ilustracion/bicho-raro.jpg",
+      "thumbnail": "/imagenes/trabajos/ilustracion/bicho-raro.jpg",
       "detailMode": "external",
       "externalUrl": "https://www.instagram.com/p/DH_U3XxCaA1/"
     },
@@ -165,7 +165,7 @@
       "title": "ESTAMPAS",
       "summary": "Varias estampas de linoleo inspiradas en el arte prehistorico",
       "version": "0.0.9",
-      "thumbnail": "imagenes/trabajos/ilustracion/estampas.png",
+      "thumbnail": "/imagenes/trabajos/ilustracion/estampas.png",
       "detailMode": "external",
       "externalUrl": "https://www.instagram.com/p/DEPmr3NCram/"
     },
@@ -176,7 +176,7 @@
       "title": "BEETLE SWEATER",
       "summary": "Jersey de patchwork",
       "version": "0.1.0",
-      "thumbnail": "imagenes/trabajos/diy/escarabajo.jpg",
+      "thumbnail": "/imagenes/trabajos/diy/escarabajo.jpg",
       "detailMode": "external",
       "externalUrl": "https://www.instagram.com/p/DS7w13zCDRD/?igsh=a2l4bGR4dWo4cmxy"
     },
@@ -187,7 +187,7 @@
       "title": "PIN DE FIELTRO",
       "summary": "Pines de fieltro de gatos",
       "version": "0.1.1",
-      "thumbnail": "imagenes/trabajos/diy/gato.jpg",
+      "thumbnail": "/imagenes/trabajos/diy/gato.jpg",
       "detailMode": "external",
       "externalUrl": "https://www.instagram.com/p/DRKD-SLiA53/?igsh=MXZ3bnZuOW1pcjdjOA=="
     },
@@ -198,7 +198,7 @@
       "title": "JERSEY A GANCHILLO",
       "summary": "Jersey realizado a ganchillo",
       "version": "0.1.2",
-      "thumbnail": "imagenes/trabajos/diy/ganchillo.png",
+      "thumbnail": "/imagenes/trabajos/diy/ganchillo.png",
       "detailMode": "external",
       "externalUrl": "https://www.instagram.com/p/DJZDTe_IW8o/?img_index=3&igsh=MWU3M2x3NHpleDc0cQ=="
     }
