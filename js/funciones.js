@@ -362,12 +362,18 @@ window.addEventListener('DOMContentLoaded', () => {
 // Archivo.html - hover en filas para mostrar imagen correspondiente
 // Auto-loop cada 2 segundos en pantallas <= 960px
 
-document.addEventListener('DOMContentLoaded', () => {
-    const filas = document.querySelectorAll('.archivo__fila');
+function initArchivoPreview() {
+    const contenedorArchivo = document.querySelector('.archivo');
     const fotoArchivo = document.querySelector('.archivo__foto');
+    if (!contenedorArchivo || !fotoArchivo) return;
+    if (contenedorArchivo.dataset.previewReady === '1') return;
+
+    contenedorArchivo.dataset.previewReady = '1';
 
     let intervaloArchivo = null;
     let indiceActual = 0;
+
+    const getFilas = () => Array.from(contenedorArchivo.querySelectorAll('.archivo__fila'));
 
     const actualizarImagen = (elemento) => {
         if (!elemento) return;
@@ -375,25 +381,30 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nuevaImagen && fotoArchivo && fotoArchivo.src !== nuevaImagen) {
             fotoArchivo.src = nuevaImagen;
         }
-
     };
 
-    // 2. Para Escritorio
-    filas.forEach(fila => {
-        fila.addEventListener('mouseenter', () => {
+    contenedorArchivo.addEventListener('mouseover', (event) => {
+        const fila = event.target.closest('.archivo__fila');
+        if (!fila || !contenedorArchivo.contains(fila)) return;
+
+        const filas = getFilas();
+        const nuevoIndice = filas.indexOf(fila);
+        if (nuevoIndice >= 0) {
+            indiceActual = nuevoIndice;
             actualizarImagen(fila);
-            indiceActual = Array.from(filas).indexOf(fila);
-        });
+        }
     });
 
-    // 3. Para Tablet/Móvil
     const iniciarAutoLoop = () => {
-        if (!intervaloArchivo) {
-            intervaloArchivo = setInterval(() => {
-                indiceActual = (indiceActual + 1) % filas.length;
-                actualizarImagen(filas[indiceActual]);
-            }, 2000);
-        }
+        if (intervaloArchivo) return;
+
+        intervaloArchivo = setInterval(() => {
+            const filas = getFilas();
+            if (filas.length === 0) return;
+
+            indiceActual = (indiceActual + 1) % filas.length;
+            actualizarImagen(filas[indiceActual]);
+        }, 2000);
     };
 
     const detenerAutoLoop = () => {
@@ -401,19 +412,20 @@ document.addEventListener('DOMContentLoaded', () => {
         intervaloArchivo = null;
     };
 
-    // Control de Resposive (Breakpoint 960px)
     const gestionarComportamiento = () => {
         if (window.innerWidth <= 960) {
             iniciarAutoLoop();
         } else {
-        detenerAutoLoop();
+            detenerAutoLoop();
         }
+    };
 
-};
+    gestionarComportamiento();
+    window.addEventListener('resize', gestionarComportamiento);
+}
 
-gestionarComportamiento();
-window.addEventListener('resize', gestionarComportamiento);
-});
+document.addEventListener('DOMContentLoaded', initArchivoPreview);
+document.addEventListener('proyectos:archivo-rendered', initArchivoPreview);
 
 // --- Loader ---
 

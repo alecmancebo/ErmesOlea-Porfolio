@@ -1,0 +1,43 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "imagenes"
+public_folder: "/imagenes"
+
+collections:
+  - name: "portfolio"
+    label: "Portfolio"
+    files:
+      - label: "Proyectos"
+        name: "projects"
+        file: "data/projects.json"
+        format: "json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.shortTitle}} | {{fields.category}} | {{fields.version}}"
+            fields:
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "Categoria", name: "category", widget: "select", options: ["EDITORIAL", "ILUSTRACIONES", "DIY"] }
+              - { label: "Titulo corto", name: "shortTitle", widget: "string" }
+              - { label: "Titulo completo", name: "title", widget: "string", required: false }
+              - { label: "Resumen", name: "summary", widget: "text" }
+              - { label: "Version", name: "version", widget: "string" }
+              - { label: "Miniatura", name: "thumbnail", widget: "image" }
+              - { label: "Modo detalle", name: "detailMode", widget: "select", options: ["dynamic", "external"] }
+              - { label: "URL externa", name: "externalUrl", widget: "string", required: false }
+              - { label: "Ano", name: "year", widget: "string", required: false }
+              - { label: "Tipo", name: "type", widget: "string", required: false }
+              - { label: "Tamano", name: "size", widget: "string", required: false }
+              - { label: "Texto detalle", name: "detailText", widget: "text", required: false }
+              - { label: "Descripcion detalle", name: "detailDescription", widget: "text", required: false }
+              - { label: "Logo", name: "logo", widget: "image", required: false }
+              - { label: "Texto CTA", name: "ctaLabel", widget: "string", required: false }
+              - { label: "URL CTA", name: "ctaUrl", widget: "string", required: false }
+              - label: "Galeria"
+                name: "gallery"
+                widget: "list"
+                required: false
+                field: { label: "Imagen", name: "image", widget: "image" }
