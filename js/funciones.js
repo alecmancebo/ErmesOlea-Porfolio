@@ -1,0 +1,506 @@
+﻿/* jshint esversion: 6 */
+
+/*
+ARCHIVO: funciones.js
+
+Propósito: Interactividad y comportamientos dinámicos del portfolio
+
+FUNCIONALIDADES PRINCIPALES:
+1. Menú móvil - toggle (abrir/cerrar) menú en pantallas pequeñas
+2. Animación de letras punk - cambio de imágenes al hover en menu links
+3. Animación de minibichos - movimiento aleatorio de elementos decorativos
+4. Ordenar/desordenar - toggle de clases para grid principal
+5. Sobre interactivo - click para abrir/cerrar sobre de contacto
+6. Secciones interactivas - click para expandir/contraer (sobre mi)
+7. Archivo.html - hover en filas para mostrar imagen correspondiente
+8. Loader - animación de transición entre páginas
+9. Navegación - transiciones con loader entre páginas
+*/
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isDesktopViewport = () => window.innerWidth > 960;
+const canUseHover = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+// Menú móvil - toggle (abrir/cerrar) menú en pantallas pequeñas
+const nav = document.querySelector(".menu");
+const botonesSobre = document.querySelectorAll(".boton--abrir, .menu__boton--cerrar");
+
+
+botonesSobre.forEach(boton => {
+    boton.addEventListener("click", () => {
+        nav.classList.toggle("menu--abierto");
+
+    })
+
+});
+
+
+// Arrays de imágenes para animaciones en hover
+
+const menuEnlaces = document.querySelectorAll(".menu__item a");
+
+const punkImgsArchivo = [
+'imagenes/global/punk_letters/archivo_letras_01.svg',
+'imagenes/global/punk_letters/archivo_letras_02.svg',
+'imagenes/global/punk_letters/archivo_letras_03.svg'];
+
+const punkImgsSobreMi = [
+'imagenes/global/punk_letters/sobremi_letras_01.svg',
+'imagenes/global/punk_letters/sobremi_letras_02.svg',
+'imagenes/global/punk_letters/sobremi_letras_03.svg'
+];
+
+const punkImgsContacto = [
+'imagenes/global/punk_letters/contacto_letras_01.svg',
+'imagenes/global/punk_letters/contacto_letras_02.svg',
+'imagenes/global/punk_letters/contacto_letras_03.svg'
+];
+
+const punkImagesSandrune = [
+'imagenes/landing/lg_sandrune_01.svg',
+'imagenes/landing/lg_sandrune_02.svg',
+];
+
+
+// Anima un elemento cambiando su src
+
+function animarLetras(img, imagenes) {
+
+    if (!img || !imagenes || imagenes.length === 0) return null;
+
+    let i = 0;
+    const intervalo = setInterval(() => {
+
+        if (!img || typeof img.src === 'undefined') {
+            clearInterval(intervalo);
+            return;
+        }
+
+        img.src = imagenes[i];
+        i = (i + 1) % imagenes.length;
+    }, 100);
+
+    return intervalo;
+
+}
+
+
+// Configura hover en enlaces del menú para animar imágenes
+
+function hoverMenu(enlace, imagenes) {
+    if (!enlace) return;
+
+    let intervalo;
+    const img = enlace.querySelector("img");
+    const span = enlace.querySelector("span");
+
+    enlace.addEventListener("mouseenter", () => {
+        if (window.innerWidth > 480 && canUseHover()) {
+            img.classList.add("menu__img--hover");
+            span.classList.add("menu__span--hover");
+            intervalo = animarLetras(img, imagenes);
+        }
+    });
+
+    enlace.addEventListener("mouseleave", () => {
+        if (window.innerWidth > 480 && canUseHover()) {
+            img.classList.remove("menu__img--hover");
+            span.classList.remove("menu__span--hover");
+            clearInterval(intervalo);
+        }
+    });
+}
+
+hoverMenu(document.querySelector('.menu__link--archivo'), punkImgsArchivo);
+hoverMenu(document.querySelector('.menu__link--sobremi'), punkImgsSobreMi);
+hoverMenu(document.querySelector('.menu__link--contacto'), punkImgsContacto);
+
+// Solo animar si no hay preferencia de reducción de movimiento
+if (!prefersReducedMotion) {
+    animarLetras(document.querySelector('.letras__img'), punkImagesSandrune);
+}
+
+
+// Cambia imágenes del menú a versión pequeña en pantallas <= 480px
+
+function actualizarImagenesMenu() {
+    const imgArchivo = document.querySelector('.menu__link--archivo img');
+    const imgSobreMi = document.querySelector('.menu__link--sobremi img');
+    const imgContacto = document.querySelector('.menu__link--contacto img');
+
+    if (window.innerWidth <= 480) {
+        if (imgArchivo) imgArchivo.src = 'imagenes/global/menu/menu_archivo.svg';
+        if (imgSobreMi) imgSobreMi.src = 'imagenes/global/menu/menu_sobremi.svg';
+        if (imgContacto) imgContacto.src = 'imagenes/global/menu/menu_contacto.svg';
+    }
+}
+
+actualizarImagenesMenu();
+
+let menuResizeRaf = null;
+window.addEventListener('resize', () => {
+    if (menuResizeRaf) return;
+    menuResizeRaf = requestAnimationFrame(() => {
+        actualizarImagenesMenu();
+        menuResizeRaf = null;
+    });
+});
+
+
+// Ordenar/desordenar - toggle de clases para grid principal
+
+const botonOrdenar = document.querySelector(".ventana__boton--ordenar");
+const botonDesordenar = document.querySelector(".ventana__boton--desordenar");
+const ventanaContenedor = document.querySelector(".ventana");
+const itemsVentana = document.querySelectorAll(".ventana__item, .cinta");
+
+if (botonOrdenar && botonDesordenar) {
+
+    botonOrdenar.addEventListener("click", () => {
+        ventanaContenedor.classList.add("esta-ordenada");
+    });
+
+    botonDesordenar.addEventListener("click", () => {
+        ventanaContenedor.classList.remove("esta-ordenada");
+    });
+}
+
+
+// Sobre interactivo - click en cinta para abrir/cerrar sobre
+
+const sobre = document.querySelector(".sobre");
+const cinta = document.querySelector(".sobre__cinta");
+
+if (cinta && sobre) {
+    cinta.addEventListener('click', () => {
+        sobre.classList.toggle('esta-abierto');
+}); }
+
+
+
+// Hover en indice__enlace para mostrar solo la imagen correspondiente
+
+document.addEventListener('DOMContentLoaded', () => {
+    const indiceEnlaces = document.querySelectorAll('.indice__enlace');
+    const ventana = document.querySelector('.ventana');
+
+    indiceEnlaces.forEach((enlace) => {
+        enlace.addEventListener('mouseenter', () => {
+            const mapeo = {
+                '/fae': 'fae',
+                'fae.html': 'fae',
+                '/comadeja': 'comadeja',
+                'comadeja.html': 'comadeja',
+                '/vernalizacion': 'ilustracion',
+                'vernalizacion.html': 'ilustracion',
+                '/cortocircuito': 'cortocircuito',
+                'cortocircuito.html': 'cortocircuito',
+                '/the-magnus-archives': 'comics',
+                'the-magnus-archives.html': 'comics'
+            };
+
+            const href = enlace.getAttribute('href');
+            const clase = mapeo[href];
+
+            if (clase && ventana) {
+                ventana.querySelectorAll('.ventana__item').forEach(item => {
+                    item.style.opacity = '0';
+                    item.style.filter = 'grayscale(1)';
+                });
+
+                const itemActivo = ventana.querySelector('.landing__' + clase);
+                if (itemActivo) {
+                    itemActivo.style.opacity = '1';
+                    itemActivo.style.filter = 'none';
+                }
+            }
+        });
+
+        enlace.addEventListener('mouseleave', () => {
+            if (ventana) {
+                ventana.querySelectorAll('.ventana__item').forEach(item => {
+                    item.style.opacity = '';
+                    item.style.filter = '';
+                });
+            }
+        });
+    });
+});
+
+
+// Secciones interactivas - click para expandir/contraer en sobremi.html
+
+const secciones = [
+{ el: document.querySelector(".textosm"), nivel: 3 },
+{ el: document.querySelector(".skills"), nivel: 2 },
+{ el: document.querySelector(".experiencia"), nivel: 1 }
+];
+
+secciones.forEach((seccion) => {
+    if (!seccion.el) return;
+
+    seccion.el.addEventListener("click", () => {
+        const EstaEnfocada = seccion.el.classList.contains("seccion--enfocada");
+
+        if (EstaEnfocada) {
+
+            secciones.forEach(s => s.el.classList.remove("seccion--enfocada", "seccion--apartada"));
+        } else {
+            secciones.forEach(s => {
+
+                if (s.nivel > seccion.nivel) {
+                    s.el.classList.add("seccion--apartada");
+                    s.el.classList.remove("seccion--enfocada");
+                } 
+                else if (s.nivel === seccion.nivel) {
+                s.el.classList.add("seccion--enfocada");
+                s.el.classList.remove("seccion--apartada");
+                } 
+                else {
+            s.el.classList.remove("seccion--apartada", "seccion--enfocada");
+                }
+            });
+        }
+    });
+});
+
+
+// Animación de minibichos - movimiento aleatorio decorativo
+
+function animarBichos(selector, velocidad = 2) {
+
+    if (prefersReducedMotion) return;
+    if (!isDesktopViewport()) return;
+
+    const elementos = document.querySelectorAll(selector);
+    if (elementos.length === 0) return;
+    const datosImagenes = [];
+    let vw = window.innerWidth;
+    let vh = window.innerHeight;
+    let animationFrameId = null;
+
+    // Actualizar viewport en resize
+    let resizeRaf = null;
+    const actualizarViewport = () => {
+        if (resizeRaf) return;
+        resizeRaf = requestAnimationFrame(() => {
+        vw = window.innerWidth;
+        vh = window.innerHeight;
+        datosImagenes.forEach(info => {
+            info.width = info.el.offsetWidth;
+            info.height = info.el.offsetHeight;
+        });
+        resizeRaf = null;
+        });
+    };
+    window.addEventListener('resize', actualizarViewport);
+
+    elementos.forEach(el => {
+        el.style.willChange = 'transform';
+        el.style.transition = 'transform 0.2s ease-out';
+
+        const width = el.offsetWidth;
+        const height = el.offsetHeight;
+        const xInicial = Math.random() * (vw - width);
+        const yInicial = Math.random() * (vh - height);
+        el.style.transform = `translate(${xInicial}px, ${yInicial}px) scale(1)`;
+
+        const info = {
+            el: el,
+            x: xInicial,
+            y: yInicial,
+            width: width,
+            height: height,
+            horizontal: (Math.random() - 0.5) * velocidad,
+            vertical: (Math.random() - 0.5) * velocidad,
+            estaPausado: false
+        };
+        el.addEventListener('mouseenter', () => info.estaPausado = true);
+        el.addEventListener('mouseleave', () => info.estaPausado = false);
+        datosImagenes.push(info);
+    });
+
+    function actualizar() {
+        if (document.hidden) {
+            animationFrameId = requestAnimationFrame(actualizar);
+            return;
+        }
+
+        datosImagenes.forEach(img => {
+            if (!img.estaPausado) {
+                img.x += img.horizontal;
+                img.y += img.vertical;
+                
+                if (img.x <= 0 || img.x + img.width >= vw) {
+                    img.horizontal *= -1;
+                }
+                if (img.y <= 0 || img.y + img.height >= vh) {
+                    img.vertical *= -1;
+                }
+            }
+            const escalaActual = img.estaPausado ? 1.2 : 1;
+            img.el.style.transform = `translate(${img.x}px, ${img.y}px) scale(${escalaActual})`;
+        });
+        animationFrameId = requestAnimationFrame(actualizar);
+    }
+    actualizar();
+
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && !animationFrameId) {
+            actualizar();
+        }
+    });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    if (!prefersReducedMotion && isDesktopViewport()) {
+        animarBichos(".minibicho", 0.2);
+    }
+});
+
+
+// Archivo.html - hover en filas para mostrar imagen correspondiente
+// Auto-loop cada 2 segundos en pantallas <= 960px
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filas = document.querySelectorAll('.archivo__fila');
+    const fotoArchivo = document.querySelector('.archivo__foto');
+
+    let intervaloArchivo = null;
+    let indiceActual = 0;
+
+    const actualizarImagen = (elemento) => {
+        if (!elemento) return;
+        const nuevaImagen = elemento.getAttribute('data-image');
+        if (nuevaImagen && fotoArchivo && fotoArchivo.src !== nuevaImagen) {
+            fotoArchivo.src = nuevaImagen;
+        }
+
+    };
+
+    // 2. Para Escritorio
+    filas.forEach(fila => {
+        fila.addEventListener('mouseenter', () => {
+            actualizarImagen(fila);
+            indiceActual = Array.from(filas).indexOf(fila);
+        });
+    });
+
+    // 3. Para Tablet/Móvil
+    const iniciarAutoLoop = () => {
+        if (!intervaloArchivo) {
+            intervaloArchivo = setInterval(() => {
+                indiceActual = (indiceActual + 1) % filas.length;
+                actualizarImagen(filas[indiceActual]);
+            }, 2000);
+        }
+    };
+
+    const detenerAutoLoop = () => {
+        clearInterval(intervaloArchivo);
+        intervaloArchivo = null;
+    };
+
+    // Control de Resposive (Breakpoint 960px)
+    const gestionarComportamiento = () => {
+        if (window.innerWidth <= 960) {
+            iniciarAutoLoop();
+        } else {
+        detenerAutoLoop();
+        }
+
+};
+
+gestionarComportamiento();
+window.addEventListener('resize', gestionarComportamiento);
+});
+
+// --- Loader ---
+
+// Animación de letras durante carga
+
+const marcador = document.querySelector("#marcador--palabra img");
+if (marcador) {
+    animarLetras(marcador, [
+    'imagenes/global/punk_letters/cargando_01.png',
+    'imagenes/global/punk_letters/cargando_02.png',
+    'imagenes/global/punk_letters/cargando_03.png'
+    ]);
+}
+
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    if (loader) {
+
+        if (prefersReducedMotion) {
+            loader.classList.remove("pos-centro");
+            loader.classList.add("pos-abajo");
+            document.body.classList.remove("loading");
+            return;
+        }
+        setTimeout(() => {
+            loader.classList.remove("pos-centro");
+            loader.classList.add("pos-abajo");
+            document.body.classList.remove("loading");
+        }, 700);
+    }
+});
+
+// Manejador para cuando retrocedes
+window.addEventListener("pageshow", (event) => {
+    const loader = document.getElementById("loader");
+    if (loader && event.persisted) {
+ 
+        loader.style.transition = "none";
+        loader.classList.remove("pos-centro", "pos-arriba");
+        loader.classList.add("pos-abajo");
+        document.body.classList.remove("loading");
+    }
+});
+
+// Navegación entre páginas - transiciones suaves con loader
+
+document.body.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    if (
+        e.defaultPrevented ||
+        e.button !== 0 ||
+        e.metaKey ||
+        e.ctrlKey ||
+        e.shiftKey ||
+        e.altKey ||
+        link.hasAttribute('download') ||
+        link.getAttribute('rel') === 'external'
+    ) {
+        return;
+    }
+
+    const href = link.getAttribute('href') || '';
+    if (href.startsWith('mailto:') || href.startsWith('tel:')) return;
+    
+    if (link.hostname === window.location.hostname && !link.hash && link.target !== '_blank') {
+        const urlDestino = link.href;
+        const loader = document.getElementById('loader');
+        
+        if (loader) {
+            e.preventDefault();
+            loader.style.transition = "none";
+            loader.classList.remove("pos-abajo");
+            loader.classList.add("pos-arriba");
+
+            setTimeout(() => {
+                loader.style.transition = "transform 0.3s cubic-bezier(0.77, 0, 0.175, 1)";
+                loader.classList.remove("pos-arriba");
+                loader.classList.add("pos-centro");
+            }, 50);
+
+            setTimeout(() => {
+                window.location.href = urlDestino;
+            }, 400);
+        }
+    }
+});
+
+

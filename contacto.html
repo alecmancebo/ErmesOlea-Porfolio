@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ermes Olea - Contacto</title>
+    
+    <!-- Página: CONTACTO
+         Propósito: Página con información de contacto presentada como un sobre
+         interactivo que se abre al hacer clic. Contiene redes sociales,
+         información de comisiones y enlaces a plataformas de contacto.
+         
+         Secciones principales:
+         - Header con navegación
+         - Contenedor sobre: sobre cerrado con animación de apertura
+         - Sobre trasera: parte trasera del sobre (SVG)
+         - Sobre contenido: tarjetas con información (redes, comisiones, etc.)
+         - Sobre delantera: parte frontal del sobre con cinta clickeable
+         - Interactividad: click en la cinta abre el sobre mostrando el contenido
+    -->
+    
+    <!-- tipografía Inconsolata Condensed-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@75,200..900&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/jpg" href="logo/logo_favicon.ico">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script defer src="js/funciones.js"></script>
+</head>
+<body>
+    <!-- Loader: Animación de carga inicial -->
+    <div id="loader" class="contenedor--carga pos-centro">
+        <div id="marcador--palabra" class="palabra"> <img src="imagenes/global/punk_letters/cargando_01.png" alt="Cartel punk con la palabra cargando"></div>
+    </div>
+
+    <!-- Elementos decorativos animados: Minibichos -->
+    <img class="minibicho" src="imagenes/global/minibichos/minibicho01.png" alt="Ilustración de minibicho 01">
+    <img class="minibicho" src="imagenes/global/minibichos/minibicho05.png" alt="Ilustración de minibicho 05">
+    <img class="minibicho" src="imagenes/global/minibichos/minibicho04.png" alt="Ilustración de minibicho 04">
+    
+    <!-- HEADER: Menú de navegación principal -->
+    <header>
+            <nav class="menu">
+            <button class="boton--abrir"><img src="imagenes/global/menu/menu_abrir.svg" alt="Icono para abrir el menú"></button>
+            <button class="menu__boton--cerrar"><img src="imagenes/global/menu/menu_cerrar.svg" alt="Icono para cerrar el menú"></button>
+            <ul>
+                <li class="menu__logo"><a href="index.html"><img src="logo/logo.svg" alt="Logo de Ermes Olea"></a></li>
+                <li class="menu__descripcion">Ermes Olea - diseñadore, ilustradore y artista multidisciplinar de Madrid, España. <br>@2026</li>
+                <li class="menu__item">
+                    <a class="menu__link--archivo" href="archivo.html">
+                        <img class="menu__img" src="imagenes/global/punk_letters/archivo_letras_01.svg" alt="Tipografía punk para Archivo">
+                        <span>Archivo</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link--sobremi" href="sobremi.html">
+                        <img class="menu__img" src="imagenes/global/punk_letters/archivo_letras_01.svg" alt="Tipografía punk para Sobre mí">
+                        <span>Sobre&nbsp;mí</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link--contacto" href="contacto.html">
+                        <img class="menu__img" src="imagenes/global/punk_letters/archivo_letras_01.svg" alt="Tipografía punk para Contacto">
+                        <span>Contacto</span>
+                    </a>
+                </li>
+                <li class="menu__deco">
+                    <img src="imagenes/global/menu/menu_estrellas.svg" alt="Ilustración de estrellas decorativas">
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT: Sobre interactivo (se abre al hacer clic en la cinta) -->
+    <div class="contenedor-sobre">
+        <!-- INTERACTIVE ELEMENT: Sobre con 3 capas (trasera, contenido, delantera) -->
+        <div class="sobre">
+            <!-- Capa 1: Parte trasera del sobre (SVG) -->
+            <div class="sobre__trasera">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 1 12 9" class="sobre__svg">
+                    <path d="M 12 10 H 0 V 3 L 6 1 L 12 3 V 10" fill="#ffffff"/>
+                </svg>
+            </div>
+
+            <!-- Capa 2: Contenido del sobre (4 tarjetas: LinkedIn, Redes, Comisiones, Hoja comisiones) -->
+            <div class="sobre__contenido">
+                <div class="sobre__tarjeta sobre__tarjeta--dibujo">
+                    <a href="https://www.linkedin.com/in/ermes-orion/"><img class="sobre__imagen" src="imagenes/contacto/ct_dibujo_01.svg" alt="Ilustración de sobre con enlace a LinkedIn"></a> 
+                </div>
+                <div class="sobre__tarjeta sobre__tarjeta--redes">
+                    <div class="sobre__papel--columnas">
+                        <h3 class="sobre__titulo">ERMES OLEA</h3>
+                        <ul class="sobre__lista">
+                            <li><a href="mailto:sandrune.art@gmail.com" class="enlace sobre__enlace--gmail">SANDRUNE.ART@GMAIL.COM</a></li>
+                            <li><p class="sobre__titulo">PUEDES VER MÁS EN MIS RRSS:</p></li>
+                            <li><a href="https://x.com/sandrune_art" class="enlace">X</a></li>
+                            <li><a href="https://www.instagram.com/sandrune_art" class="enlace">Instagram</a></li>
+                            <li><a href="https://www.tiktok.com/@sandrune_art" class="enlace">TIKTOK</a></li>
+                            <li><a href="https://www.behance.net/ermesorion" class="enlace">BEHANCE</a></li>
+                            <li><a href="https://www.tumblr.com/sandrune-art" class="enlace">TUMBLR</a></li>
+                            <li><a href="https://bsky.app/profile/sandrune.bsky.social" class="enlace">BLUESKY</a></li>
+                            <li><a href="https://cara.app/sandrune" class="enlace">CARA</a></li>
+                            <li><a href="https://discord.com/users/sandrune" class="enlace">DISCORD</a></li>
+                            <li><a href="https://ko-fi.com/sandrune" class="enlace">KO-FI</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sobre__tarjeta sobre__tarjeta--comisiones">
+                    <img class="sobre__info__foto" src="imagenes/contacto/ct_comisiones.png" alt="Tarjeta ilustrada de comisiones disponible">
+                    <div class="sobre__info">
+                        <p class="sobre__texto">
+                            Hago dibujos de personajes, hojas de diseño (character sheets), ilustraciones completas, iconos... ¡y estoy abierto a cualquier idea loca que tengas! Puedes enviarme un mensaje directo, un correo electrónico o contactarme por cualquiera de estos medios:
+                        </p>
+                        <ul class="sobre__lista">
+                            <li><span class="sobre__lista--flecha"></span><a href="https://vgen.co/sandrune" class="enlace">V-GEN</a></li>
+                            <li><span class="sobre__lista--flecha"></span><a href="https://artistree.io/sandrune" class="enlace">ARTISTREE</a></li>
+                            <li><span class="sobre__lista--flecha"></span><a href="https://kirke.social/sandrune" class="enlace">KIRKE</a></li>
+                            <li><span class="sobre__lista--flecha"></span><a href="https://sandrune.straw.page/sandrunecomms" class="enlace">MAS INFO</a></li>
+                        </ul>
+                        <img src="imagenes/contacto/ct_ermes.png" alt="Retrato ilustrado de Ermes para la sección de comisiones" class="sobre__info__dibujo">
+                    </div>
+                </div>
+
+                <div class="sobre__tarjeta sobre__tarjeta--hoja">
+                    <img src="imagenes/contacto/ct_comisiones_foto.png" alt="Hoja de precios y ejemplos de comisiones" class="sobre__imagen">
+                </div>
+            </div>
+
+            <!-- Capa 3: Parte delantera del sobre (SVG + cinta clickeable) -->
+            <div class="sobre__delantera">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 3 12 7" class="sobre__svg">
+                    <path d="M 12 10 H 0 V 3 H 2 L 6 6 L 10 3 H 12 H 12 V 10" fill="#ffffff"/>
+                </svg>
+                <div class="sobre__contactame">¡CONTÁCTAME!</div>
+                <img class="sobre__cinta" src="imagenes/contacto/ct_click.svg" alt="Cinta con texto clica para abrir la carta">
+            </div>
+        </div>
+    </div>
+    <!-- FIN MAIN CONTENT -->
+
+</body>
+</html>
